@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SG Trend Wire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+  :root{
+    --paper:#F5F7F4;
+    --surface:#FFFFFF;
+    --surface-sunk:#ECEFEA;
+    --ink:#141A17;
+    --ink-soft:#4A5450;
+    --ink-faint:#77827D;
+    --rule:#D8DED7;
+    --rule-soft:#E6EAE4;
+    --pine:#123A32;
+    --pine-ink:#123A32;
+    --signal:#B4531A;
+    --risk:#A32B22;
+    --risk-bg:#FBEEEC;
+    --caution:#8A6008;
+    --caution-bg:#FBF3E2;
+    --clear:#2F6B4F;
+    --shadow:0 1px 2px rgba(20,26,23,.06);
+    --display:'Archivo','Helvetica Neue',Arial,sans-serif;
+    --body:'Source Serif 4',Georgia,'Times New Roman',serif;
+    --mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#0E1211;
+      --surface:#161C1A;
+      --surface-sunk:#111615;
+      --ink:#E6EBE7;
+      --ink-soft:#A3AEA8;
+      --ink-faint:#7C8781;
+      --rule:#2A3230;
+      --rule-soft:#212927;
+      --pine:#8FCBB8;
+      --pine-ink:#0E1211;
+      --signal:#E08544;
+      --risk:#EE8377;
+      --risk-bg:#241614;
+      --caution:#D9A63F;
+      --caution-bg:#231C10;
+      --clear:#6FBE95;
+      --shadow:0 1px 2px rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0E1211;
+    --surface:#161C1A;
+    --surface-sunk:#111615;
+    --ink:#E6EBE7;
+    --ink-soft:#A3AEA8;
+    --ink-faint:#7C8781;
+    --rule:#2A3230;
+    --rule-soft:#212927;
+    --pine:#8FCBB8;
+    --pine-ink:#0E1211;
+    --signal:#E08544;
+    --risk:#EE8377;
+    --risk-bg:#241614;
+    --caution:#D9A63F;
+    --caution-bg:#231C10;
+    --clear:#6FBE95;
+    --shadow:0 1px 2px rgba(0,0,0,.4);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.55;
+    margin:0;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px 72px}
+  a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+  a:hover{border-bottom-color:var(--signal);color:var(--signal)}
+  a:focus-visible{outline:2px solid var(--signal);outline-offset:2px;border-radius:2px}
+
+  /* ---------- masthead ---------- */
+  .masthead{border-bottom:2px solid var(--ink);padding:36px 0 14px;margin-bottom:0}
+  .org{
+    font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--signal);margin:0 0 10px
+  }
+  .masthead h1{
+    font-family:var(--display);font-weight:700;font-size:clamp(30px,6vw,46px);
+    line-height:1.02;letter-spacing:-.02em;margin:0;text-wrap:balance
+  }
+  .dateline{
+    display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline;
+    margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--ink-soft)
+  }
+  .dateline .sep{color:var(--rule)}
+
+  /* ---------- counters ---------- */
+  .counters{
+    display:flex;flex-wrap:wrap;gap:0;border-bottom:1px solid var(--rule);
+  }
+  .counter{
+    flex:1 1 120px;padding:14px 16px 15px;border-right:1px solid var(--rule-soft)
+  }
+  .counter:last-child{border-right:0}
+  .counter .n{
+    font-family:var(--mono);font-weight:600;font-size:22px;
+    font-variant-numeric:tabular-nums;line-height:1;display:block
+  }
+  .counter .k{
+    font-family:var(--display);font-size:10px;letter-spacing:.11em;text-transform:uppercase;
+    color:var(--ink-faint);margin-top:6px;display:block
+  }
+  .counter.hot .n{color:var(--signal)}
+  .counter.no .n{color:var(--risk)}
+
+  /* ---------- section headers ---------- */
+  .sec{margin-top:44px}
+  .sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+  .sec-head h2{
+    font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.13em;
+    text-transform:uppercase;margin:0
+  }
+  .sec-head .note{font-family:var(--mono);font-size:11px;color:var(--ink-faint)}
+  .sec-rule{height:1px;background:var(--ink);margin-bottom:22px}
+
+  /* ---------- priority ---------- */
+  .prio{display:flex;flex-direction:column;gap:1px;background:var(--rule-soft);border:1px solid var(--rule);border-radius:3px;overflow:hidden}
+  .prio-row{display:flex;gap:16px;background:var(--surface);padding:15px 18px;align-items:flex-start}
+  .prio-tag{
+    font-family:var(--display);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    flex:0 0 96px;padding-top:3px;color:var(--ink-faint)
+  }
+  .prio-row.act .prio-tag{color:var(--clear)}
+  .prio-row.build .prio-tag{color:var(--signal)}
+  .prio-row.avoid .prio-tag{color:var(--risk)}
+  .prio-row p{margin:0;font-size:15px}
+  .prio-row strong{font-weight:600}
+
+  /* ---------- trends ---------- */
+  .trend{padding:22px 0;border-bottom:1px solid var(--rule-soft)}
+  .trend:last-child{border-bottom:0}
+  .trend-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:9px}
+  .trend-top h3{
+    font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:-.01em;margin:0
+  }
+  .heat{
+    font-family:var(--display);font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+    padding:3px 8px;border-radius:2px;white-space:nowrap
+  }
+  .heat.peak{background:var(--risk-bg);color:var(--risk)}
+  .heat.rise{background:var(--caution-bg);color:var(--caution)}
+  .trend dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:5px 14px;align-items:baseline}
+  .trend dt{
+    font-family:var(--display);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink-faint);padding-top:5px
+  }
+  .trend dd{margin:0;font-size:15.5px}
+  .trend dd.angle{color:var(--ink)}
+  .trend dd.risk{color:var(--caution);font-size:14.5px}
+    .src{font-family:var(--mono);font-size:11.5px;word-break:break-all;color:var(--ink-faint)}
+  .src a{border-bottom-color:var(--rule-soft)}
+
+
+  .trend dd.none{color:var(--ink-faint);font-size:14.5px;font-style:italic}
+  .trend .cal-ideas{margin-top:1px}
+
+  /* ---------- no-go ---------- */
+  .nogo{border-left:3px solid var(--risk);background:var(--risk-bg);border-radius:0 3px 3px 0;padding:4px 0}
+  .nogo-item{padding:12px 18px;display:flex;gap:13px;align-items:flex-start}
+  .nogo-item + .nogo-item{border-top:1px solid color-mix(in srgb,var(--risk) 16%,transparent)}
+  .nogo-item h4{
+    font-family:var(--display);font-weight:700;font-size:13px;margin:0 0 2px;color:var(--risk)
+  }
+  .nogo-item p{margin:0;font-size:14.5px;color:var(--ink-soft)}
+  .nogo-x{color:var(--risk);font-family:var(--mono);font-size:13px;font-weight:600;padding-top:1px}
+
+  /* ---------- calendar ---------- */
+  .cal{display:flex;flex-direction:column}
+  .cal-row{
+    display:grid;grid-template-columns:88px 42px 1fr;gap:16px;
+    padding:13px 0;border-bottom:1px solid var(--rule-soft);align-items:baseline
+  }
+  .cal-row:last-child{border-bottom:0}
+  .cal-date{
+    font-family:var(--mono);font-size:12.5px;font-weight:600;font-variant-numeric:tabular-nums;
+    color:var(--ink);white-space:nowrap
+  }
+  .cal-away{
+    font-family:var(--mono);font-size:12px;font-variant-numeric:tabular-nums;
+    color:var(--ink-faint);text-align:right
+  }
+  .cal-body h4{font-family:var(--display);font-weight:600;font-size:15.5px;margin:0 0 3px;display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+  .stars{font-family:var(--mono);font-size:12px;letter-spacing:.5px;color:var(--signal)}
+  .stars.s2{color:var(--ink-soft)}
+  .stars.s1{color:var(--ink-faint)}
+  .lead{
+    font-family:var(--display);font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+    background:var(--caution-bg);color:var(--caution);padding:2px 6px;border-radius:2px;white-space:nowrap
+  }
+  .cal-body p{margin:0;font-size:14.5px;color:var(--ink-soft)}
+  .cal-row.major{background:linear-gradient(90deg,color-mix(in srgb,var(--signal) 7%,transparent),transparent 65%);
+    margin:0 -12px;padding-left:12px;padding-right:12px;border-radius:2px}
+
+  /* ---------- footer blocks ---------- */
+  .gap{
+    background:var(--surface-sunk);border:1px solid var(--rule);border-radius:3px;
+    padding:16px 18px;margin-top:24px
+  }
+  .gap h4{
+    font-family:var(--display);font-size:10px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+    color:var(--ink-faint);margin:0 0 8px
+  }
+  .gap p{margin:0 0 8px;font-size:14.5px;color:var(--ink-soft)}
+  .gap p:last-child{margin-bottom:0}
+
+  
+
+  .cal-ideas{list-style:none;margin:7px 0 0;padding:0;display:flex;flex-direction:column;gap:5px}
+  .cal-idea{display:grid;grid-template-columns:16px 1fr;gap:8px;font-size:14px;color:var(--ink);align-items:baseline}
+  .cal-idea .n{font-family:var(--mono);font-size:10.5px;font-weight:600;color:var(--signal)}
+  .cal-idea em{font-style:italic}
+  .cal-why{font-size:14.5px;color:var(--ink-soft);margin:0}
+
+  /* ---------- archive calendar ---------- */
+  .cal{border:1px solid var(--rule);border-radius:3px;background:var(--surface);padding:14px 16px 12px;margin:22px 0 0}
+  .cal-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+  .cal-title{font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+  .cal-nav{font-family:var(--mono);font-size:15px;line-height:1;background:none;border:1px solid var(--rule);color:var(--ink-soft);
+           border-radius:2px;width:24px;height:24px;cursor:pointer;padding:0}
+  .cal-nav:hover:not(:disabled){border-color:var(--signal);color:var(--signal)}
+  .cal-nav:disabled{opacity:.3;cursor:default}
+  .cal-nav:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+  .cal-dow{font-family:var(--mono);font-size:9.5px;color:var(--ink-faint);text-align:center;padding-bottom:4px}
+  .cal-cell{font-family:var(--mono);font-size:11.5px;font-variant-numeric:tabular-nums;text-align:center;
+            padding:5px 0;border-radius:2px;color:var(--ink-faint);text-decoration:none;border-bottom:0}
+  .cal-cell.out{visibility:hidden}
+  a.cal-cell.has{color:var(--signal);font-weight:600;background:color-mix(in srgb,var(--signal) 10%,transparent)}
+  a.cal-cell.has:hover{background:var(--signal);color:var(--surface)}
+  .cal-cell.here{outline:1px solid var(--signal);outline-offset:-1px}
+  .cal-cell:focus-visible{outline:2px solid var(--signal);outline-offset:1px}
+  .cal-all{display:block;margin-top:10px;font-family:var(--mono);font-size:11px;color:var(--ink-faint);
+           text-decoration:none;border-bottom:0}
+  .cal-all:hover{color:var(--signal)}
+
+
+  /* ---------- nav ---------- */
+  .nav{display:flex;gap:16px;padding:14px 0 0;font-family:var(--mono);font-size:11.5px;
+       letter-spacing:.04em;text-transform:uppercase}
+  .nav a{border-bottom:0;color:var(--ink-faint)}
+  .nav a:hover{color:var(--signal)}
+
+  @media (max-width:620px){
+    .wrap{padding:0 18px 56px}
+    .cal-row{grid-template-columns:72px 36px 1fr;gap:10px}
+    .prio-row{flex-direction:column;gap:5px}
+    .prio-tag{flex:none;padding-top:0}
+    .trend dl{grid-template-columns:1fr;gap:2px 0}
+    .trend dt{padding-top:9px}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <a href="./index.html">Today</a>
+    <a href="./archive/index.html">Archive</a>
+  </nav>
+
+  <header class="masthead">
+    <p class="org">TMRW Tech · Social</p>
+    <h1>Singapore Trend Wire</h1>
+    <div class="dateline">
+      <span>THU 3 SEP 2026</span>
+      <span class="sep">/</span>
+      <span>MARKET: SG</span>
+      <span class="sep">/</span>
+      <span>COMPILED 09:00 SGT</span>
+    </div>
+  </header>
+
+  <div class="counters">
+    <div class="counter hot"><span class="n">5</span><span class="k">Live trends</span></div>
+    <div class="counter no"><span class="n">5</span><span class="k">No-go</span></div>
+    <div class="counter"><span class="n">12</span><span class="k">Calendar / 30d</span></div>
+    <div class="counter"><span class="n">36</span><span class="k">Days to F1</span></div>
+  </div>
+
+  <!--CAL--><!--/CAL-->
+
+  <section class="sec">
+    <div class="sec-head"><h2>This week</h2><span class="note">three decisions</span></div>
+    <div class="sec-rule"></div>
+    <div class="prio">
+      <div class="prio-row act">
+        <span class="prio-tag">Act today</span>
+        <p>The <strong>haze × school-holiday</strong> post. Nine days off start Saturday and the forecast just moved them indoors. Publish before any advisory lands — after that it reads as opportunism.</p>
+      </div>
+      <div class="prio-row build">
+        <span class="prio-tag">Start building</span>
+        <p><strong>F1</strong> — 36 days. Fix your lineup deck first: the nightly billing has moved since July. Brief the non-attendee, not the race.</p>
+      </div>
+      <div class="prio-row avoid">
+        <span class="prio-tag">Avoid</span>
+        <p>The <strong>Panfilov acquittal</strong>, still SG's #1 search on day two. Someone will pitch it as a creator-economy story. It is not.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2>Trending now</h2><span class="note">last 24–48h</span></div>
+    <div class="sec-rule"></div>
+
+    <article class="trend">
+      <div class="trend-top">
+        <h3>Haze, now searched</h3>
+        <span class="heat peak">Peaking</span>
+      </div>
+      <dl>
+        <dt>What</dt>
+        <dd>“Haze Singapore” and “haze” are both among SG's top search risers today, up 1,000% each — the public is driving this now, not the agencies.</dd>
+        <dt>Trendjack</dt><dd class="angle"><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span><em>“Nine days off. Two of them outdoors, probably.”</em> One saveable indoor plan. The parents are already searching.</span></li></ul></dd>
+        <dt>Risk</dt>
+        <dd class="risk">⚠ HANDLE CAREFULLY — utility only, no jokes once advisories issue, and never name a source country.</dd>
+        <dt>Source</dt>
+        <dd class="src"><a href="https://mothership.sg/2026/09/haze-sep-2026/">mothership.sg/2026/09/haze-sep-2026</a></dd>
+      </dl>
+    </article>
+
+    <article class="trend">
+      <div class="trend-top">
+        <h3>SIA's new cabins — the anticlimax</h3>
+        <span class="heat rise">Rising</span>
+      </div>
+      <dl>
+        <dt>What</dt>
+        <dd>Searches up 800% on a story that gives almost nobody anything — a 7 Nov reveal for top-tier members only, seats not flying until Q1 2027.</dd>
+        <dt>Trendjack</dt><dd class="angle"><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>With a product on the shelf: one shot, <em>“Available November. Of this year.”</em></span></li><li class="cal-idea"><span class="n">2</span><span>Without: <em>“Things Singaporeans are currently waiting until 2027 for.”</em> Open the list, let the comments fill it.</span></li></ul></dd>
+        <dt>Source</dt>
+        <dd class="src"><a href="https://www.asiaone.com/singapore/singapore-airlines-new-cabin-seats-first-and-business-class-nov-7">asiaone.com/singapore/singapore-airlines-new-cabin-seats-first-and-business-class-nov-7</a></dd>
+      </dl>
+    </article>
+
+    <article class="trend">
+      <div class="trend-top">
+        <h3>Wallich Residence — mystery solved</h3>
+        <span class="heat rise">Rising</span>
+      </div>
+      <dl>
+        <dt>What</dt>
+        <dd>Yesterday's unexplained “Wallich Residence” spike has a story: ten flats tied to the S$3b money laundering case go to auction 23 Sep, guide prices S$2.238m–S$6.78m.</dd>
+        <dt>Trendjack</dt><dd class="angle"><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>Property and finance only: <em>“What S$2.238m buys you in Tanjong Pagar.”</em> A comparison card against live listings. The argument over whether that is cheap is the real conversation, and a safe one.</span></li></ul></dd>
+        <dt>Risk</dt>
+        <dd class="risk">⚠ HANDLE CAREFULLY — the auction is public, the case is not closed. Compare prices; never joke about the money or name anyone charged.</dd>
+        <dt>Source</dt>
+        <dd class="src"><a href="https://www.asiaone.com/singapore/10-luxury-apartments-linked-3b-money-laundering-case-sept-23-auction-block">asiaone.com/singapore/10-luxury-apartments-linked-3b-money-laundering-case-sept-23-auction-block</a></dd>
+      </dl>
+    </article>
+
+    <article class="trend">
+      <div class="trend-top">
+        <h3>GetGo opens West Malaysia</h3>
+        <span class="heat rise">Rising</span>
+      </div>
+      <dl>
+        <dt>What</dt>
+        <dd>Car-sharing to JB, KL and Cameron Highlands at S$20–35 a day, no deposit, no mileage charge — the JB run is now open to people who don't own a car.</dd>
+        <dt>Trendjack</dt><dd class="angle"><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span><em>“The JB trip, costed three ways.”</em> One table — bus, own car, this. Everyone is doing that maths today; publish it and win the search.</span></li><li class="cal-idea"><span class="n">2</span><span>Nothing to sell here? <em>“Congratulations, the Causeway jam is now available to everyone.”</em> One line, one photo of the queue.</span></li></ul></dd>
+        <dt>Source</dt>
+        <dd class="src"><a href="https://mothership.sg/2026/09/getgo-malaysia/">mothership.sg/2026/09/getgo-malaysia</a></dd>
+      </dl>
+    </article>
+
+    <article class="trend">
+      <div class="trend-top">
+        <h3>The Yishun water bottle</h3>
+        <span class="heat peak">Peaking</span>
+      </div>
+      <dl>
+        <dt>What</dt>
+        <dd>A stall owner and a family argued over an outside water bottle — 1,500+ comments before the video came down, split between house rules and don't touch my things.</dd>
+        <dt>Trendjack</dt><dd class="angle"><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>Post the rule, not the fight. A sign-style graphic of your own policy — <em>“Outside drinks: fine by us.”</em> Only if it's true, and never mention the incident.</span></li></ul></dd>
+        <dt>Risk</dt>
+        <dd class="risk">⚠ HANDLE CAREFULLY — identifiable people, live police report. The debate is fair game; the video is not.</dd>
+        <dt>Source</dt>
+        <dd class="src"><a href="https://mothership.sg/2026/09/coffee-shop-fight-water-bottle-spore/">mothership.sg/2026/09/coffee-shop-fight-water-bottle-spore</a></dd>
+      </dl>
+    </article>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2>No-go list</h2><span class="note">trending, untouchable</span></div>
+    <div class="sec-rule"></div>
+    <div class="nogo">
+      <div class="nogo-item">
+        <span class="nogo-x">✕</span>
+        <div>
+          <h4>Lev Panfilov acquittal</h4>
+          <p>#1 SG search, 5K+, second day. Sexual assault case, identifiable complainant. No brand-safe entry exists.</p>
+        </div>
+      </div>
+      <div class="nogo-item">
+        <span class="nogo-x">✕</span>
+        <div>
+          <h4>Death of an SCDF colonel</h4>
+          <p>2K+ searches overnight. Leave that space to the people who knew him.</p>
+        </div>
+      </div>
+      <div class="nogo-item">
+        <span class="nogo-x">✕</span>
+        <div>
+          <h4>Nepal–Tibet floods</h4>
+          <p>Singapore has sent a 19-member victim identification team. Standing rule holds: no AI imagery anywhere near this.</p>
+        </div>
+      </div>
+      <div class="nogo-item">
+        <span class="nogo-x">✕</span>
+        <div>
+          <h4>Geylang pasar malam crash</h4>
+          <p>Driver now charged over alleged drug-impaired driving that killed a stall attendant. Sub judice.</p>
+        </div>
+      </div>
+      <div class="nogo-item">
+        <span class="nogo-x">✕</span>
+        <div>
+          <h4>This week's deaths in the feed</h4>
+          <p>An NTU student, a man off Yishun Dam, a man at a Toa Payoh block. All circulating, none touchable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2>Calendar</h2><span class="note">★★★ major · ★★ worth a post · ★ if it fits</span></div>
+    <div class="sec-rule"></div>
+    <div class="cal">
+
+      <div class="cal-row major">
+        <span class="cal-date">FRI 4 SEP</span><span class="cal-away">1d</span>
+        <div class="cal-body">
+          <h4>Teachers' Day <span class="stars">★★★</span></h4>
+          <p class="cal-why">School holiday, not a public holiday. Biggest organic UGC day of the month, and it is tomorrow.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span><em>“The teacher who wrote you off.”</em> One line, comments open — the replies are the content.</span></li><li class="cal-idea"><span class="n">2</span><span>A photo of your team's worst handwriting: <em>“Somebody's teacher tried.”</em></span></li></ul>
+        </div>
+      </div>
+
+      <div class="cal-row">
+        <span class="cal-date">SAT 5 SEP</span><span class="cal-away">2d</span>
+        <div class="cal-body">
+          <h4>September school holidays <span class="stars">★★★</span></h4>
+          <p class="cal-why">Nine days to 13 Sep, colliding with the haze forecast and 33–35°C. Indoor demand spikes Saturday morning.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span><em>“Nine days. One aircon. A plan.”</em> A saveable day-by-day indoor list.</span></li></ul>
+        </div>
+      </div>
+
+      <div class="cal-row">
+        <span class="cal-date">TUE 8 SEP</span><span class="cal-away">5d</span>
+        <div class="cal-body">
+          <h4>9.9 pre-sale window <span class="stars">★★★</span> <span class="lead">⏰ Lead time</span></h4>
+          <p class="cal-why">Vouchers and livestream slots lock the day before, not on the day.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span><em>“What's actually cheaper at 9.9 vs 11.11.”</em> An honest table. Trust content outperforms hype every year.</span></li></ul>
+        </div>
+      </div>
+
+      <div class="cal-row major">
+        <span class="cal-date">WED 9 SEP</span><span class="cal-away">6d</span>
+        <div class="cal-body">
+          <h4>9.9 peak day <span class="stars">★★★</span></h4>
+          <p class="cal-why">Biggest commerce moment before 11.11, landing mid-school-holiday.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>Post at 00:00 and 20:00 — the two voucher drops. Same creative, different caption.</span></li><li class="cal-idea"><span class="n">2</span><span><em>“Your cart at 11.59pm.”</em> A screenshot joke every SG shopper recognises.</span></li></ul>
+        </div>
+      </div>
+
+      <div class="cal-row">
+        <span class="cal-date">SUN 13 SEP</span><span class="cal-away">10d</span>
+        <div class="cal-body">
+          <h4>Holidays end · Minecraft at Mandai closes <span class="stars s2">★★</span></h4>
+          <p class="cal-why">Last-day urgency is the whole post. Parents want one final thing to do.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span><em>“Last day. Go.”</em> One image, one closing time, link in bio.</span></li></ul>
+        </div>
+      </div>
+
+      <div class="cal-row">
+        <span class="cal-date">WED 23 SEP</span><span class="cal-away">20d</span>
+        <div class="cal-body">
+          <h4>Laundered-asset property auction <span class="stars s1">★</span></h4>
+          <p class="cal-why">A news moment, not a posting moment. Diarise it so nobody is caught out by the spike.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>Property brands: have the price-comparison card built and sitting in drafts before the day.</span></li></ul>
+        </div>
+      </div>
+
+      <div class="cal-row major">
+        <span class="cal-date">FRI 25 SEP</span><span class="cal-away">22d</span>
+        <div class="cal-body">
+          <h4>Mid-Autumn Festival <span class="stars">★★★</span> <span class="lead">⏰ Lead time</span></h4>
+          <p class="cal-why">Corporate gifting orders close around 15 Sep — ten working days from now.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span><em>“The mooncake nobody in the office wants.”</em> A ranking. The comments do the work.</span></li></ul>
+        </div>
+      </div>
+
+      <div class="cal-row major">
+        <span class="cal-date">WED 30 SEP</span><span class="cal-away">27d</span>
+        <div class="cal-body">
+          <h4>Triple closure day <span class="stars">★★★</span></h4>
+          <p class="cal-why">Satay by the Bay's last service, and Snow City shuts permanently after 26 years. Shoot from ~25 Sep — emotion lands on the day, not the announcement.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span><em>“Last order.”</em> One photo of the final plate, posted at closing time.</span></li><li class="cal-idea"><span class="n">2</span><span><em>“Twenty-six years of Singaporeans pretending to be cold.”</em> Ask for the Snow City photo everyone has. They all have one.</span></li></ul>
+        </div>
+      </div>
+
+      <div class="cal-row">
+        <span class="cal-date">THU 1 OCT</span><span class="cal-away">28d</span>
+        <div class="cal-body">
+          <h4>International Coffee Day <span class="stars s2">★★</span></h4>
+          <p class="cal-why">One of the few global days with real SG traction.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span><em>“Kopi C siew dai, explained to a flat-white drinker.”</em> A single translation card.</span></li></ul>
+        </div>
+      </div>
+
+      <div class="cal-row">
+        <span class="cal-date">FRI 2 OCT</span><span class="cal-away">29d</span>
+        <div class="cal-body">
+          <h4>Children's Day · GP Season opens <span class="stars">★★★</span> <span class="lead">⏰ Lead time</span></h4>
+          <p class="cal-why">Primary and kindergarten only; parents post heavily. Grand Prix Season runs 2–11 Oct citywide from the same day.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span><em>“Primary school canteen food, ranked.”</em> Guaranteed argument in the comments.</span></li></ul>
+        </div>
+      </div>
+
+      <div class="cal-row">
+        <span class="cal-date">SAT 3 OCT</span><span class="cal-away">30d</span>
+        <div class="cal-body">
+          <h4>Joo Chiat Car-Free Day <span class="stars s2">★★</span></h4>
+          <p class="cal-why">3.30–9.30pm, between Dunman and East Coast Road. First time this has run outside the CBD.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span><em>“Joo Chiat Road, walked end to end.”</em> One slow pan, no voiceover, every shopfront.</span></li></ul>
+        </div>
+      </div>
+
+      <div class="cal-row major">
+        <span class="cal-date">FRI 9 OCT</span><span class="cal-away">36d</span>
+        <div class="cal-body">
+          <h4>F1 Singapore Grand Prix <span class="stars">★★★</span> <span class="lead">⏰ Lead time</span></h4>
+          <p class="cal-why">9–11 Oct. Current billing: JJ Lin and Split Enz Friday; The Killers and Zara Larsson Saturday; Lana Del Rey and Janet Jackson Sunday. Update any deck built from July.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span><b>Own the non-attendee.</b> <em>“No ticket? Here's where you'll still hear it.”</em> Closures, free viewing spots, which restaurants stay reachable.</span></li><li class="cal-idea"><span class="n">2</span><span><em>“Your commute, qualifying edition.”</em> One closures graphic, posted the Monday before.</span></li></ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="gap">
+      <h4>Beyond 30 days — start now</h4>
+      <p><strong>SIA cabin reveal, 7 Nov</strong> — travel and lifestyle should hold a slot. <strong>Deepavali, 8–9 Nov</strong> ⏰ — casting and cultural review need six to eight weeks, so that starts this month. <strong>11.11</strong> ⏰ — deepest discounts of the SG year.</p>
+      <p><strong>Correction to standing briefs:</strong> the Great Singapore Sale no longer exists — discontinued after 2022. If a client brief still says “GSS”, correct it.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2>Gaps in today's scan</h2><span class="note">honest holes</span></div>
+    <div class="sec-rule"></div>
+    <div class="gap">
+      <p><strong>No live PSI number.</strong> The NEA data API was blocked to this session and haze.gov.sg served a 2014 archive page. The haze read above is search behaviour plus the 2 Sep outlook, not a current reading — check myENV before publishing any air-quality claim.</p>
+      <p><strong>SG TikTok sounds still unavailable.</strong> The chart source reports its own data as last updated August 2025. Second day running — pull manually from TikTok Creative Center.</p>
+      <p><strong>r/singapore returned 403 again</strong> and CNA was unreachable — two of six sources missed, so Reddit-first stories are not represented.</p>
+      <p><strong>F1 lineup is provisional.</strong> Two published schedules disagree on which artist plays which night — confirm officially before it goes in a deck.</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
