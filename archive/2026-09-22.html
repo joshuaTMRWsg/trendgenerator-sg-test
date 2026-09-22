@@ -304,12 +304,12 @@
       <span class="sep">/</span>
       <span>MARKET: SG</span>
       <span class="sep">/</span>
-      <span>COMPILED 22:20 SGT</span>
+      <span>COMPILED 22:55 SGT</span>
     </div>
   </header>
 
   <div class="counters">
-    <div class="counter hot"><span class="n">6</span><span class="k">Live trends</span></div>
+    <div class="counter hot"><span class="n">5</span><span class="k">Live trends</span></div>
     <div class="counter no"><span class="n">6</span><span class="k">No-go</span></div>
     <div class="counter"><span class="n">12</span><span class="k">Calendar / 30d</span></div>
     <div class="counter"><span class="n">17</span><span class="k">Days to F1</span></div>
@@ -362,7 +362,7 @@
       </div>
       <dl>
         <dt>What</dt>
-        <dd class="none">No honest read today. Creative Center's trending API needs an authenticated session (no <code>TIKTOK_CC_COOKIE</code>/<code>APIFY_TOKEN</code> in this environment) and its web UI is JS-only. SG virality outlets (Stomp, Mothership Trending, The Independent SG, The Smart Local) carried nothing platform-dated inside 48h — search surfaced only a month-old Chinatown dance-troupe clip and an undated CHIJMES escalator trend, both too stale to print a rank on.</dd>
+        <dd class="none">No honest read today. <code>api.apify.com</code> is not on this session's allowlist — CONNECT tunnel refused with 403 despite a valid <code>APIFY_TOKEN</code> in env, so the Creative Center actor never ran. Of the SG virality outlets reachable today — Mothership, Goody Feed, The Independent SG — only a TikToker-vs-McDonald's sauce clip surfaced, published Sun 20 Sep, outside the 48h window; Stomp and The Smart Local, which usually carry these clips first, both refused the connection this session.</dd>
       </dl>
     </article>
 
@@ -372,7 +372,7 @@
       </div>
       <dl>
         <dt>What</dt>
-        <dd class="none">No honest read today. Instagram has no public trend endpoint, and the sweep found only global 2026 format round-ups (not SG-specific) and evergreen "most Instagrammable cafés" listicles with no date attached — nothing cleared the 48h bar for a platform-attributed Singapore trend.</dd>
+        <dd class="none">No honest read today. Instagram has no public trend endpoint, and none of today's reachable SG outlets (Mothership, Goody Feed, The Independent SG, Honeycombers) named a specific Reel or Story format circulating in Singapore inside 48h — search returned only undated global format round-ups.</dd>
       </dl>
     </article>
 
@@ -406,31 +406,15 @@
 
     <article class="trend">
       <div class="trend-top">
-        <h3>Flash floods hit Bukit Timah in afternoon downpour</h3>
-        <span class="heat cool">Cooling</span>
-      </div>
-      <dl>
-        <dt>What</dt>
-        <dd>Heavy rain flooded stretches of King's Road and Coronation Road from about 5.15pm; PUB says both cleared by 5.28pm, no injuries reported.</dd>
-        <dt>Trendjack</dt><dd class="none">No honest trendjack — a 13-minute flood is a weather note, not a moment to post into.</dd>
-        <dt>Source</dt>
-        <dd class="src"><a href="https://www.asiaone.com/singapore/singapore-weather-22-september-thundery-showers-flash-floods">asiaone.com/singapore/singapore-weather-22-september-thundery-showers-flash-floods</a></dd>
-      </dl>
-    </article>
-
-    <article class="trend">
-      <div class="trend-top">
-        <h3>CASE warns teens off stacking coffee, matcha and energy drinks</h3>
+        <h3>Uncle fined $5,000 for leaving waste outside neighbour's door — twice</h3>
         <span class="heat rise">Rising</span>
       </div>
       <dl>
         <dt>What</dt>
-        <dd>CASE tests found all six common caffeinated-drink combos exceeded the daily limit for 12–18-year-olds; Monster + Red Bull + espresso hit 282mg, near triple the recommended max.</dd>
-        <dt>Trendjack</dt><dd class="angle"><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>Café or F&amp;B, PSA style: <em>"One caffeinated drink is enough. We'll say no to the top-up so you don't have to."</em></span></li></ul></dd>
-        <dt>Risk</dt>
-        <dd class="risk">⚠ HANDLE CAREFULLY — keep it PSA, not a joke about the dosage.</dd>
+        <dd>A 67-year-old, suspecting his Bukit Batok neighbour had punctured his tyres, left urine and faeces outside the man's flat twice; the State Courts fined him $5,000 today, paid in full.</dd>
+        <dt>Trendjack</dt><dd class="none">No honest trendjack — this is a real harassment conviction with an alarmed victim, not material for a joke about the method.</dd>
         <dt>Source</dt>
-        <dd class="src"><a href="https://www.asiaone.com/singapore/mixing-energy-drinks-coffee-caffeine-overdose-case">asiaone.com/singapore/mixing-energy-drinks-coffee-caffeine-overdose-case</a></dd>
+        <dd class="src"><a href="https://goodyfeed.com/man-67-fined-s5000-after-leaving-urine-and-faeces-outside-neighbours-bukit-batok-flat-twice/">goodyfeed.com/man-67-fined-s5000-after-leaving-urine-and-faeces-outside-neighbours-bukit-batok-flat-twice</a></dd>
       </dl>
     </article>
   </section>
@@ -598,36 +582,36 @@
     <div class="sec-rule"></div>
     <table class="srcs">
       <tr><th>Source</th><th>URL</th><th>Status</th><th>Fed</th></tr>
-      <tr><td>Mothership feed</td><td>https://mothership.sg/feed/</td><td class="bad">blocked</td><td>—</td></tr>
-      <tr><td>The Independent SG feed</td><td>https://theindependent.sg/feed/</td><td class="bad">blocked</td><td>—</td></tr>
-      <tr><td>Goody Feed</td><td>https://goodyfeed.com/feed/</td><td class="bad">blocked</td><td>—</td></tr>
-      <tr><td>The Smart Local feed</td><td>https://www.thesmartlocal.com/feed/</td><td class="bad">blocked</td><td>—</td></tr>
-      <tr><td>Google Trends SG RSS</td><td>https://trends.google.com/trending/rss?geo=SG</td><td class="bad">blocked</td><td>—</td></tr>
-      <tr><td>Live PSI</td><td>https://api.data.gov.sg/v1/environment/psi</td><td class="bad">blocked</td><td>—</td></tr>
-      <tr><td>24h weather forecast</td><td>https://api.data.gov.sg/v1/environment/24-hour-weather-forecast</td><td class="bad">blocked</td><td>—</td></tr>
-      <tr><td>Air temperature</td><td>https://api.data.gov.sg/v1/environment/air-temperature</td><td class="bad">blocked</td><td>—</td></tr>
-      <tr><td>AsiaOne Singapore</td><td>https://www.asiaone.com/singapore</td><td class="bad">blocked</td><td>—</td></tr>
-      <tr><td>Stomp Trending Now</td><td>https://www.stomp.sg/trending-now</td><td class="bad">blocked</td><td>—</td></tr>
-      <tr><td>Mothership Trending</td><td>https://mothership.sg/category/lifestyle/trending/</td><td class="bad">blocked</td><td>—</td></tr>
-      <tr><td>Marketing-Interactive</td><td>https://www.marketing-interactive.com/</td><td class="bad">blocked</td><td>—</td></tr>
-      <tr><td>Channel NewsAsia (§1b, permanently blocked)</td><td>https://www.channelnewsasia.com/singapore</td><td class="bad">blocked</td><td>—</td></tr>
-      <tr><td>Google (control test)</td><td>https://www.google.com</td><td class="bad">blocked</td><td>—</td></tr>
-      <tr><td>WebSearch: Singapore trending news today</td><td>(hosted search, not a direct fetch)</td><td class="ok">ok</td><td>Retrenchments, bus fines, matcha/caffeine leads</td></tr>
-      <tr><td>WebSearch: Tiffany Teo Asian Games gold</td><td>mothership.sg/2026/09/tiffany-teo-gold-medal-asian-games/ (via search)</td><td class="ok">ok</td><td>Trend 3</td></tr>
-      <tr><td>WebSearch: bus fine rules Sept 23</td><td>mothership.sg/2026/09/singapore-commuters-loud-audio-feet-bus-fined/ (via search)</td><td class="ok">ok</td><td>Trend 4, Calendar 23 Sep</td></tr>
-      <tr><td>WebSearch: Bukit Timah flash floods</td><td>asiaone.com/singapore/singapore-weather-22-september-thundery-showers-flash-floods (via search)</td><td class="ok">ok</td><td>Trend 5</td></tr>
-      <tr><td>WebSearch: CASE caffeine warning</td><td>asiaone.com/singapore/mixing-energy-drinks-coffee-caffeine-overdose-case (via search)</td><td class="ok">ok</td><td>Trend 6</td></tr>
-      <tr><td>WebSearch: PSD review update</td><td>asiaone.com/singapore/psd-reviewing-civil-servant-housing-data (via search)</td><td class="ok">ok</td><td>No-go 1</td></tr>
-      <tr><td>WebSearch: Esplanade Mall driver update</td><td>mothership.sg/2026/09/im-a-passerby-mercedes-driver-42-.../ (via search)</td><td class="ok">ok</td><td>No-go 5</td></tr>
-      <tr><td>WebSearch: Geylang pasar malam case update</td><td>asiaone.com/singapore/geylang-pasar-malam-crash-man-charged... (via search)</td><td class="ok">ok</td><td>No-go 4</td></tr>
-      <tr><td>WebSearch: SG TikTok/IG virality sweep (6 queries)</td><td>(hosted search, no single URL)</td><td class="ok">ok</td><td>TikTok/Instagram slots marked empty</td></tr>
+      <tr><td>Mothership feed</td><td>https://mothership.sg/feed/</td><td class="ok">200</td><td>Trend 1, evidence sweep</td></tr>
+      <tr><td>Mothership · Tiffany Teo article</td><td>https://mothership.sg/2026/09/tiffany-teo-gold-medal-asian-games/</td><td class="ok">200</td><td>Trend 1, This week act-today</td></tr>
+      <tr><td>Mothership · bus-fine article</td><td>https://mothership.sg/2026/09/singapore-commuters-loud-audio-feet-bus-fined/</td><td class="ok">200</td><td>Trend 2, Calendar 23 Sep</td></tr>
+      <tr><td>Mothership Trending (category page)</td><td>https://mothership.sg/category/lifestyle/trending/</td><td class="ok">200</td><td>Checked for platform clips — stale/cached content, nothing dated used</td></tr>
+      <tr><td>The Independent SG feed</td><td>https://theindependent.sg/feed/</td><td class="ok">200 (301→200)</td><td>Evidence sweep only — fallen-tree item's underlying event was 4 days old, not used</td></tr>
+      <tr><td>The Independent SG (article pages)</td><td>https://theindependent.sg/&lt;slug&gt;</td><td class="bad">403</td><td>—</td></tr>
+      <tr><td>Goody Feed</td><td>https://goodyfeed.com/feed/</td><td class="ok">200</td><td>Evidence sweep</td></tr>
+      <tr><td>Goody Feed · neighbour-waste article</td><td>https://goodyfeed.com/man-67-fined-s5000-after-leaving-urine-and-faeces-outside-neighbours-bukit-batok-flat-twice/</td><td class="ok">200</td><td>Trend 3</td></tr>
+      <tr><td>The Smart Local feed</td><td>https://www.thesmartlocal.com/feed/</td><td class="bad">403 host_not_allowed</td><td>—</td></tr>
+      <tr><td>Google Trends SG RSS</td><td>https://trends.google.com/trending/rss?geo=SG</td><td class="ok">200</td><td>Platform-evidence sweep, cross-check on Tiffany Teo/weather items</td></tr>
+      <tr><td>Live PSI</td><td>https://api.data.gov.sg/v1/environment/psi</td><td class="bad">403 host_not_allowed</td><td>—</td></tr>
+      <tr><td>24h weather forecast</td><td>https://api.data.gov.sg/v1/environment/24-hour-weather-forecast</td><td class="bad">403 host_not_allowed</td><td>—</td></tr>
+      <tr><td>Air temperature</td><td>https://api.data.gov.sg/v1/environment/air-temperature</td><td class="bad">403 host_not_allowed</td><td>—</td></tr>
+      <tr><td>AsiaOne Singapore</td><td>https://www.asiaone.com/singapore</td><td class="bad">403 host_not_allowed</td><td>—</td></tr>
+      <tr><td>Stomp Singapore Seen</td><td>https://www.stomp.sg/singapore-seen</td><td class="bad">403 host_not_allowed</td><td>—</td></tr>
+      <tr><td>Stomp Trending Now</td><td>https://www.stomp.sg/trending-now</td><td class="bad">403 host_not_allowed</td><td>—</td></tr>
+      <tr><td>Marketing-Interactive</td><td>https://www.marketing-interactive.com/</td><td class="bad">403 host_not_allowed</td><td>—</td></tr>
+      <tr><td>Honeycombers SG</td><td>https://thehoneycombers.com/singapore/</td><td class="ok">200</td><td>Platform-evidence sweep, nothing dated used</td></tr>
+      <tr><td>SPF newsroom</td><td>https://www.police.gov.sg/Media-Hub/News</td><td class="bad">403 host_not_allowed</td><td>—</td></tr>
+      <tr><td>Apify (TikTok actor)</td><td>https://api.apify.com/v2/acts/…/run-sync-get-dataset-items</td><td class="bad">403 host_not_allowed</td><td>—</td></tr>
+      <tr><td>WebSearch: TikTok trending Singapore hashtag viral</td><td>(hosted search, not a direct fetch)</td><td class="ok">ok</td><td>Confirmed nothing dated — TikTok slot stays empty</td></tr>
+      <tr><td>WebSearch: Instagram Reel trending Singapore viral</td><td>(hosted search, not a direct fetch)</td><td class="ok">ok</td><td>Confirmed nothing SG-dated — Instagram slot stays empty</td></tr>
+      <tr><td>Channel NewsAsia (§1b, permanently blocked)</td><td>https://www.channelnewsasia.com/singapore</td><td class="bad">not attempted</td><td>—</td></tr>
+      <tr><td>The Straits Times (§1b, permanently blocked)</td><td>https://www.straitstimes.com/singapore</td><td class="bad">not attempted</td><td>—</td></tr>
     </table>
     <div class="gap">
       <h4>Unresolved</h4>
-      <p><strong>Every direct fetch this run was blocked</strong> — not just the §1b list, but the full 1a feed/API/HTML roster and even a control request to google.com. <code>curl</code> against the session's egress proxy confirms an organization policy denial (403 on CONNECT), not a transient outage — only WebSearch and Anthropic/package-registry infra reach out. This run's entire "Trending now" and No-go sourcing was rebuilt on WebSearch snippets rather than the direct-fetch ladder the workflow assumes; today's items are still real, dated and linked, but the intended pipeline is not currently functional in this environment and should be reported to whoever manages the egress policy.</p>
-      <p><strong>Google Trends SG live list</strong> — RSS blocked, and WebSearch returned no current-day trending list, only a 6-day-old cached mention (haze, N95 masks). No search-demand read today.</p>
-      <p><strong>Top-2 TikTok trends / top-2 Instagram formats for SG</strong> — no credentials in env, direct API/web blocked, and no SG media coverage inside 48h named a platform, creator and figure together. Shipped empty per the evidence ladder rather than guessed.</p>
-      <p><strong>calendar_seed.json</strong> — created this run from the site's own previously-published holiday/observance data (mom.gov.sg and un.org were both unreachable). Needs a real re-verification against both source URLs on the next monthly refresh once direct fetches work again.</p>
+      <p><strong>Network access improved materially since the last refresh.</strong> The 22:20 SGT brief reported every direct fetch blocked; this refresh reached mothership.sg, goodyfeed.com, theindependent.sg/feed/, trends.google.com and thehoneycombers.com successfully. Still blocked in this session: the entire gov.sg family (PSI, weather, air temp, SPF), asiaone.com, stomp.sg, thesmartlocal.com, marketing-interactive.com and api.apify.com — all 403 host_not_allowed on CONNECT, an allowlist gap rather than a source-side outage.</p>
+      <p><strong>Top-2 TikTok trends / top-2 Instagram formats for SG</strong> — <code>api.apify.com</code> is blocked despite a valid <code>APIFY_TOKEN</code> in env, so the Creative Center actor couldn't run; the SG outlets that usually carry viral-clip write-ups (Stomp, The Smart Local) are also blocked this session. Nothing inside 48h cleared the bar via the outlets that did load. Shipped empty per the evidence ladder rather than guessed. If <code>api.apify.com</code> and <code>stomp.sg</code>/<code>thesmartlocal.com</code> get allowlisted, pin an actor ID in <code>sources.json</code> next run.</p>
+      <p><strong>calendar_seed.json</strong> — still on the 22 Sep seed (mom.gov.sg and un.org remain unreachable under the gov.sg block). No date inside 45 days is missing, so no refresh forced this run.</p>
     </div>
   </section>
 
