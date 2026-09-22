@@ -1,0 +1,33 @@
+{
+  "_comment": "Cache for fixed calendar dates per CLAUDE.md. Refresh monthly (or whenever a date inside 45 days is missing) from https://www.mom.gov.sg/employment-practices/public-holidays and https://www.un.org/en/observances/list-days-weeks. Daily runs read from this cache instead of re-fetching both URLs.",
+  "last_refreshed": "2026-09-22",
+  "public_holidays": {
+    "2026-01-01": "New Year's Day",
+    "2026-02-17": "Chinese New Year",
+    "2026-02-18": "Chinese New Year",
+    "2026-03-21": "Hari Raya Puasa",
+    "2026-04-03": "Good Friday",
+    "2026-05-01": "Labour Day",
+    "2026-05-27": "Hari Raya Haji",
+    "2026-05-31": "Vesak Day",
+    "2026-06-01": "Vesak Day (in lieu)",
+    "2026-08-09": "National Day",
+    "2026-08-10": "National Day (in lieu)",
+    "2026-11-08": "Deepavali",
+    "2026-11-09": "Deepavali (in lieu)",
+    "2026-12-25": "Christmas Day"
+  },
+  "cultural_dates": {
+    "2026-09-25": "Mid-Autumn Festival",
+    "2026-10-02": "Children's Day (schools)"
+  },
+  "observance_shortlist": {
+    "2026-09-27": "World Tourism Day",
+    "2026-10-01": "International Coffee Day",
+    "2026-10-10": "World Mental Health Day",
+    "2026-11-19": "World Toilet Day",
+    "2026-11-25": "White Ribbon Day / International Day for the Elimination of Violence against Women",
+    "2026-12-03": "International Day of Persons with Disabilities"
+  },
+  "_note_on_provenance": "Public holidays mirror the gazetted MOM list already embedded in build_archive.py's SG_PUBLIC_HOLIDAYS. Observance shortlist drawn from the UN's full list, pre-filtered down to dates with a plausible SG brand hook per CLAUDE.md's guidance (café/coffee, mental health post-F1-weekend, toilet-day-founded-here). Seeded 2026-09-22 from known/previously-verified site data because mom.gov.sg and un.org were unreachable this run (see index.html #debug ledger) — re-verify against both source URLs on the next monthly refresh once direct fetches are available again."
+}
