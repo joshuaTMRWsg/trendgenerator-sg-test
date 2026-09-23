@@ -140,6 +140,9 @@ avatar and a 7-day sparkline. Media is hotlinked, never stored — it is only
 valid for the day, and older archive pages losing their thumbnails is
 expected.
 
+Every TikTok and Instagram link on the page — cards and Source lines —
+opens in a new tab with `target="_blank" rel="noopener noreferrer"`.
+
 The Instagram actor's `country` setting does not geolocate. Title the card
 `Instagram · Explore feed (SG locale)` and say plainly in `What` whether any
 post carries a Singapore creator, location or hashtag. If none does, the
