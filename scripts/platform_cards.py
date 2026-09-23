@@ -15,6 +15,7 @@ import re
 import sys
 
 VISIBLE = 2
+NEWTAB = ' target="_blank" rel="noopener noreferrer"'
 
 
 def esc(s):
@@ -57,7 +58,7 @@ def tiktok_row(x):
     cls = "up" if x.get("Trend Direction") == "up" else "down"
     who = f'top creator {esc(top.get("handle"))}' if top.get("handle") else ""
     return (f'<li class="tt"><span class="rk">{esc(x.get("Rank"))}</span>{img}'
-            f'<span class="tt-main"><a href="{safe_url(x.get("TikTok URL"))}">{esc(x.get("Hashtag"))}</a>'
+            f'<span class="tt-main"><a href="{safe_url(x.get("TikTok URL"))}"{NEWTAB}>{esc(x.get("Hashtag"))}</a>'
             f'<span class="tt-meta">{short(x.get("Posts"))} posts · {short(x.get("Video Views"))} views · {who}</span></span>'
             f'<span class="tt-trend {cls}">{spark(x.get("Trend Data"))}{arrow}</span></li>')
 
@@ -67,10 +68,10 @@ def ig_tile(i, x):
     cover = safe_url(x.get("cover_url") or media.get("cover_url"))
     post = safe_url(x.get("post_url"))
     badge = '<span class="play">▶</span>' if x.get("has_video") else ""
-    body = (f'<a class="ig-cover" href="{post}"><img src="{cover}" alt="" loading="lazy" '
+    body = (f'<a class="ig-cover" href="{post}"{NEWTAB}><img src="{cover}" alt="" loading="lazy" '
             f'onerror="this.style.visibility=\'hidden\'">{badge}</a>')
     return (f'<figure class="ig">{body}<figcaption>'
-            f'<span class="ig-meta"><b>{i}</b> <a href="{post}">@{esc(x.get("owner_username"))}</a> · {short(x.get("view_count"))} views</span>'
+            f'<span class="ig-meta"><b>{i}</b> <a href="{post}"{NEWTAB}>@{esc(x.get("owner_username"))}</a> · {short(x.get("view_count"))} views</span>'
             '</figcaption></figure>')
 
 
