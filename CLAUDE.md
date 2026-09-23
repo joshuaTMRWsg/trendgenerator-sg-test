@@ -114,8 +114,36 @@ Replacing the matching lines in the scheduled prompt's checklist:
 - **four visible `<h2>` sections** — This week, Trending now, No-go list,
   Calendar — plus the `#debug` one, so five `<h2>` in the file;
 - visible word count 900–1200, counted after stripping tags, the
-  `<!--CAL-->` block **and** the `#debug` section;
+  `<!--CAL-->` block, the `#debug` section **and** the collapsed
+  `<details class="more">` lists;
 - loading the page with no query and no hash shows four sections and no
   ledger; `?debug` and `#debug` each reveal it;
 - every ledger row carries a status;
 - both `index.html` and `archive/<today>.html` carry the ledger.
+
+## Platform cards (TikTok + Instagram)
+
+Both platform slots come from the Apify actors pinned in `sources.json`, one
+run each per day, `maxItems`/`max_results` 20. Save each dataset to a temp
+file (never commit it) and stamp the cards with:
+
+```bash
+python3 scripts/platform_cards.py tiktok.json instagram.json index.html archive/<today>.html
+```
+
+The script fills the `<!--TIKTOK--><!--/TIKTOK-->` and `<!--IG--><!--/IG-->`
+markers inside each platform card (directly under its `.trend-top`): the top
+two items show, the other 18 sit behind a "Show 18 more" toggle. Instagram
+tiles are thumbnails whose `src` is the Apify-hosted cover and which link to
+the post; TikTok rows show rank, hashtag, posts, views, the top creator's
+avatar and a 7-day sparkline. Media is hotlinked, never stored — it is only
+valid for the day, and older archive pages losing their thumbnails is
+expected.
+
+The Instagram actor's `country` setting does not geolocate. Title the card
+`Instagram · Explore feed (SG locale)` and say plainly in `What` whether any
+post carries a Singapore creator, location or hashtag. If none does, the
+trendjack is `<dd class="none">`. Never call that feed "trending in SG".
+
+If an actor run fails, leave its markers empty and fall back to the evidence
+ladder above for that slot.
