@@ -63,8 +63,7 @@
       "category": "Mall — heartland",
       "fits": ["heartland and neighbourhood pride", "school holidays and family days out", "haze and indoor plans", "festive decor", "Tiong Bahru estate nostalgia"],
       "never": ["mocking another mall", "incidents at any mall"],
-      "watch_for": ["Tiong Bahru Plaza", "Tiong Bahru"],
-      "_assumption": "Read as Tiong Bahru Plaza (a mall, alongside The Centrepoint and Hougang Mall). Change this entry if the client is the estate or another Tiong Bahru business."
+      "watch_for": ["Tiong Bahru Plaza", "Tiong Bahru"]
     },
     {
       "id": "hougang-mall",
@@ -100,8 +99,7 @@
       "category": "Luxury automotive",
       "fits": ["craftsmanship, bespoke and design moments", "major cultural festivals handled with ceremony (Mid-Autumn, CNY, Deepavali)", "art and design weeks"],
       "never": ["humour, memes, discounts or trendjacks off news", "any cost, COE or wealth-gap story", "F1 — it isn't the brand's sport"],
-      "watch_for": ["Rolls-Royce Motor Cars Singapore", "Rolls-Royce Asia Pacific"],
-      "_assumption": "Read as Rolls-Royce Motor Cars (BMW Group), not Rolls-Royce plc aerospace. Change if the client is the aero-engine business."
+      "watch_for": ["Rolls-Royce Motor Cars Singapore", "Rolls-Royce Asia Pacific"]
     },
     {
       "id": "mini",
