@@ -9,6 +9,7 @@ index.html              today's brief — served at the root
 archive/index.html      browsable list of every past day, newest first
 archive/YYYY-MM-DD.html one file per day, never edited after the day it's written
 manifest.json           one entry per day; drives archive/index.html
+brands.json             client roster; every run checks trends and calendar against it
 build_archive.py        regenerates archive/index.html from manifest.json
 ```
 

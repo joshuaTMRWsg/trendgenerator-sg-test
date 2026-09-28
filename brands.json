@@ -1,0 +1,161 @@
+{
+  "_comment": "Client roster. Every run checks each Trending-now entry and each Calendar entry against every brand below and writes a brand line only where the fit is honest. `fits` are themes that make a match; `never` are hard stops; `watch_for` are search terms to run each day for the brand's own moments and mentions. Dates and facts about a brand are never taken from this file — verify them from a source fetched that day.",
+  "last_updated": "2026-09-28",
+  "brands": [
+    {
+      "id": "bmw",
+      "name": "BMW Singapore (Performance Motors Ltd)",
+      "chip": "BMW",
+      "category": "Premium automotive",
+      "fits": ["driving and road trips", "COE results and car ownership", "F1 and motorsport season", "Orchard/CBD road closures", "EVs and charging", "weekend drives, Malaysia trips"],
+      "never": ["car fires, crashes, recalls or anything where a car is the victim", "COE jokes that mock people who can't afford a car", "claims about specs, prices or offers not on a PML page fetched that day"],
+      "watch_for": ["BMW Singapore", "Performance Motors", "BMW recall Singapore"]
+    },
+    {
+      "id": "dd",
+      "name": "Dunkin' Donuts Singapore",
+      "chip": "Dunkin'",
+      "category": "QSR — coffee and doughnuts",
+      "fits": ["International Coffee Day", "office treats and thank-yous", "school and Children's Day moments", "late-night and early-morning events", "viral 'paid in doughnuts' style stories", "rival food launches (react, never attack)"],
+      "never": ["food-safety stories about any outlet", "halal or religion-linked food stories", "naming a competitor in a put-down"],
+      "watch_for": ["Dunkin Singapore", "Dunkin Donuts Singapore"]
+    },
+    {
+      "id": "ikea",
+      "name": "IKEA Singapore",
+      "chip": "IKEA",
+      "category": "Home furnishing retail",
+      "fits": ["moving house, BTO keys, HDB resale and rental news", "small-space living", "closures and nostalgia (memory-keeping)", "haze and staying in", "school holidays and family days out", "meatballs and the food hall"],
+      "never": ["property-price rage or cooling-measure politics", "punching down on people who can't afford homes", "product safety or recall stories"],
+      "watch_for": ["IKEA Singapore", "IKEA Tampines", "IKEA Alexandra", "IKEA Jurong"]
+    },
+    {
+      "id": "aia",
+      "name": "AIA Singapore",
+      "chip": "AIA",
+      "category": "Insurance",
+      "fits": ["fitness and running events", "health and wellness observance days", "haze and health advisories (factual, caring tone)", "family milestones", "World Mental Health Day", "AUFF build-up"],
+      "never": ["deaths, accidents, illness or tragedy of any kind — insurers never post into loss", "promises of payouts, returns or cover in a trendjack line", "anything MAS would read as financial advice"],
+      "watch_for": ["AIA Singapore", "AIA Vitality Singapore"]
+    },
+    {
+      "id": "orba",
+      "name": "Orchard Road Business Association (ORBA)",
+      "chip": "ORBA",
+      "category": "Precinct / place marketing",
+      "fits": ["Orchard Road events, light-ups and closures", "iPhone launch queues on Orchard", "F1 visitors and tourism", "festive seasons (Christmas on A Great Street)", "car-free and pedestrian days", "retail openings and closures on the belt"],
+      "never": ["taking a side between member malls or tenants", "closures framed as 'Orchard is dying'"],
+      "watch_for": ["Orchard Road", "ORBA Singapore", "Christmas on A Great Street"]
+    },
+    {
+      "id": "centrepoint",
+      "name": "The Centrepoint",
+      "chip": "Centrepoint",
+      "category": "Mall — Orchard",
+      "fits": ["Orchard Road footfall moments", "school holidays and family days out", "haze and indoor plans", "festive decor", "F1 and Orchard visitor traffic"],
+      "never": ["mocking another mall", "incidents at any mall"],
+      "watch_for": ["The Centrepoint Singapore", "Centrepoint Orchard"]
+    },
+    {
+      "id": "tiong-bahru",
+      "name": "Tiong Bahru Plaza",
+      "chip": "Tiong Bahru",
+      "category": "Mall — heartland",
+      "fits": ["heartland and neighbourhood pride", "school holidays and family days out", "haze and indoor plans", "festive decor", "Tiong Bahru estate nostalgia"],
+      "never": ["mocking another mall", "incidents at any mall"],
+      "watch_for": ["Tiong Bahru Plaza", "Tiong Bahru"],
+      "_assumption": "Read as Tiong Bahru Plaza (a mall, alongside The Centrepoint and Hougang Mall). Change this entry if the client is the estate or another Tiong Bahru business."
+    },
+    {
+      "id": "hougang-mall",
+      "name": "Hougang Mall",
+      "chip": "Hougang Mall",
+      "category": "Mall — heartland",
+      "fits": ["heartland and northeast neighbourhood pride", "school holidays and family days out", "haze and indoor plans", "festive decor", "Hougang estate news (openings, transport)"],
+      "never": ["mocking another mall", "incidents at any mall", "Hougang as a political constituency"],
+      "watch_for": ["Hougang Mall", "Hougang"]
+    },
+    {
+      "id": "samsung",
+      "name": "Samsung Singapore",
+      "chip": "Samsung",
+      "category": "Consumer electronics",
+      "fits": ["phone launches and upgrade season (react to rivals with wit, not attacks)", "foldables", "photography and night shots (F1, light-ups, fireworks)", "home appliances in haze and heat", "gaming and K-pop moments"],
+      "never": ["battery, fire or safety stories about any device", "naming Apple or any rival in a put-down", "specs or prices not on a Samsung SG page fetched that day"],
+      "watch_for": ["Samsung Singapore", "Galaxy Singapore launch"]
+    },
+    {
+      "id": "ferrari",
+      "name": "Ferrari (Singapore)",
+      "chip": "Ferrari",
+      "category": "Luxury automotive",
+      "fits": ["F1 Singapore Grand Prix and Scuderia Ferrari race results", "motorsport heritage moments", "design and craftsmanship observance days"],
+      "never": ["humour, memes or discounts of any kind", "COE or cost-of-living tie-ins", "any trend that isn't motorsport or design — restraint is the brand"],
+      "watch_for": ["Ferrari Singapore", "Scuderia Ferrari Singapore Grand Prix"]
+    },
+    {
+      "id": "rolls-royce",
+      "name": "Rolls-Royce Motor Cars Asia Pacific",
+      "chip": "Rolls-Royce",
+      "category": "Luxury automotive",
+      "fits": ["craftsmanship, bespoke and design moments", "major cultural festivals handled with ceremony (Mid-Autumn, CNY, Deepavali)", "art and design weeks"],
+      "never": ["humour, memes, discounts or trendjacks off news", "any cost, COE or wealth-gap story", "F1 — it isn't the brand's sport"],
+      "watch_for": ["Rolls-Royce Motor Cars Singapore", "Rolls-Royce Asia Pacific"],
+      "_assumption": "Read as Rolls-Royce Motor Cars (BMW Group), not Rolls-Royce plc aerospace. Change if the client is the aero-engine business."
+    },
+    {
+      "id": "mini",
+      "name": "MINI Singapore",
+      "chip": "MINI",
+      "category": "Automotive — playful premium",
+      "fits": ["parking, small spaces and tight corners", "car-free days and city driving", "weekend plans and road trips", "playful meme formats", "EVs"],
+      "never": ["crashes or road incidents", "COE jokes that mock people who can't afford a car"],
+      "watch_for": ["MINI Singapore"]
+    },
+    {
+      "id": "hyrox",
+      "name": "HYROX",
+      "chip": "HYROX",
+      "category": "Fitness racing",
+      "fits": ["running and fitness events", "gym-culture moments", "athlete wins (Asian Games, SEA Games)", "haze and training indoors", "Hyrox Singapore race dates"],
+      "never": ["medical emergencies at any race", "mocking athletes or participants"],
+      "watch_for": ["HYROX Singapore", "Hyrox Singapore race"]
+    },
+    {
+      "id": "auff",
+      "name": "AIA Ultimate FitnessFest (AUFF)",
+      "chip": "AUFF",
+      "category": "Fitness festival (AIA)",
+      "fits": ["fitness and wellness days", "running and race moments", "athlete wins", "haze and training indoors", "festival countdown once dates are confirmed"],
+      "never": ["same hard stops as AIA — nothing into injury, illness or loss", "medical emergencies at any race"],
+      "watch_for": ["AIA Ultimate FitnessFest", "AUFF Singapore"]
+    },
+    {
+      "id": "maersk-air-cargo",
+      "name": "Maersk Air Cargo",
+      "chip": "Maersk Air",
+      "category": "B2B logistics",
+      "fits": ["peak-season shipping (11.11, Black Friday, Christmas)", "Changi and air-freight news", "supply-chain disruption that affects SG shoppers (factual)", "product launches that depend on air freight (phones, perishables)"],
+      "never": ["consumer meme formats", "disasters, crashes or conflict-driven disruption", "commenting on a customer's or competitor's delays"],
+      "watch_for": ["Maersk Air Cargo", "Changi air cargo"]
+    },
+    {
+      "id": "uob",
+      "name": "UOB",
+      "chip": "UOB",
+      "category": "Banking",
+      "fits": ["payday, payouts and budgeting moments (factual)", "shopping festivals and card spend (11.11, 9.9)", "arts and culture events", "scam-awareness when a scam wave is trending", "F1 and big-ticket event weekends"],
+      "never": ["promises of returns, rates or approvals in a trendjack line", "jokes about anyone losing money or being scammed", "politics, ministerial pay or government policy"],
+      "watch_for": ["UOB Singapore", "UOB card promotion"]
+    },
+    {
+      "id": "osim",
+      "name": "OSIM Singapore",
+      "chip": "OSIM",
+      "category": "Wellness devices",
+      "fits": ["post-race and post-event recovery", "office stress and long weeks", "parents, grandparents and gifting moments", "World Mental Health Day (rest, not treatment)", "haze and staying in"],
+      "never": ["medical or treatment claims", "injury stories"],
+      "watch_for": ["OSIM Singapore"]
+    }
+  ]
+}
