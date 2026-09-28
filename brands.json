@@ -4,12 +4,12 @@
   "brands": [
     {
       "id": "bmw",
-      "name": "BMW Singapore (Performance Motors Ltd)",
+      "name": "BMW Singapore",
       "chip": "BMW",
       "category": "Premium automotive",
       "fits": ["driving and road trips", "COE results and car ownership", "F1 and motorsport season", "Orchard/CBD road closures", "EVs and charging", "weekend drives, Malaysia trips"],
-      "never": ["car fires, crashes, recalls or anything where a car is the victim", "COE jokes that mock people who can't afford a car", "claims about specs, prices or offers not on a PML page fetched that day"],
-      "watch_for": ["BMW Singapore", "Performance Motors", "BMW recall Singapore"]
+      "never": ["car fires, crashes, recalls or anything where a car is the victim", "COE jokes that mock people who can't afford a car", "claims about specs, prices or offers not on a BMW Singapore page fetched that day"],
+      "watch_for": ["BMW Singapore", "BMW recall Singapore"]
     },
     {
       "id": "dd",
