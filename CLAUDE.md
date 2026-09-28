@@ -114,12 +114,79 @@ Replacing the matching lines in the scheduled prompt's checklist:
 - **four visible `<h2>` sections** — This week, Trending now, No-go list,
   Calendar — plus the `#debug` one, so five `<h2>` in the file;
 - visible word count 900–1200, counted after stripping tags, the
-  `<!--CAL-->` block, the `#debug` section **and** the collapsed
-  `<details class="more">` lists;
+  `<!--CAL-->` block, the `#debug` section, the collapsed
+  `<details class="more">` lists **and** every client-brand element
+  (`<dt>Our brands</dt>`, `details.brand-fit`, `.brand-flag`) — keep a flag
+  to one short line all the same;
 - loading the page with no query and no hash shows four sections and no
   ledger; `?debug` and `#debug` each reveal it;
 - every ledger row carries a status;
-- both `index.html` and `archive/<today>.html` carry the ledger.
+- both `index.html` and `archive/<today>.html` carry the ledger;
+- every `.chip` on the page matches a `chip` in `brands.json`, and no
+  brand line sits on an entry that is also on the No-go list.
+
+## Client brands
+
+The roster is `brands.json` — the only place brands are listed. Read it at
+the start of every run; to add, drop or change a brand, edit that file and
+nothing else.
+
+**Check every entry against every brand.** Each Trending-now entry
+(platform slots included), each Calendar row and the "Beyond 30 days" note
+gets checked against each brand's `fits` and `never`. Where a brand has an
+honest fit, write its line. Most entries end up with none to three brands.
+An entry with no fit gets no block — never stretch a brand to fill it, and
+never give every brand a line just because it's on the roster.
+
+**A brand line meets the same standard as the Trendjack row**: the actual
+caption or headline, then the format in a few words. The brand's product
+is the punchline, or the brand speaks into the public reaction rather than
+the news. If it needs a shoot or budget, it goes on a Calendar row, not a
+trend. Where one line suits several brands (the three malls, say), write it
+once and give the others "Same line, own storefront shot."
+
+**Hard stops, on top of each brand's `never`:**
+
+- Nothing on the No-go list gets a brand line, whatever the fit.
+- No athlete names or photos, and no protected event marks (Asian Games,
+  Olympics, F1, Grand Prix logos) in a brand line unless the brand holds
+  those rights. Celebrate the moment, not the person.
+- No facts about a brand — price, spec, offer, store hours, event date —
+  unless they come from the brand's own page fetched that day. Log the page
+  in the source ledger.
+- AIA, AUFF and UOB: no rates, returns, cover or approvals in the line, and
+  never post into loss, illness or money trouble.
+- Ferrari and Rolls-Royce: restraint is the brand. Expect "none" on most
+  days; never humour, memes or discounts.
+- Maersk Air Cargo is B2B: LinkedIn-style lines only, never consumer memes.
+
+**Brand watch.** If a trend or No-go item involves a roster brand, its
+parent group or a named rival in a way the client would want to know about
+(an incident, a recall, a complaint going viral), add a visible flag instead
+of ideas: `⚠` plus one line on what the client team should know and whether
+the brand should stay out. A flag is never collapsed.
+
+**Brands' own moments.** Each run, search every brand's `watch_for` terms.
+A brand event verified that day (a race date, a launch, a store opening)
+goes into the Calendar as its own row, with that brand's line in its block.
+Anything you couldn't confirm goes in the ledger's Unresolved list, not on
+the page.
+
+Markup — inside a trend's `<dl>`, just before `<dt>Source</dt>`:
+
+```html
+<dt>Our brands</dt><dd><details class="brand-fit"><summary>For our brands (2) <span class="chip">OSIM</span><span class="chip">HYROX</span></summary><ul class="brand-ideas">
+  <li class="brand-idea"><span class="chip">OSIM</span><span>One chair shot: <em>"22.78 seconds of work. The recovery takes longer."</em></span></li>
+  <li class="brand-idea"><span class="chip">HYROX</span><span><em>"Watched the 200m on repeat? Now do 8 × 1km."</em> One line, sign-up link.</span></li>
+</ul></details></dd>
+```
+
+A flag uses the same row with `<p class="brand-flag"><span class="chip">BMW</span><span>⚠ …</span></p>`
+in place of the `<details>`. On a Calendar row the `<details class="brand-fit">`
+block goes straight after that row's `<ul class="cal-ideas">`; in "Beyond 30
+days" it goes after the `<p>`. The count in `<summary>` is the number of
+brands in the block. The CSS (`/* client brands */` in the style block) is
+already in `index.html` — copy it forward like the rest of the tokens.
 
 ## Platform cards (TikTok + Instagram)
 

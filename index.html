@@ -300,6 +300,21 @@
   details.more[open] summary{margin-bottom:4px}
   details.more summary:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
 
+  /* ---------- client brands ---------- */
+  details.brand-fit{margin:8px 0 0}
+  details.brand-fit summary{cursor:pointer;font-family:var(--mono);font-size:11px;color:var(--pine);list-style:none;display:inline-flex;flex-wrap:wrap;gap:4px 8px;align-items:center;padding:3px 9px;border:1px solid var(--rule);border-radius:2px;background:var(--surface)}
+  details.brand-fit summary::-webkit-details-marker{display:none}
+  details.brand-fit summary::before{content:"\25B8";color:var(--ink-faint)}
+  details.brand-fit[open] summary::before{content:"\25BE"}
+  details.brand-fit summary:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+  .brand-ideas{list-style:none;margin:7px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
+  .brand-idea{display:grid;grid-template-columns:auto 1fr;gap:9px;font-size:14px;color:var(--ink);align-items:baseline}
+  .brand-idea em{font-style:italic}
+  .chip{font-family:var(--display);font-size:9.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap;
+        padding:2px 6px;border-radius:2px;background:color-mix(in srgb,var(--pine) 12%,transparent);color:var(--pine)}
+  .brand-flag{margin:8px 0 0;font-size:14px;color:var(--caution);display:grid;grid-template-columns:auto 1fr;gap:9px;align-items:baseline}
+  .brand-flag .chip{background:var(--caution-bg);color:var(--caution)}
+
   @media (max-width:620px){
     .wrap{padding:0 18px 56px}
     .cal-row{grid-template-columns:72px 36px 1fr;gap:10px}
@@ -307,6 +322,8 @@
     .prio-tag{flex:none;padding-top:0}
     .trend dl{grid-template-columns:1fr;gap:2px 0}
     .trend dt{padding-top:9px}
+    .cal-body .brand-idea{grid-template-columns:1fr;gap:2px}
+    .cal-body .brand-idea .chip{justify-self:start}
   }
   html{scroll-behavior:smooth}
   .cal-row{scroll-margin-top:320px}
@@ -392,6 +409,7 @@
         <dt>What</dt>
         <dd>TikTok Creative Center's Singapore hashtag rankings, direct authenticated read: #harrypotter leads with 686 posts and 4.1M views (trend stable), followed by #christiantiktok on 739 posts and 1.1M views (trend down).</dd>
         <dt>Trendjack</dt><dd class="angle"><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>Bookshop or entertainment account, one prop: <em>"20+ years later and we're still not over the letter."</em></span></li><li class="cal-idea"><span class="n">2</span><span>No product: <em>"Which house would TikTok sort you into today?"</em> Comment-bait.</span></li></ul></dd>
+        <dt>Our brands</dt><dd><details class="brand-fit"><summary>For our brands (1) <span class="chip">IKEA</span></summary><ul class="brand-ideas"><li class="brand-idea"><span class="chip">IKEA</span><span>One storage shot: <em>"Every home has a cupboard under the stairs. Ours come flat-packed."</em></span></li></ul></details></dd>
         <dt>Source</dt>
         <dd class="src"><a href="https://www.tiktok.com/tag/harrypotter" target="_blank" rel="noopener noreferrer">tiktok.com/tag/harrypotter</a> &middot; <a href="https://www.tiktok.com/tag/christiantiktok" target="_blank" rel="noopener noreferrer">tiktok.com/tag/christiantiktok</a></dd>
       </dl>
@@ -420,6 +438,7 @@
         <dt>What</dt>
         <dd>Shanti Pereira retained her Asian Games 200m title in 22.78s on Sunday, becoming the first woman to win it twice, while Loh Kean Yew beat world No. 1 Jonatan Christie to guarantee Singapore's first individual Asian Games badminton medal &mdash; pushing the country's tally to 11 (2 gold, 5 silver, 4 bronze), as Google Trends SG spiked on "badminton".</dd>
         <dt>Trendjack</dt><dd class="angle"><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>Local F&amp;B account, one product shot: <em>"On the house today, if your name's Shanti or Kean Yew."</em></span></li><li class="cal-idea"><span class="n">2</span><span>Comment-bait, no product: <em>"Which one has you more hyped &mdash; the second 200m gold, or the first-ever badminton medal?"</em></span></li></ul></dd>
+        <dt>Our brands</dt><dd><details class="brand-fit"><summary>For our brands (3) <span class="chip">OSIM</span><span class="chip">Dunkin'</span><span class="chip">HYROX</span></summary><ul class="brand-ideas"><li class="brand-idea"><span class="chip">OSIM</span><span>One chair shot: <em>"22.78 seconds of work. The recovery takes longer."</em></span></li><li class="brand-idea"><span class="chip">Dunkin'</span><span>Box shot, posted before the semi: <em>"Two golds. A dozen for whoever's watching today."</em></span></li><li class="brand-idea"><span class="chip">HYROX</span><span><em>"Watched the 200m on repeat? Now do 8 × 1km."</em> One line, race-sign-up link.</span></li></ul></details></dd>
         <dt>Source</dt>
         <dd class="src"><a href="https://goodyfeed.com/singapores-asian-games-2026-medal-tally-after-shanti-pereiras-200m-gold-reaches-11-medals/" target="_blank" rel="noopener noreferrer">goodyfeed.com/singapores-asian-games-2026-medal-tally</a> &middot; <a href="https://trends.google.com/trending/rss?geo=SG" target="_blank" rel="noopener noreferrer">trends.google.com/trending/rss?geo=SG</a></dd>
       </dl>
@@ -434,6 +453,7 @@
         <dt>What</dt>
         <dd>Sunday's inaugural Kiprun Singapore half-marathon was cut from 21.1km to 10km and its awards ceremony scrapped after 2am air-quality checks made every category non-competitive; today's 8am PSI reading is back to a moderate 62&ndash;77 across every region.</dd>
         <dt>Trendjack</dt><dd class="angle"><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>Isotonic drink or recovery brand, no shoot: <em>"Congrats on finishing a race you didn't sign up for."</em></span></li><li class="cal-idea"><span class="n">2</span><span>Running community account, no product: <em>"Still owed a medal ceremony? Comments are open."</em></span></li></ul></dd>
+        <dt>Our brands</dt><dd><details class="brand-fit"><summary>For our brands (2) <span class="chip">HYROX</span><span class="chip">OSIM</span></summary><ul class="brand-ideas"><li class="brand-idea"><span class="chip">HYROX</span><span><em>"Trained for 21.1 and got 10? Eight indoor kilometres are waiting."</em> Into the runners' reaction, not at the organiser.</span></li><li class="brand-idea"><span class="chip">OSIM</span><span><em>"Ran 10. Legs think it was 21.1."</em> One product shot.</span></li></ul></details></dd>
         <dt>Source</dt>
         <dd class="src"><a href="https://goodyfeed.com/singapore-half-marathon-cut-to-10km-as-haze-worsens-awards-ceremony-cancelled/" target="_blank" rel="noopener noreferrer">goodyfeed.com/singapore-half-marathon-cut-to-10km-haze</a> &middot; <a href="https://api.data.gov.sg/v1/environment/psi" target="_blank" rel="noopener noreferrer">api.data.gov.sg/v1/environment/psi</a></dd>
       </dl>
@@ -448,6 +468,7 @@
         <dt>What</dt>
         <dd>Two cleaning staff at Geylang Bahru Market &amp; Food Centre grabbed 11 fire extinguishers from the hawker centre's safety cabinet and put out a car engine fire in the carpark on Saturday afternoon, with passersby pitching in before SCDF arrived; no injuries were reported.</dd>
         <dt>Trendjack</dt><dd class="angle"><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>F&amp;B or hardware account, one product shot: <em>"The real MVPs of Geylang Bahru: two cleaners, eleven extinguishers, zero drama."</em></span></li><li class="cal-idea"><span class="n">2</span><span>Comment-bait, no product: <em>"Tag someone who'd drop their lunch and run toward the fire, not away."</em></span></li></ul></dd>
+        <dt>Our brands</dt><dd><p class="brand-flag"><span class="chip">BMW</span><span>⚠ The car on fire is a BMW. BMW and PML stay out; give the client team a heads-up.</span></p></dd>
         <dt>Source</dt>
         <dd class="src"><a href="https://mothership.sg/2026/09/bmw-catches-fire-at-geylang-bahru-market-carpark-hawker-centre-cleaners-help-to-put-it-out/" target="_blank" rel="noopener noreferrer">mothership.sg/bmw-catches-fire-geylang-bahru</a></dd>
       </dl>
@@ -512,7 +533,7 @@
         <span class="cal-date">WED 30 SEP</span><span class="cal-away">2d</span>
         <div class="cal-body">
           <h4>Satay by the Bay, Snow City &amp; Carnivore all close <span class="stars">★★★</span></h4>
-          <p class="cal-why">Satay by the Bay, Snow City and Carnivore close this week &mdash; the month's biggest closures day.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span><em>"Last order."</em> One photo of the final plate.</span></li><li class="cal-idea"><span class="n">2</span><span><em>"26 years of pretending to be cold."</em> Crowdsource the Snow City photo.</span></li></ul>
+          <p class="cal-why">Satay by the Bay, Snow City and Carnivore close this week &mdash; the month's biggest closures day.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span><em>"Last order."</em> One photo of the final plate.</span></li><li class="cal-idea"><span class="n">2</span><span><em>"26 years of pretending to be cold."</em> Crowdsource the Snow City photo.</span></li></ul><details class="brand-fit"><summary>For our brands (1) <span class="chip">IKEA</span></summary><ul class="brand-ideas"><li class="brand-idea"><span class="chip">IKEA</span><span>One frame shot: <em>"That Snow City photo from 2004 deserves better than your camera roll."</em></span></li></ul></details>
         </div>
       </div>
 
@@ -520,7 +541,7 @@
         <span class="cal-date">THU 1 OCT</span><span class="cal-away">3d</span>
         <div class="cal-body">
           <h4>International Coffee Day <span class="stars s2">★★</span></h4>
-          <p class="cal-why">A rare observance SG caf&eacute;s actually use.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>Caf&eacute;: <em>"Free-flow talk, one free top-up."</em></span></li></ul>
+          <p class="cal-why">A rare observance SG caf&eacute;s actually use.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>Caf&eacute;: <em>"Free-flow talk, one free top-up."</em></span></li></ul><details class="brand-fit"><summary>For our brands (1) <span class="chip">Dunkin'</span></summary><ul class="brand-ideas"><li class="brand-idea"><span class="chip">Dunkin'</span><span><em>"Coffee Day. The doughnut isn't optional."</em> One cup, one doughnut, same-day.</span></li></ul></details>
         </div>
       </div>
 
@@ -528,7 +549,7 @@
         <span class="cal-date">FRI 2 OCT</span><span class="cal-away">4d</span>
         <div class="cal-body">
           <h4>Children's Day &middot; GP Season opens <span class="stars">★★★</span> <span class="lead">⏰ Lead time</span></h4>
-          <p class="cal-why">Primary and kindergarten only; parents post heavily as GP Season opens too.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>Snack brand: <em>"Recess money doesn't stretch anymore."</em></span></li><li class="cal-idea"><span class="n">2</span><span><em>"Which canteen dish do adults still miss?"</em></span></li></ul>
+          <p class="cal-why">Primary and kindergarten only; parents post heavily as GP Season opens too.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>Snack brand: <em>"Recess money doesn't stretch anymore."</em></span></li><li class="cal-idea"><span class="n">2</span><span><em>"Which canteen dish do adults still miss?"</em></span></li></ul><details class="brand-fit"><summary>For our brands (3) <span class="chip">Centrepoint</span><span class="chip">Tiong Bahru</span><span class="chip">Hougang Mall</span></summary><ul class="brand-ideas"><li class="brand-idea"><span class="chip">Centrepoint</span><span>All three malls, one line each: <em>"No school on Friday. Bring them here, not to the office."</em></span></li><li class="brand-idea"><span class="chip">Tiong Bahru</span><span>Same line, own storefront shot.</span></li><li class="brand-idea"><span class="chip">Hougang Mall</span><span>Same line, own storefront shot.</span></li></ul></details>
         </div>
       </div>
 
@@ -536,7 +557,7 @@
         <span class="cal-date">SAT 3 OCT</span><span class="cal-away">5d</span>
         <div class="cal-body">
           <h4>Joo Chiat Car-Free Day <span class="stars s2">★★</span></h4>
-          <p class="cal-why">3.30&ndash;9.30pm, Dunman to East Coast Road &mdash; first time outside the CBD.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span><em>"Joo Chiat Road, walked end to end."</em></span></li></ul>
+          <p class="cal-why">3.30&ndash;9.30pm, Dunman to East Coast Road &mdash; first time outside the CBD.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span><em>"Joo Chiat Road, walked end to end."</em></span></li></ul><details class="brand-fit"><summary>For our brands (1) <span class="chip">MINI</span></summary><ul class="brand-ideas"><li class="brand-idea"><span class="chip">MINI</span><span><em>"A car-free day we fully support. Park the MINI, walk Joo Chiat."</em></span></li></ul></details>
         </div>
       </div>
 
@@ -544,7 +565,7 @@
         <span class="cal-date">MON 5 OCT</span><span class="cal-away">7d</span>
         <div class="cal-body">
           <h4>World Teachers' Day <span class="stars s1">★</span></h4>
-          <p class="cal-why">UN observance, days after Children's Day &mdash; parents still in gratitude mode.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span><em>"Tag the teacher you'd still thank today."</em></span></li></ul>
+          <p class="cal-why">UN observance, days after Children's Day &mdash; parents still in gratitude mode.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span><em>"Tag the teacher you'd still thank today."</em></span></li></ul><details class="brand-fit"><summary>For our brands (1) <span class="chip">Dunkin'</span></summary><ul class="brand-ideas"><li class="brand-idea"><span class="chip">Dunkin'</span><span><em>"One box for the staffroom."</em> A thank-you-to-teachers post, product in frame.</span></li></ul></details>
         </div>
       </div>
 
@@ -560,7 +581,7 @@
         <span class="cal-date">FRI 9 OCT</span><span class="cal-away">11d</span>
         <div class="cal-body">
           <h4>F1 Singapore Grand Prix <span class="stars">★★★</span> <span class="lead">⏰ Lead time</span></h4>
-          <p class="cal-why">9&ndash;11 Oct, SG's first Sprint race; Zone 4 from S$148.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span><em>"No ticket? Here's where you'll still hear it."</em></span></li><li class="cal-idea"><span class="n">2</span><span>F&amp;B near the track: <em>"Race weekend hours, extended."</em></span></li></ul>
+          <p class="cal-why">9&ndash;11 Oct, SG's first Sprint race; Zone 4 from S$148.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span><em>"No ticket? Here's where you'll still hear it."</em></span></li><li class="cal-idea"><span class="n">2</span><span>F&amp;B near the track: <em>"Race weekend hours, extended."</em></span></li></ul><details class="brand-fit"><summary>For our brands (3) <span class="chip">Ferrari</span><span class="chip">ORBA</span><span class="chip">Samsung</span></summary><ul class="brand-ideas"><li class="brand-idea"><span class="chip">Ferrari</span><span>Nothing before the lights go out. Post the result only — one image, one line, after qualifying and after the race.</span></li><li class="brand-idea"><span class="chip">ORBA</span><span><em>"The track is at Marina Bay. Orchard is open all weekend."</em></span></li><li class="brand-idea"><span class="chip">Samsung</span><span><em>"Shoot the night race. Post it before the podium does."</em> Night-mode shot from the stands.</span></li></ul></details>
         </div>
       </div>
 
@@ -568,7 +589,7 @@
         <span class="cal-date">SAT 10 OCT</span><span class="cal-away">12d</span>
         <div class="cal-body">
           <h4>World Mental Health Day <span class="stars s2">★★</span></h4>
-          <p class="cal-why">Lands the morning after F1 Qualifying &mdash; a natural comedown beat.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>No shoot needed: <em>"Rest is productive too."</em></span></li></ul>
+          <p class="cal-why">Lands the morning after F1 Qualifying &mdash; a natural comedown beat.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>No shoot needed: <em>"Rest is productive too."</em></span></li></ul><details class="brand-fit"><summary>For our brands (2) <span class="chip">OSIM</span><span class="chip">AIA</span></summary><ul class="brand-ideas"><li class="brand-idea"><span class="chip">OSIM</span><span><em>"Ten minutes. No phone. That's the whole post."</em> Rest, never treatment.</span></li><li class="brand-idea"><span class="chip">AIA</span><span><em>"How are you, really? One word is enough."</em> A comment prompt with no product and no pitch.</span></li></ul></details>
         </div>
       </div>
 
@@ -600,7 +621,7 @@
         <span class="cal-date">SUN 8 NOV</span><span class="cal-away">41d</span>
         <div class="cal-body">
           <h4>Deepavali <span class="stars">★★★</span> <span class="lead">⏰ Lead time</span></h4>
-          <p class="cal-why">Public holiday, 9 Nov also off in lieu &mdash; casting needs six to eight weeks.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span><em>"Little India, the week before."</em> A lights-and-prep photo essay.</span></li><li class="cal-idea"><span class="n">2</span><span>Sweets brand: <em>"Restock before the aunties clear the shelf."</em></span></li></ul>
+          <p class="cal-why">Public holiday, 9 Nov also off in lieu &mdash; casting needs six to eight weeks.</p><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span><em>"Little India, the week before."</em> A lights-and-prep photo essay.</span></li><li class="cal-idea"><span class="n">2</span><span>Sweets brand: <em>"Restock before the aunties clear the shelf."</em></span></li></ul><details class="brand-fit"><summary>For our brands (2) <span class="chip">Rolls-Royce</span><span class="chip">IKEA</span></summary><ul class="brand-ideas"><li class="brand-idea"><span class="chip">Rolls-Royce</span><span><em>"A festival of light."</em> One Starlight Headliner image, posted on the day, nothing else.</span></li><li class="brand-idea"><span class="chip">IKEA</span><span><em>"Open-house guests don't bring chairs."</em> One stack-of-chairs shot the week before.</span></li></ul></details>
         </div>
       </div>
 
@@ -608,7 +629,7 @@
 
     <div class="gap">
       <h4>Beyond 30 days &mdash; start now</h4>
-      <p><strong>iPhone Duo pre-orders, mid-Oct.</strong> <strong>SIA cabin reveal, 7 Nov.</strong> <strong>11.11</strong> ⏰ &mdash; deepest discounts of the year.</p>
+      <p><strong>iPhone Duo pre-orders, mid-Oct.</strong> <strong>SIA cabin reveal, 7 Nov.</strong> <strong>11.11</strong> ⏰ &mdash; deepest discounts of the year.</p><details class="brand-fit"><summary>For our brands (2) <span class="chip">Maersk Air</span><span class="chip">UOB</span></summary><ul class="brand-ideas"><li class="brand-idea"><span class="chip">Maersk Air</span><span>B2B, LinkedIn only: <em>"11.11 starts in the hold, weeks before the cart."</em></span></li><li class="brand-idea"><span class="chip">UOB</span><span><em>"Set your 11.11 budget before the countdown sets it for you."</em> No rates, no offers in the line.</span></li></ul></details>
     </div>
   </section>
 
