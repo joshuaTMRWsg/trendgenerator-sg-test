@@ -49,8 +49,8 @@ is more useful than a confident guess.
 
 ## 2. THE PAGE — FOUR VISIBLE SECTIONS + HIDDEN SOURCE LEDGER
 
-A morning scan with real depth on every entry: 1400–2000 visible words (see
-`CLAUDE.md` for what counts). Match the existing pages exactly: same fonts, same CSS token
+A morning scan on the surface, real depth one click down: 1000–1500 visible
+words (see `CLAUDE.md` for what counts; brand blocks are excluded). Match the existing pages exactly: same fonts, same CSS token
 block (including the client-brands CSS), both theme blocks,
 `<nav class="nav">`, and the `<!--CAL--><!--/CAL-->` markers after the
 counters strip. Copy the structure from the existing `index.html` — do not
@@ -61,22 +61,28 @@ invent a new design.
 **2. Trending now** — six to seven entries: 2 TikTok, 2 Instagram, 2–3 news,
 per `CLAUDE.md`. Each a `<dl>` with rows in this order:
 - **What** — one sentence. Genuinely one.
-- **Trendjack** — **3–5 numbered ideas** via `.cal-ideas` / `.cal-idea`
-  inside `<dd class="angle">`, each a different mechanic, each opening with
-  its mechanic in two or three words (*Product punchline:*, *Into the
-  reaction:*, *Utility:*, *Format remix:*, *Reply in the comments:* …). An
-  idea is the actual headline, caption or format a brand would post, and it
-  ends with its aim tag: `award` or `viral`. Where there is no honest
-  trendjack, say so in `<dd class="none">` with one line explaining why —
-  none means none, not one weak idea. Policy stories, ongoing tragedies and pure industry news
+- **Trendjack** — 1–2 numbered ideas via `.cal-ideas` / `.cal-idea` inside
+  `<dd class="angle">`: the generic read of the moment, what any brand could
+  do. Each is the actual headline, caption or format, opens with its
+  mechanic in two or three words, and ends with its aim tag: `award` or
+  `viral`. Where there is no honest trendjack, say so in `<dd class="none">`
+  with one line explaining why — none means none, not one weak idea. Policy stories, ongoing tragedies and pure industry news
   usually have none. **Never invent an opportunity to fill the slot.**
 - **Risk** — only when flagged. ⚠ DO NOT TOUCH or ⚠ HANDLE CAREFULLY plus one
   clause.
-- **Our brands** — check the entry against every brand in `brands.json` and
-  follow the "Client brands" rules in `CLAUDE.md`. Lines only where a brand
-  genuinely fits; most entries get none to three; never force one. If the
-  trend is bad news for a roster brand, show a visible ⚠ brand flag instead
-  of ideas.
+- **Our brands** — the deliverable. Check the entry against every brand in
+  `brands.json` and follow the "Client brands" rules in `CLAUDE.md`. **Every
+  brand that genuinely fits gets its own 3–5 numbered angles**, each a
+  different mechanic (*Product punchline:*, *Into the reaction:*, *Utility:*,
+  *Format remix:*, *Reply in the comments:* …), each the actual caption or
+  headline a designer could brief from, tagged `award` or `viral`. The
+  angles are the brand's, not the entry's: the same moment gives different
+  brands different ideas, and no line appears under two brands. Most entries
+  fit none to three brands; a brand that doesn't fit gets nothing, never one
+  weak line. Ferrari and Rolls-Royce carry one restrained line at most; on a
+  ⚠ HANDLE CAREFULLY entry a brand carries one public-service line at most.
+  If the trend is bad news for a roster brand, show a visible ⚠ brand flag
+  instead of ideas.
 - **Source** — the link.
 Heat chip on each: Peaking / Rising / Cooling.
 
@@ -87,13 +93,11 @@ brand lines on anything in this list.
 **4. Calendar** — ~12 entries by date with days-away counts. ★★★ major · ★★
 worth a post · ★ only if it fits. ⏰ Lead time on anything needing more than
 a week. Include SG public holidays and world observance days where they fall.
-Every entry: one line on why it matters in SG (`.cal-why`), then numbered
-post ideas — **3–5 on every ★★★ and ★★ row**, 1–2 on a ★ row. An idea is
-an actual headline, caption or format a designer could brief from, tagged
-`award` or `viral`, and no two ideas on a row share a mechanic — not just
-"one with product, one without": a different mechanic, a different platform,
-a different emotional register, each named in its two-word lead. Then the **Our brands** block for that entry,
-same rules as above. The "Beyond 30 days" note gets a brand block too where
+Every entry: one line on why it matters in SG (`.cal-why`), then 1–2
+numbered generic post ideas, tagged `award` or `viral`, different in kind.
+Then the **Our brands** block for that entry, same rules as above: **3–5
+angles per fitting brand on every ★★★ and ★★ row**, 1–2 per brand on a ★
+row, each brand's angles its own. The "Beyond 30 days" note gets a brand block too where
 one fits. Religious and cultural festivals follow the festival rule in
 `CLAUDE.md`: a correct greeting is the floor and often the ceiling.
 
@@ -127,14 +131,15 @@ it beside today's headlines?).
 Before writing an angle, ask who is arguing in the comments, who feels left
 out, what the conversation actually is. That is where the post lives.
 
-**Volume and variety.** 3–5 ideas on every entry that has a trendjack and
-on every ★★★/★★ Calendar row, each a different mechanism, each opening
-with its mechanic named. Fewer than three means you haven't looked hard
-enough, or the honest answer is none. The page never leans on one
-mechanic: at most two comment-prompt ideas on the whole page, no line
-formula used twice. The mechanic follows the brand and the moment; the
-leads in `CLAUDE.md` are examples, not a menu. Think out of the box before
-reaching for the familiar.
+**Volume and variety — per brand.** 3–5 angles for every brand that fits
+an entry or a ★★★/★★ Calendar row, each a different mechanic, each opening
+with its mechanic named, and each brand's angles its own — the same moment
+reads differently for a furniture chain, a mall and a bank, and no line
+sits under two brands. Fewer than three for a brand means you haven't
+looked hard enough, or the brand doesn't fit and gets nothing. The page
+never leans on one mechanic: at most two comment-prompt ideas on the whole
+page, no line formula used twice. The leads in `CLAUDE.md` are examples,
+not a menu. Think out of the box before reaching for the familiar.
 
 **Sensitivity check on every idea, no exceptions:** race, ethnicity and
 religion; gender and identity; disability and health; nationality and
@@ -163,8 +168,9 @@ reference examples or agencies in the brief, and never print these rules.
 5. Run `python3 build_archive.py`.
 6. Verify before committing — the full list is in `CLAUDE.md`
    ("Verification, amended"); in short: four visible `<h2>` plus the hidden
-   ledger; visible word count 1400–2000; 3–5 ideas on every entry and ★★★/★★
-   row; no horizontal scroll at 390px; every
+   ledger; visible word count 1000–1500; 3–5 angles per fitting brand on
+   every entry and ★★★/★★ row, none shared between brands; no horizontal
+   scroll at 390px; every
    source link resolves and every ledger row has a status; all day-counts
    match today; every `.chip` matches `brands.json`; no brand line on a No-go
    item; every idea tagged; no banned shorthand; every Medium line flagged;
