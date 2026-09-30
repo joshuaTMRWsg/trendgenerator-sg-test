@@ -48,9 +48,11 @@ it does to news.
 
 **Word budget moves with the mix.** The ledger below is debug-only and no
 longer counts toward the visible total, so allocate:
-`This week` 90 · `Trending now` 560 · `No-go` 130 · `Calendar` 420.
-Visible total has to land inside 1250 — count before committing and cut
-the calendar whys first, never the ideas.
+`This week` 90 · `Trending now` 950 · `No-go` 130 · `Calendar` 750.
+Visible total lands between 1400 and 2000 — count before committing and cut
+the calendar whys and the `What` sentences first, never the ideas. The
+3–5 angles per entry are the point of the page; they are never the thing
+trimmed to make a budget.
 
 ## Gaps → debug-only source ledger
 
@@ -113,7 +115,7 @@ Replacing the matching lines in the scheduled prompt's checklist:
 
 - **four visible `<h2>` sections** — This week, Trending now, No-go list,
   Calendar — plus the `#debug` one, so five `<h2>` in the file;
-- visible word count 900–1250, counted after stripping tags, the
+- visible word count 1400–2000, counted after stripping tags, the
   `<!--CAL-->` block, the `#debug` section, the collapsed
   `<details class="more">` lists **and** every client-brand element
   (`<dt>Our brands</dt>`, `details.brand-fit`, `.brand-flag`) — keep a flag
@@ -131,7 +133,10 @@ Replacing the matching lines in the scheduled prompt's checklist:
 - every Medium-risk line carries `⚠ review:`; no High-risk line is on the
   page, and each one dropped is in the ledger's Unresolved list;
 - no more than two comment-prompt ideas on the whole page, and no line
-  formula used twice.
+  formula used twice;
+- every Trending-now entry that has a trendjack carries 3–5 numbered
+  ideas, every ★★★ and ★★ Calendar row carries 3–5, every ★ row 1–2, and
+  within one entry no two ideas share a mechanic.
 
 ## Creative standard
 
@@ -176,16 +181,24 @@ felt left out of a parental-leave announcement). The second is the more
 important: the story is rarely the trendjack — the second-day argument in
 the comments is.
 
-**Variety.** Ideas on one entry must differ in kind, and the page as a whole
-may not lean on one mechanic: at most two comment-prompt ideas ("Comments
-open", "Pick a side") on the whole page, and no line formula used twice.
-The mechanic follows the brand and the moment. Product-as-punchline,
-posting into the second-day reaction, a utility the moment creates, an
-insider observation, a format or sound remix, a reply in the comments of
-the original post, a collab, a stunt or an OOH-able idea (Calendar only), a
-LinkedIn post for B2B — these are examples, not a menu, and the best idea
+**Volume and variety.** Every Trending-now entry that has a trendjack
+carries **3–5 numbered ideas**; every ★★★ and ★★ Calendar row carries 3–5;
+a ★ row carries 1–2. Fewer than three on an entry means you have not
+looked hard enough — or the honest answer is `<dd class="none">`, and then
+it is none, not one. Within one entry no two ideas share a mechanic, and
+each idea opens with its mechanic in two or three words before the line,
+so the spread reads at a glance: *Product punchline:*, *Into the reaction:*,
+*Utility:*, *Insider observation:*, *Format remix:*, *Reply in the
+comments:*, *Collab:*, *Stunt:* (Calendar only), *LinkedIn:* (B2B). Across
+the page, at most two comment-prompt ideas ("Comments open", "Pick a
+side") and no line formula used twice. The mechanic follows the brand and
+the moment: the leads above are examples, not a menu, and the best idea
 some days is one none of them describes. Think out of the box before
 reaching for the familiar.
+
+Brand lines stay one per brand that honestly fits; a brand line may take
+any of the entry's angles, and where three brands fit, three different
+angles beat the same line three times.
 
 **Restraint is part of the standard.** "No clean trendjack" and "no fit for
 our brands" are correct answers and beat a weak line every time. A festival
