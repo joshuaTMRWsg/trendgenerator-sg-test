@@ -48,9 +48,9 @@ it does to news.
 
 **Word budget moves with the mix.** The ledger below is debug-only and no
 longer counts toward the visible total, so allocate:
-`This week` 90 · `Trending now` 550 · `No-go` 130 · `Calendar` 380.
-Visible total still has to land inside 1200 — count before committing and cut
-the calendar whys first.
+`This week` 90 · `Trending now` 560 · `No-go` 130 · `Calendar` 420.
+Visible total has to land inside 1250 — count before committing and cut
+the calendar whys first, never the ideas.
 
 ## Gaps → debug-only source ledger
 
@@ -113,7 +113,7 @@ Replacing the matching lines in the scheduled prompt's checklist:
 
 - **four visible `<h2>` sections** — This week, Trending now, No-go list,
   Calendar — plus the `#debug` one, so five `<h2>` in the file;
-- visible word count 900–1200, counted after stripping tags, the
+- visible word count 900–1250, counted after stripping tags, the
   `<!--CAL-->` block, the `#debug` section, the collapsed
   `<details class="more">` lists **and** every client-brand element
   (`<dt>Our brands</dt>`, `details.brand-fit`, `.brand-flag`) — keep a flag
@@ -123,7 +123,138 @@ Replacing the matching lines in the scheduled prompt's checklist:
 - every ledger row carries a status;
 - both `index.html` and `archive/<today>.html` carry the ledger;
 - every `.chip` on the page matches a `chip` in `brands.json`, and no
-  brand line sits on an entry that is also on the No-go list.
+  brand line sits on an entry that is also on the No-go list;
+- every Trendjack idea, Calendar idea and brand line ends with `award` or
+  `viral`, or is a plain greeting under the festival rule;
+- none of the banned shorthand from the sensitivity check appears anywhere
+  on the page — grep for it;
+- every Medium-risk line carries `⚠ review:`; no High-risk line is on the
+  page, and each one dropped is in the ledger's Unresolved list;
+- no more than two comment-prompt ideas on the whole page, and no line
+  formula used twice.
+
+## Creative standard
+
+This replaces the scheduled prompt's "angle standard" wherever the two
+disagree. It applies to every Trendjack idea, every Calendar idea and every
+brand line. Never print any of it on the page.
+
+**The bar** is work a creative director at Ogilvy, BBH, Wieden+Kennedy,
+Droga5 or Mother would put their name to, or a post a Singaporean would
+screenshot and send to a friend. Nothing in between. Each idea aims at one
+of two things and says which, in a one-word tag at the end of the line:
+
+- `award` — built on a real insight (a truth the audience recognises but
+  hasn't seen said), one single-minded idea, and craft in the line. The
+  kind of thing that holds up in a Cannes Lions, Spikes Asia or D&AD case
+  film.
+- `viral` — built on timing, a live format or sound, an emotional hook
+  (surprise, relatability, humour that punches nowhere) or a share
+  mechanic (a challenge, a remix, a reply the original poster would
+  repost) that fits how the platform behaves this week.
+
+**Five tests, all of them, before an idea goes on the page:**
+
+1. *Insight* — can you say in one sentence what's true here that people
+   haven't seen said? If not, it's a caption, not an idea.
+2. *Single-minded* — one idea, one line, one image. If it needs a
+   paragraph to explain, cut it.
+3. *Screenshot* — would someone send it to a friend? Product descriptions,
+   generic greetings and "did you know" posts fail unless the execution
+   is genuinely sharp.
+4. *Insider* — for anything touching a community, a festival or a group:
+   would a member of that community proudly post it from their own
+   account? If you're not sure, it fails.
+5. *Front page* — if it ran beside today's headlines on the front of the
+   Straits Times, would the brand regret it?
+
+**Two reference moves, never to be printed or attributed:** the product is
+the punchline (a furniture chain answering a stolen-bus-bench story with
+one product shot and a line about buying a cheaper bench), and posting into
+the reaction rather than the news (a bed retailer answering the singles who
+felt left out of a parental-leave announcement). The second is the more
+important: the story is rarely the trendjack — the second-day argument in
+the comments is.
+
+**Variety.** Ideas on one entry must differ in kind, and the page as a whole
+may not lean on one mechanic: at most two comment-prompt ideas ("Comments
+open", "Pick a side") on the whole page, and no line formula used twice.
+The mechanic follows the brand and the moment. Product-as-punchline,
+posting into the second-day reaction, a utility the moment creates, an
+insider observation, a format or sound remix, a reply in the comments of
+the original post, a collab, a stunt or an OOH-able idea (Calendar only), a
+LinkedIn post for B2B — these are examples, not a menu, and the best idea
+some days is one none of them describes. Think out of the box before
+reaching for the familiar.
+
+**Restraint is part of the standard.** "No clean trendjack" and "no fit for
+our brands" are correct answers and beat a weak line every time. A festival
+or observance whose honest answer is a plain, correct greeting gets exactly
+that, tagged neither `award` nor `viral`.
+
+## Sensitivity and risk — mandatory on every idea
+
+Run every Trendjack idea, Calendar idea and brand line through all of these
+before it goes on the page. This is the check that was missing when a
+Deepavali row shipped with "restock before the aunties clear the shelf" and
+a "Little India, the week before" photo essay — both offensive, both
+avoidable.
+
+- **Race, ethnicity, religion** — no stereotypes, caricature or
+  appropriation. Banned outright: "aunties", "uncles" or any relative-word
+  used as shorthand for an ethnic community; accents or Singlish put in a
+  community's mouth; a festival reduced to its food, lights or clothes;
+  religious objects (diya, kolam, ketupat, lanterns, crosses, prayer
+  items) as product props; photo essays of Little India, Geylang Serai,
+  Chinatown or any enclave as a backdrop; "our version of [festival
+  food]"; "restock before [group] clears the shelf" and its relatives.
+- **Gender, sexuality, identity** — no assumptions about who does what at
+  home, no tokenising, nothing that mocks or excludes.
+- **Disability and health** — illness, disability, mental health, haze
+  symptoms and injury are never punchlines or props. Haze lines are about
+  comfort, never breathing.
+- **Nationality and politics** — nothing on active political disputes,
+  government policy, ministerial pay, foreign workers, naturalisation, or
+  bilateral matters (Malaysia, Indonesia, the source of the haze). OB
+  markers stay untouched.
+- **Tragedy and timing** — check each line against today's No-go list and
+  feeds. A line that's fine on a quiet day is tone-deaf beside a death;
+  drop it and say so in the ledger.
+- **Multicultural fairness** — a line written like a tourist's or a
+  commentator's fails. For CMIO festivals the brand speaks as a
+  participant (only if it genuinely is one), as a respectful guest (a
+  greeting, a gift, a utility for hosts and guests), or not at all.
+- **Legal and regulatory** — flag anything needing compliance review: MAS
+  rules for AIA, AUFF and UOB; the ASAS code; health or wellness claims
+  (OSIM, AIA); alcohol; PDPA; protected marks.
+
+**Rate every idea Low, Medium or High.**
+
+- *Low* — ships as is, no annotation.
+- *Medium* — ships with `⚠ review:` plus one clause on what a human must
+  check, appended to the line. It is not ready-to-run until cleared.
+- *High* — never on the page. Log it in the ledger's Unresolved list with
+  one line on why it was dropped, so the team sees the thinking.
+
+## Festivals and community moments
+
+Deepavali, Hari Raya Puasa and Haji, Vesak, Chinese New Year, Thaipusam,
+Pongal, Good Friday, Christmas, Mid-Autumn and the like:
+
+- The default is a greeting that is correct — spelling, language, date,
+  form — and nothing else. It is the floor and, for most brands, the
+  ceiling.
+- Anything beyond it must pass the insider test and be about a practice
+  the community would recognise as accurately and warmly observed — never
+  about the community itself.
+- Utility ideas (extended hours, parking, a delivery cut-off, open-house
+  supplies) are the strongest honest move for a brand outside the
+  community, and every fact in them comes from the brand's own page
+  fetched that day.
+- No casting, "no models", "shot in [enclave]" or "the week before" shoot
+  directions on the page.
+- Rolls-Royce's "ceremony" means one restrained image and a greeting, not
+  a product-as-festival analogy.
 
 ## Client brands
 
@@ -138,12 +269,18 @@ honest fit, write its line. Most entries end up with none to three brands.
 An entry with no fit gets no block — never stretch a brand to fill it, and
 never give every brand a line just because it's on the roster.
 
-**A brand line meets the same standard as the Trendjack row**: the actual
-caption or headline, then the format in a few words. The brand's product
-is the punchline, or the brand speaks into the public reaction rather than
-the news. If it needs a shoot or budget, it goes on a Calendar row, not a
-trend. Where one line suits several brands (the three malls, say), write it
-once and give the others "Same line, own storefront shot."
+**A brand line meets the creative standard below and passes the sensitivity
+check below** — the same bar as the Trendjack row. Format: the actual
+caption or headline in `<em>`, then platform and format in a few words,
+then one clause on why it works, then the aim tag (`award` or `viral`).
+Under 35 words. If it needs a shoot or budget, it goes on a Calendar row,
+not a trend. Where one line suits several brands (the three malls, say),
+write it once and give the others "Same line, own storefront shot."
+
+The roster may carry three optional keys per brand — `tone`, `platforms`,
+`objective`. Use them when filled. When empty, default platforms to
+Instagram and TikTok for consumer brands and LinkedIn for Maersk Air Cargo,
+use the category's obvious register, and say nothing about it on the page.
 
 **Hard stops, on top of each brand's `never`:**
 
