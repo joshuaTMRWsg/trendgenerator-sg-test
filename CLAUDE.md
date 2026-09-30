@@ -48,11 +48,11 @@ it does to news.
 
 **Word budget moves with the mix.** The ledger below is debug-only and no
 longer counts toward the visible total, so allocate:
-`This week` 90 · `Trending now` 950 · `No-go` 130 · `Calendar` 750.
-Visible total lands between 1400 and 2000 — count before committing and cut
-the calendar whys and the `What` sentences first, never the ideas. The
-3–5 angles per entry are the point of the page; they are never the thing
-trimmed to make a budget.
+`This week` 90 · `Trending now` 600 · `No-go` 130 · `Calendar` 450.
+Visible total lands between 1000 and 1500 — count before committing and cut
+the calendar whys and the `What` sentences first. Brand blocks are excluded
+from the count (see Verification), which is where the 3–5 angles per brand
+live; they are never trimmed to make a budget.
 
 ## Gaps → debug-only source ledger
 
@@ -115,7 +115,7 @@ Replacing the matching lines in the scheduled prompt's checklist:
 
 - **four visible `<h2>` sections** — This week, Trending now, No-go list,
   Calendar — plus the `#debug` one, so five `<h2>` in the file;
-- visible word count 1400–2000, counted after stripping tags, the
+- visible word count 1000–1500, counted after stripping tags, the
   `<!--CAL-->` block, the `#debug` section, the collapsed
   `<details class="more">` lists **and** every client-brand element
   (`<dt>Our brands</dt>`, `details.brand-fit`, `.brand-flag`) — keep a flag
@@ -134,9 +134,11 @@ Replacing the matching lines in the scheduled prompt's checklist:
   page, and each one dropped is in the ledger's Unresolved list;
 - no more than two comment-prompt ideas on the whole page, and no line
   formula used twice;
-- every Trending-now entry that has a trendjack carries 3–5 numbered
-  ideas, every ★★★ and ★★ Calendar row carries 3–5, every ★ row 1–2, and
-  within one entry no two ideas share a mechanic.
+- every brand block on a Trending-now entry or a ★★★/★★ Calendar row
+  carries 3–5 numbered ideas per brand (1–2 on a ★ row; one line for
+  Ferrari or Rolls-Royce; one public-service line on a ⚠ HANDLE CAREFULLY
+  entry), no two ideas for one brand share a mechanic, and no line appears
+  under two brands.
 
 ## Creative standard
 
@@ -181,24 +183,33 @@ felt left out of a parental-leave announcement). The second is the more
 important: the story is rarely the trendjack — the second-day argument in
 the comments is.
 
-**Volume and variety.** Every Trending-now entry that has a trendjack
-carries **3–5 numbered ideas**; every ★★★ and ★★ Calendar row carries 3–5;
-a ★ row carries 1–2. Fewer than three on an entry means you have not
-looked hard enough — or the honest answer is `<dd class="none">`, and then
-it is none, not one. Within one entry no two ideas share a mechanic, and
-each idea opens with its mechanic in two or three words before the line,
-so the spread reads at a glance: *Product punchline:*, *Into the reaction:*,
-*Utility:*, *Insider observation:*, *Format remix:*, *Reply in the
-comments:*, *Collab:*, *Stunt:* (Calendar only), *LinkedIn:* (B2B). Across
-the page, at most two comment-prompt ideas ("Comments open", "Pick a
-side") and no line formula used twice. The mechanic follows the brand and
-the moment: the leads above are examples, not a menu, and the best idea
-some days is one none of them describes. Think out of the box before
-reaching for the familiar.
+**Volume and variety — per brand.** The generic Trendjack row is a 1–2
+line read of the moment: what any brand could do, so the team sees the
+shape of it. The deliverable is the brand block. **Every roster brand that
+honestly fits an entry gets 3–5 numbered angles of its own** on a
+Trending-now entry or a ★★★/★★ Calendar row, 1–2 on a ★ row. Fewer than
+three for a brand means you have not looked hard enough — or the brand
+does not fit, and then it gets no block at all, not one weak line. The
+angles are the brand's, not the entry's: the same moment gives IKEA,
+a mall and OSIM different ideas, and no line ever appears under two
+brands. The old "Same line, own storefront shot" convention is retired —
+the three malls get three different reads of the same day (Orchard
+footfall, heartland nostalgia, northeast family plans).
 
-Brand lines stay one per brand that honestly fits; a brand line may take
-any of the entry's angles, and where three brands fit, three different
-angles beat the same line three times.
+Within one brand no two angles share a mechanic, and each opens with its
+mechanic in two or three words so the spread reads at a glance: *Product
+punchline:*, *Into the reaction:*, *Utility:*, *Insider observation:*,
+*Format remix:*, *Reply in the comments:*, *Collab:*, *Stunt:* (Calendar
+only), *LinkedIn:* (B2B). The leads are examples, not a menu; the mechanic
+follows the brand and the moment, and the best idea some days is one none
+of them describes. Think out of the box before reaching for the familiar.
+Across the page, at most two comment-prompt ideas and no line formula used
+twice.
+
+Two ceilings sit below 3–5 and are correct there: Ferrari and Rolls-Royce
+carry **one** restrained line at most, because restraint is the brand; and
+on a ⚠ HANDLE CAREFULLY entry a brand carries **one** public-service line
+at most, never a campaign.
 
 **Restraint is part of the standard.** "No clean trendjack" and "no fit for
 our brands" are correct answers and beat a weak line every time. A festival
@@ -282,13 +293,14 @@ honest fit, write its line. Most entries end up with none to three brands.
 An entry with no fit gets no block — never stretch a brand to fill it, and
 never give every brand a line just because it's on the roster.
 
-**A brand line meets the creative standard below and passes the sensitivity
-check below** — the same bar as the Trendjack row. Format: the actual
-caption or headline in `<em>`, then platform and format in a few words,
-then one clause on why it works, then the aim tag (`award` or `viral`).
-Under 35 words. If it needs a shoot or budget, it goes on a Calendar row,
-not a trend. Where one line suits several brands (the three malls, say),
-write it once and give the others "Same line, own storefront shot."
+**A brand block meets the creative standard and passes the sensitivity
+check** — the same bar as the Trendjack row, and it is where the work is.
+Each brand that fits gets its own numbered list of 3–5 angles (see Volume
+and variety). Each angle: the mechanic lead, then the actual caption or
+headline in `<em>`, then platform and format in a few words, then the aim
+tag (`award` or `viral`), with `⚠ review:` and one clause where the rating
+is Medium. Under 35 words each. If an angle needs a shoot or budget, it
+belongs on a Calendar row, not a trend.
 
 The roster may carry three optional keys per brand — `tone`, `platforms`,
 `objective`. Use them when filled. When empty, default platforms to
@@ -326,8 +338,16 @@ Markup — inside a trend's `<dl>`, just before `<dt>Source</dt>`:
 
 ```html
 <dt>Our brands</dt><dd><details class="brand-fit"><summary>For our brands (2) <span class="chip">OSIM</span><span class="chip">HYROX</span></summary><ul class="brand-ideas">
-  <li class="brand-idea"><span class="chip">OSIM</span><span>One chair shot: <em>"22.78 seconds of work. The recovery takes longer."</em></span></li>
-  <li class="brand-idea"><span class="chip">HYROX</span><span><em>"Watched the 200m on repeat? Now do 8 × 1km."</em> One line, sign-up link.</span></li>
+  <li class="brand-idea"><span class="chip">OSIM</span><span><ul class="cal-ideas">
+    <li class="cal-idea"><span class="n">1</span><span>Product punchline: <em>"22.78 seconds of work. The recovery takes longer."</em> One chair shot · award</span></li>
+    <li class="cal-idea"><span class="n">2</span><span>Into the reaction: <em>"Everyone's a sprinter until the stairs."</em> One line, no product · viral</span></li>
+    <li class="cal-idea"><span class="n">3</span><span>Utility: a 10-minute post-run unwind Reel in the chair, no claims · award</span></li>
+  </ul></span></li>
+  <li class="brand-idea"><span class="chip">HYROX</span><span><ul class="cal-ideas">
+    <li class="cal-idea"><span class="n">1</span><span>Product punchline: <em>"Watched the 200m on repeat? Now do 8 × 1km."</em> Sign-up link · viral</span></li>
+    <li class="cal-idea"><span class="n">2</span><span>Format remix: the track-to-sled transition Reel, no athlete image · viral</span></li>
+    <li class="cal-idea"><span class="n">3</span><span>Insider observation: <em>"A whole country watched 22 seconds. Nobody watches your hour. Do it anyway."</em> · award</span></li>
+  </ul></span></li>
 </ul></details></dd>
 ```
 
