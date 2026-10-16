@@ -76,7 +76,7 @@ def ig_tile(i, x):
 
 
 def more(n, inner):
-    return (f'<details class="more"><summary>Show {n} more</summary>{inner}</details>' if n else "")
+    return (f'<details class="more"><summary>Show {n} more</summary>{inner}</details>' if n > 0 else "")
 
 
 def tiktok_block(data):
