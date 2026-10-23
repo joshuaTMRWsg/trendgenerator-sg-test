@@ -1,0 +1,829 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>SG Trend Wire — 23 Oct 2026</title>
+<meta name="description" content="TMRW Tech daily Singapore social trend brief.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+  :root{
+    --paper:#F5F7F4;
+    --surface:#FFFFFF;
+    --surface-sunk:#ECEFEA;
+    --ink:#141A17;
+    --ink-soft:#4A5450;
+    --ink-faint:#77827D;
+    --rule:#D8DED7;
+    --rule-soft:#E6EAE4;
+    --pine:#123A32;
+    --pine-ink:#123A32;
+    --signal:#B4531A;
+    --risk:#A32B22;
+    --risk-bg:#FBEEEC;
+    --caution:#8A6008;
+    --caution-bg:#FBF3E2;
+    --clear:#2F6B4F;
+    --shadow:0 1px 2px rgba(20,26,23,.06);
+    --display:'Archivo','Helvetica Neue',Arial,sans-serif;
+    --body:'Source Serif 4',Georgia,'Times New Roman',serif;
+    --mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#0E1211;
+      --surface:#161C1A;
+      --surface-sunk:#111615;
+      --ink:#E6EBE7;
+      --ink-soft:#A3AEA8;
+      --ink-faint:#7C8781;
+      --rule:#2A3230;
+      --rule-soft:#212927;
+      --pine:#8FCBB8;
+      --pine-ink:#0E1211;
+      --signal:#E08544;
+      --risk:#EE8377;
+      --risk-bg:#241614;
+      --caution:#D9A63F;
+      --caution-bg:#231C10;
+      --clear:#6FBE95;
+      --shadow:0 1px 2px rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0E1211;
+    --surface:#161C1A;
+    --surface-sunk:#111615;
+    --ink:#E6EBE7;
+    --ink-soft:#A3AEA8;
+    --ink-faint:#7C8781;
+    --rule:#2A3230;
+    --rule-soft:#212927;
+    --pine:#8FCBB8;
+    --pine-ink:#0E1211;
+    --signal:#E08544;
+    --risk:#EE8377;
+    --risk-bg:#241614;
+    --caution:#D9A63F;
+    --caution-bg:#231C10;
+    --clear:#6FBE95;
+    --shadow:0 1px 2px rgba(0,0,0,.4);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.55;
+    margin:0;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px 72px}
+  a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+  a:hover{border-bottom-color:var(--signal);color:var(--signal)}
+  a:focus-visible{outline:2px solid var(--signal);outline-offset:2px;border-radius:2px}
+
+  /* ---------- masthead ---------- */
+  .masthead{border-bottom:2px solid var(--ink);padding:36px 0 14px;margin-bottom:0}
+  .org{
+    font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--signal);margin:0 0 10px
+  }
+  .masthead h1{
+    font-family:var(--display);font-weight:700;font-size:clamp(30px,6vw,46px);
+    line-height:1.02;letter-spacing:-.02em;margin:0;text-wrap:balance
+  }
+  .dateline{
+    display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline;
+    margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--ink-soft)
+  }
+  .dateline .sep{color:var(--rule)}
+
+  /* ---------- counters ---------- */
+  .counters{
+    display:flex;flex-wrap:wrap;gap:0;border-bottom:1px solid var(--rule);
+  }
+  .counter{
+    flex:1 1 120px;padding:14px 16px 15px;border-right:1px solid var(--rule-soft)
+  }
+  .counter:last-child{border-right:0}
+  .counter .n{
+    font-family:var(--mono);font-weight:600;font-size:22px;
+    font-variant-numeric:tabular-nums;line-height:1;display:block
+  }
+  .counter .k{
+    font-family:var(--display);font-size:10px;letter-spacing:.11em;text-transform:uppercase;
+    color:var(--ink-faint);margin-top:6px;display:block
+  }
+  .counter.hot .n{color:var(--signal)}
+  .counter.no .n{color:var(--risk)}
+
+  /* ---------- section headers ---------- */
+  .sec{margin-top:44px}
+  .sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+  .sec-head h2{
+    font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.13em;
+    text-transform:uppercase;margin:0
+  }
+  .sec-head .note{font-family:var(--mono);font-size:11px;color:var(--ink-faint)}
+  .sec-rule{height:1px;background:var(--ink);margin-bottom:22px}
+
+  /* ---------- priority ---------- */
+  .prio{display:flex;flex-direction:column;gap:1px;background:var(--rule-soft);border:1px solid var(--rule);border-radius:3px;overflow:hidden}
+  .prio-row{display:flex;gap:16px;background:var(--surface);padding:15px 18px;align-items:flex-start}
+  .prio-tag{
+    font-family:var(--display);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    flex:0 0 96px;padding-top:3px;color:var(--ink-faint)
+  }
+  .prio-row.act .prio-tag{color:var(--clear)}
+  .prio-row.build .prio-tag{color:var(--signal)}
+  .prio-row.avoid .prio-tag{color:var(--risk)}
+  .prio-row p{margin:0;font-size:15px}
+  .prio-row strong{font-weight:600}
+
+  /* ---------- trends ---------- */
+  .trend{padding:22px 0;border-bottom:1px solid var(--rule-soft)}
+  .trend:last-child{border-bottom:0}
+  .trend-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:9px}
+  .trend-top h3{
+    font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:-.01em;margin:0
+  }
+  .heat{
+    font-family:var(--display);font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+    padding:3px 8px;border-radius:2px;white-space:nowrap
+  }
+  .heat.peak{background:var(--risk-bg);color:var(--risk)}
+  .heat.rise{background:var(--caution-bg);color:var(--caution)}
+  .heat.cool{background:var(--surface-sunk);color:var(--ink-faint)}
+  .trend dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:5px 14px;align-items:baseline}
+  .trend dt{
+    font-family:var(--display);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink-faint);padding-top:5px
+  }
+  .trend dd{margin:0;font-size:15.5px}
+  .trend dd.angle{color:var(--ink)}
+  .trend dd.risk{color:var(--caution);font-size:14.5px}
+    .src{font-family:var(--mono);font-size:11.5px;word-break:break-all;color:var(--ink-faint)}
+  .src a{border-bottom-color:var(--rule-soft)}
+
+
+  .trend dd.none{color:var(--ink-faint);font-size:14.5px;font-style:italic}
+  .trend .cal-ideas{margin-top:1px}
+
+  /* ---------- no-go ---------- */
+  .nogo{border-left:3px solid var(--risk);background:var(--risk-bg);border-radius:0 3px 3px 0;padding:4px 0}
+  .nogo-item{padding:12px 18px;display:flex;gap:13px;align-items:flex-start}
+  .nogo-item + .nogo-item{border-top:1px solid color-mix(in srgb,var(--risk) 16%,transparent)}
+  .nogo-item h4{
+    font-family:var(--display);font-weight:700;font-size:13px;margin:0 0 2px;color:var(--risk)
+  }
+  .nogo-item p{margin:0;font-size:14.5px;color:var(--ink-soft)}
+  .nogo-x{color:var(--risk);font-family:var(--mono);font-size:13px;font-weight:600;padding-top:1px}
+
+  /* ---------- calendar ---------- */
+  .cal{display:flex;flex-direction:column}
+  .cal-row{
+    display:grid;grid-template-columns:88px 42px 1fr;gap:16px;
+    padding:13px 0;border-bottom:1px solid var(--rule-soft);align-items:baseline
+  }
+  .cal-row:last-child{border-bottom:0}
+  .cal-date{
+    font-family:var(--mono);font-size:12.5px;font-weight:600;font-variant-numeric:tabular-nums;
+    color:var(--ink);white-space:nowrap
+  }
+  .cal-away{
+    font-family:var(--mono);font-size:12px;font-variant-numeric:tabular-nums;
+    color:var(--ink-faint);text-align:right
+  }
+  .cal-body h4{font-family:var(--display);font-weight:600;font-size:15.5px;margin:0 0 3px;display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+  .stars{font-family:var(--mono);font-size:12px;letter-spacing:.5px;color:var(--signal)}
+  .stars.s2{color:var(--ink-soft)}
+  .stars.s1{color:var(--ink-faint)}
+  .lead{
+    font-family:var(--display);font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+    background:var(--caution-bg);color:var(--caution);padding:2px 6px;border-radius:2px;white-space:nowrap
+  }
+  .cal-body p{margin:0;font-size:14.5px;color:var(--ink-soft)}
+  .cal-row.major{background:linear-gradient(90deg,color-mix(in srgb,var(--signal) 7%,transparent),transparent 65%);
+    margin:0 -12px;padding-left:12px;padding-right:12px;border-radius:2px}
+
+  /* ---------- footer blocks ---------- */
+  .gap{
+    background:var(--surface-sunk);border:1px solid var(--rule);border-radius:3px;
+    padding:16px 18px;margin-top:24px
+  }
+  .gap h4{
+    font-family:var(--display);font-size:10px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+    color:var(--ink-faint);margin:0 0 8px
+  }
+  .gap p{margin:0 0 8px;font-size:14.5px;color:var(--ink-soft)}
+  .gap p:last-child{margin-bottom:0}
+
+  .srcs{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:11.5px;margin-top:4px}
+  .srcs th{text-align:left;color:var(--ink-faint);font-weight:600;padding:0 10px 6px 0}
+  .srcs td{padding:4px 10px 4px 0;border-top:1px solid var(--rule-soft);vertical-align:top;word-break:break-all}
+  .srcs .ok{color:var(--clear)}
+  .srcs .bad{color:var(--risk)}
+
+
+
+  .cal-ideas{list-style:none;margin:7px 0 0;padding:0;display:flex;flex-direction:column;gap:5px}
+  .cal-idea{display:grid;grid-template-columns:16px 1fr;gap:8px;font-size:14px;color:var(--ink);align-items:baseline}
+  .cal-idea .n{font-family:var(--mono);font-size:10.5px;font-weight:600;color:var(--signal)}
+  .cal-idea em{font-style:italic}
+  .cal-why{font-size:14.5px;color:var(--ink-soft);margin:0}
+
+  /* ---------- archive calendar ---------- */
+  .cal{border:1px solid var(--rule);border-radius:3px;background:var(--surface);padding:14px 16px 12px;margin:22px 0 0}
+  .cal-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+  .cal-title{font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+  .cal-nav{font-family:var(--mono);font-size:15px;line-height:1;background:none;border:1px solid var(--rule);color:var(--ink-soft);
+           border-radius:2px;width:24px;height:24px;cursor:pointer;padding:0}
+  .cal-nav:hover:not(:disabled){border-color:var(--signal);color:var(--signal)}
+  .cal-nav:disabled{opacity:.3;cursor:default}
+  .cal-nav:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+  .cal-dow{font-family:var(--mono);font-size:9.5px;color:var(--ink-faint);text-align:center;padding-bottom:4px}
+  .cal-cell{font-family:var(--mono);font-size:11.5px;font-variant-numeric:tabular-nums;text-align:center;
+            padding:5px 0;border-radius:2px;color:var(--ink-faint);text-decoration:none;border-bottom:0}
+  .cal-cell.out{visibility:hidden}
+  a.cal-cell.has{color:var(--signal);font-weight:600;background:color-mix(in srgb,var(--signal) 10%,transparent)}
+  a.cal-cell.has:hover{background:var(--signal);color:var(--surface)}
+  .cal-cell.here{outline:1px solid var(--signal);outline-offset:-1px}
+  .cal-cell:focus-visible{outline:2px solid var(--signal);outline-offset:1px}
+  .cal-all{display:block;margin-top:10px;font-family:var(--mono);font-size:11px;color:var(--ink-faint);
+           text-decoration:none;border-bottom:0}
+  .cal-all:hover{color:var(--signal)}
+
+  nav.cal{position:sticky;top:0;z-index:20;box-shadow:0 8px 16px -6px rgba(0,0,0,.25)}
+  .cal-cell.weekend{color:var(--risk)}
+  .cal-cell.holiday{color:var(--risk)!important;font-weight:700}
+  .cal-cell.ev1,.cal-cell.ev2,.cal-cell.ev3{position:relative}
+  .cal-cell.ev1::after,.cal-cell.ev2::after,.cal-cell.ev3::after{
+    content:"★";position:absolute;bottom:1px;right:1px;font-size:6px;line-height:1;color:var(--signal)
+  }
+  .cal-cell.ev2::after{content:"★★"}
+  .cal-cell.ev3::after{content:"★★★";font-size:5px}
+  .cal-legend{display:flex;flex-wrap:wrap;gap:5px 12px;margin:10px 0 0;font-family:var(--mono);font-size:10px;color:var(--ink-faint)}
+  .cal-legend .lg{display:flex;align-items:center;gap:4px}
+  .cal-legend .lg.holiday::before,.cal-legend .lg.weekend::before{content:"";width:7px;height:7px;border-radius:2px;display:inline-block}
+  .cal-legend .lg.holiday::before{background:var(--risk)}
+  .cal-legend .lg.weekend::before{background:color-mix(in srgb,var(--risk) 55%,transparent)}
+
+
+  /* ---------- platform cards ---------- */
+  .tt-list{list-style:none;margin:10px 0 12px;padding:0}
+  .tt{display:grid;grid-template-columns:22px 28px 1fr auto;gap:10px;align-items:center;padding:7px 0;border-top:1px solid var(--rule-soft)}
+  .tt .rk{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--signal);text-align:right}
+  .tt .av{width:28px;height:28px;border-radius:50%;object-fit:cover;background:var(--surface-sunk);display:block}
+  .tt-main{min-width:0;display:flex;flex-direction:column}
+  .tt-main a{font-family:var(--display);font-weight:600;font-size:15px;border-bottom:0;align-self:flex-start}
+  .tt-meta{font-family:var(--mono);font-size:11px;color:var(--ink-faint);overflow-wrap:anywhere}
+  .tt-trend{font-family:var(--mono);font-size:11px;display:flex;align-items:center;gap:4px}
+  .tt-trend.up{color:var(--clear)} .tt-trend.down{color:var(--risk)}
+  .ig-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px;margin:10px 0 12px}
+  .ig-grid.top{grid-template-columns:repeat(2,minmax(0,180px))}
+  .ig{margin:0;min-width:0}
+  .ig-cover{position:relative;display:block;aspect-ratio:9/16;background:var(--surface-sunk);border:1px solid var(--rule);border-radius:3px;overflow:hidden}
+  .ig-cover img{width:100%;height:100%;object-fit:cover;display:block}
+  .ig .play{position:absolute;right:6px;bottom:6px;font-size:10px;color:#fff;background:rgba(0,0,0,.55);border-radius:2px;padding:1px 5px}
+  .ig figcaption{margin-top:4px;font-size:12px;line-height:1.35;color:var(--ink-soft)}
+  .ig-meta{display:block;font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);overflow-wrap:anywhere}
+  .ig-meta b{color:var(--signal)} .ig-meta a{border-bottom:0}
+  details.more{margin:0 0 12px}
+  details.more summary{cursor:pointer;font-family:var(--mono);font-size:11.5px;color:var(--signal);list-style:none;display:inline-block;padding:4px 10px;border:1px solid var(--rule);border-radius:2px}
+  details.more summary::-webkit-details-marker{display:none}
+  details.more[open] summary{margin-bottom:4px}
+  details.more summary:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+
+  /* ---------- client brands ---------- */
+  details.brand-fit{margin:8px 0 0}
+  details.brand-fit summary{cursor:pointer;font-family:var(--mono);font-size:11px;color:var(--pine);list-style:none;display:inline-flex;flex-wrap:wrap;gap:4px 8px;align-items:center;padding:3px 9px;border:1px solid var(--rule);border-radius:2px;background:var(--surface)}
+  details.brand-fit summary::-webkit-details-marker{display:none}
+  details.brand-fit summary::before{content:"\25B8";color:var(--ink-faint)}
+  details.brand-fit[open] summary::before{content:"\25BE"}
+  details.brand-fit summary:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+  .brand-ideas{list-style:none;margin:7px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
+  .brand-idea{display:grid;grid-template-columns:auto 1fr;gap:9px;font-size:14px;color:var(--ink);align-items:baseline}
+  .brand-idea em{font-style:italic}
+  .chip{font-family:var(--display);font-size:9.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap;
+        padding:2px 6px;border-radius:2px;background:color-mix(in srgb,var(--pine) 12%,transparent);color:var(--pine)}
+  .brand-flag{margin:8px 0 0;font-size:14px;color:var(--caution);display:grid;grid-template-columns:auto 1fr;gap:9px;align-items:baseline}
+  .brand-flag .chip{background:var(--caution-bg);color:var(--caution)}
+
+  @media (max-width:620px){
+    .wrap{padding:0 18px 56px}
+    .cal-row{grid-template-columns:72px 36px 1fr;gap:10px}
+    .prio-row{flex-direction:column;gap:5px}
+    .prio-tag{flex:none;padding-top:0}
+    .trend dl{grid-template-columns:1fr;gap:2px 0}
+    .trend dt{padding-top:9px}
+    .cal-body .brand-idea{grid-template-columns:1fr;gap:2px}
+    .cal-body .brand-idea .chip{justify-self:start}
+  }
+  html{scroll-behavior:smooth}
+  .cal-row{scroll-margin-top:320px}
+  .cal-row:target{background:color-mix(in srgb,var(--signal) 8%,transparent);margin:0 -12px;padding-left:12px;padding-right:12px;border-radius:2px}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+<style>
+  .nav{font-family:var(--mono);font-size:11.5px;display:flex;gap:14px;padding:14px 0 0;color:var(--ink-faint)}
+  .nav a{border-bottom:0} .nav a:hover{color:var(--signal)}
+</style>
+</head>
+<body>
+<div class="wrap"><nav class="nav"><a href="">today</a><span>/</span><a href="./">archive</a></nav></div>
+<div class="wrap">
+
+  <header class="masthead">
+    <p class="org">TMRW Tech · Social</p>
+    <h1>Singapore Trend Wire</h1>
+    <div class="dateline">
+      <span>FRI 23 OCT 2026</span>
+      <span class="sep">/</span>
+      <span>MARKET: SG</span>
+      <span class="sep">/</span>
+      <span>COMPILED 08:50 SGT</span>
+    </div>
+  </header>
+
+  <div class="counters">
+    <div class="counter hot"><span class="n">7</span><span class="k">Live trends</span></div>
+    <div class="counter no"><span class="n">12</span><span class="k">No-go</span></div>
+    <div class="counter"><span class="n">12</span><span class="k">Calendar / 30d</span></div>
+    <div class="counter"><span class="n">16</span><span class="k">Days to Deepavali</span></div>
+  </div>
+
+<!--CAL--><nav class="cal" aria-label="Brief archive calendar"><div class="cal-head"><button class="cal-nav" data-step="-1" aria-label="Earlier month">&#8249;</button><span class="cal-title">October 2026</span><button class="cal-nav" data-step="1" aria-label="Later month">&#8250;</button></div><div class="cal-month" data-i="0" hidden><div class="cal-grid"><span class="cal-dow">M</span><span class="cal-dow">T</span><span class="cal-dow">W</span><span class="cal-dow">T</span><span class="cal-dow">F</span><span class="cal-dow">S</span><span class="cal-dow">S</span><span class="cal-cell out"></span><span class="cal-cell out"></span><span class="cal-cell out"></span><span class="cal-cell out"></span><span class="cal-cell out"></span><span class="cal-cell out"></span><span class="cal-cell weekend">1</span><a class="cal-cell ev1" href="#ev-2026-11-02" title="Allotment garden ballot closes">2</a><span class="cal-cell">3</span><span class="cal-cell">4</span><span class="cal-cell">5</span><span class="cal-cell">6</span><span class="cal-cell weekend">7</span><a class="cal-cell holiday ev3" href="#ev-2026-11-08" title="Deepavali — Deepavali">8</a><span class="cal-cell holiday" title="Deepavali (in lieu)">9</span><span class="cal-cell">10</span><a class="cal-cell ev3" href="#ev-2026-11-11" title="11.11">11</a><span class="cal-cell">12</span><span class="cal-cell">13</span><span class="cal-cell weekend">14</span><span class="cal-cell weekend">15</span><span class="cal-cell">16</span><span class="cal-cell">17</span><span class="cal-cell">18</span><a class="cal-cell ev1" href="#ev-2026-11-19" title="World Toilet Day">19</a><a class="cal-cell ev2" href="#ev-2026-11-20" title="Christmas Train Show opens; school holidays from 21 Nov">20</a><span class="cal-cell weekend">21</span><span class="cal-cell weekend">22</span><span class="cal-cell">23</span><span class="cal-cell">24</span><span class="cal-cell">25</span><span class="cal-cell">26</span><span class="cal-cell">27</span><span class="cal-cell weekend">28</span><span class="cal-cell weekend">29</span><span class="cal-cell">30</span><span class="cal-cell out"></span><span class="cal-cell out"></span><span class="cal-cell out"></span><span class="cal-cell out"></span><span class="cal-cell out"></span><span class="cal-cell out"></span></div><div class="cal-label" hidden>November 2026</div></div><div class="cal-month" data-i="1"><div class="cal-grid"><span class="cal-dow">M</span><span class="cal-dow">T</span><span class="cal-dow">W</span><span class="cal-dow">T</span><span class="cal-dow">F</span><span class="cal-dow">S</span><span class="cal-dow">S</span><span class="cal-cell out"></span><span class="cal-cell out"></span><span class="cal-cell out"></span><a class="cal-cell has" href="../archive/2026-10-01.html" title="PSLE is over — the last written papers sat yesterday and Children&#x27;s Day is tomorrow. One post for P6 families before lunch, no shoot.">1</a><a class="cal-cell has" href="../archive/2026-10-02.html" title="Two in three SG workers feel “always-on” — JobStreet’s study landed yesterday, and today is a Friday. One clock-out post before 6pm, no shoot.">2</a><a class="cal-cell weekend has" href="../archive/2026-10-03.html" title="The Weeknd plays his second National Stadium night tonight — night one topped SG’s Google entertainment searches. One morning-after post ready for Sunday, no shoot.">3</a><a class="cal-cell weekend has" href="../archive/2026-10-04.html" title="Six in ten Singaporeans skip strength training — the national health surveys say 87.3% move enough but only 37.6% lift. One fitness post before lunch, no shoot.">4</a><a class="cal-cell has" href="../archive/2026-10-05.html" title="Nine Asian Games silvers, a national record — and the comments are only counting golds. One post for the silver side before lunch, no shoot.">5</a><a class="cal-cell has" href="../archive/2026-10-06.html" title="F1 race week starts today — buses skip Esplanade Bridge from this morning and Padang roads close at midnight. One “how to get round it” post before the evening commute, no shoot.">6</a><a class="cal-cell has" href="../archive/2026-10-07.html" title="A Van Gogh void deck in MacPherson is going round again — and the comments want one under every block. One heartland-pride post before lunch, no shoot.">7</a><a class="cal-cell has" href="../archive/2026-10-08.html" title="Haze is forecast unhealthy right into race weekend — the west hit 161 at 6am. Re-read every F1 post for outdoor cheer, then one indoor-plans post before lunch, no shoot.">8</a><a class="cal-cell has" href="../archive/2026-10-09.html" title="F1 opens under unhealthy air — central Singapore’s 24-hour PSI was 166 at 8am, with first practice at 4.30pm. Every race post today goes out indoors-first, before lunch, no shoot.">9</a><a class="cal-cell weekend has" href="../archive/2026-10-10.html" title="World Mental Health Day lands in the season’s worst air — central Singapore’s 24-hour PSI was 175 at 8am, and the Sprint starts at 5pm. One check-in post before lunch, indoors, no shoot.">10</a><a class="cal-cell weekend has" href="../archive/2026-10-11.html" title="Race night, with the air a little kinder — central Singapore’s 24-hour PSI was 152 at 8am, down from 175 yesterday, and lights out is 8pm. One race-night post before 6pm, indoors-first, no shoot.">11</a><a class="cal-cell has" href="../archive/2026-10-12.html" title="The morning after the race, still under haze — #f1 and #singaporegp are No. 1 and No. 2 on TikTok SG, central Singapore’s 24-hour PSI was 146 at 8am, and HPB has cancelled today’s outdoor sessions. One race-recap post before noon, indoors, no shoot.">12</a><a class="cal-cell has" href="../archive/2026-10-13.html" title="The haze has stopped Singapore’s runners — central Singapore’s 24-hour PSI was 168 at 8am, up from 146 yesterday, and run clubs keep cancelling. One indoor-training post before lunch, no shoot.">13</a><a class="cal-cell has" href="../archive/2026-10-14.html" title="“Same guy, same face, different background” — a Redditor’s Europe-photo dating experiment is the light story in a heavy week. One before-and-after post before lunch, no shoot.">14</a><a class="cal-cell has" href="../archive/2026-10-15.html" title="“Now got butter police?” — a kaya-toast scolding has Singapore defending how strangers eat breakfast, the one light story on a Very Unhealthy morning. One how-I-eat-it post before lunch, no shoot.">15</a><a class="cal-cell has" href="../archive/2026-10-16.html" title="The skyline went missing — central Singapore’s 24-hour PSI was 226 at 8am, and the feeds are full of before-and-after photos. One N95-collection card before lunch, no shoot.">16</a><a class="cal-cell weekend has" href="../archive/2026-10-17.html" title="BIGBANG plays the National Stadium tonight under a haze plan — plastic bottles only, and the show stops only above PSI 300 (central was 189 at 8am). One fan-utility post before the afternoon, no shoot.">17</a><a class="cal-cell weekend has" href="../archive/2026-10-18.html" title="iPhone Duo pre-orders were fully reserved at Singtel by 5.30am — a day after opening. Samsung’s no-names reply and Maersk Air’s LinkedIn post go out before shops open on 23 Oct.">18</a><a class="cal-cell has" href="../archive/2026-10-19.html" title="Singapore’s runners have moved into the malls — a 7am lap of an empty Marina Square is going round Instagram, with a weekly Saturday repeat. HYROX, AUFF and OSIM post before Saturday, no shoot.">19</a><a class="cal-cell has" href="../archive/2026-10-20.html" title="Singapore is grading its bosses on the haze — Redditors are trading office arrangements, from free N95s at reception to “five days WFO, thank you boss”, as NEA warns the smoke may return tonight. Dunkin’, IKEA and OSIM post before lunch, no shoot.">20</a><a class="cal-cell has" href="../archive/2026-10-21.html" title="Singapore is first in the world for what its pay buys, and eighth once the hours are counted — a 43.1-hour week against Norway’s 37.5. OSIM and Dunkin’ post into it before lunch, no shoot.">21</a><a class="cal-cell has" href="../archive/2026-10-22.html" title="Hijacked WhatsApp accounts are asking parents for money in their children’s names — 128 cases and S$249,000 since September. UOB posts one call-first card today, no shoot.">22</a><a class="cal-cell here ev2 has" href="../archive/2026-10-23.html" title="A Singaporean dad lost 21kg to keep up with his daughters — and placed fifth in his first bodybuilding show, with another on Saturday. HYROX, AUFF, OSIM and AIA post before the weekend, no shoot.">23</a><a class="cal-cell weekend ev2" href="#ev-2026-10-24" title="The Car Expo, Singapore EXPO, 24–25 Oct">24</a><span class="cal-cell weekend">25</span><a class="cal-cell ev1" href="#ev-2026-10-26" title="OPPO Find X10 deliveries begin · Teochew Festival, Chinatown Point, to 1 Nov">26</a><span class="cal-cell">27</span><span class="cal-cell">28</span><a class="cal-cell ev1" href="#ev-2026-10-29" title="CATS opens at Sands Theatre">29</a><span class="cal-cell">30</span><a class="cal-cell weekend ev2" href="#ev-2026-10-31" title="Halloween">31</a><span class="cal-cell out"></span></div><div class="cal-label" hidden>October 2026</div></div><div class="cal-month" data-i="2" hidden><div class="cal-grid"><span class="cal-dow">M</span><span class="cal-dow">T</span><span class="cal-dow">W</span><span class="cal-dow">T</span><span class="cal-dow">F</span><span class="cal-dow">S</span><span class="cal-dow">S</span><span class="cal-cell out"></span><span class="cal-cell">1</span><a class="cal-cell has" href="../archive/2026-09-02.html" title="The closures post. Emotion is live now, one image and one line, zero risk.">2</a><a class="cal-cell has" href="../archive/2026-09-03.html" title="The haze × school-holiday post. PSI has drifted into unhealthy-for-sensitive-groups territory today, two days before nine days off begin. Publish before any formal advisory lands — after that it reads as opportunism.">3</a><a class="cal-cell has" href="../archive/2026-09-04.html" title="The Teachers&#x27; Day post. Term 3 ends today, no school, and the nine-day break follows — the biggest organic gratitude-and-nostalgia UGC day of the month, live now.">4</a><a class="cal-cell weekend has" href="../archive/2026-09-05.html" title="The haze × holiday-starts-today post. Three regions crossed into unhealthy air overnight and the nine-day school break begins this morning — the indoor-alternative content window is live now, not next week.">5</a><a class="cal-cell weekend has" href="../archive/2026-09-06.html" title="The Community Shield kickoff post. The 2026/27 season opens tonight at Jalan Besar, 7.30pm — one clean same-day watch-party window for F&amp;B and beverage brands.">6</a><a class="cal-cell has" href="../archive/2026-09-07.html" title="The Krakatau disruption post. Anak Krakatau&#x27;s eruption has shut eight Indonesian airports and stranded an estimated 170,000 passengers since Sunday; Singapore Airlines has cancelled multiple SIN–Jakarta flights with more disruption likely today.">7</a><a class="cal-cell has" href="../archive/2026-09-08.html" title="The hot, hazy dry-spell post. NEA is tracking Singapore&#x27;s 24-hour PSI back up into the low-unhealthy range today as the dry spell over the region drags on, with daytime highs also pushing toward 34–35°C through the rest of the week. The indoor-comfort and hydration content window is live now, not a slow-news filler.">8</a><a class="cal-cell has" href="../archive/2026-09-09.html" title="The 9.9 peak day post. Shopee and Lazada&#x27;s 9.9 Super Shopping Day peaks today, the same day $400–$600 in Enhanced Cost-of-Living Special Payments starts landing in PayNow-linked accounts for over 2.4 million citizens. The payout-meets-sale window is live now, not next week.">9</a><a class="cal-cell has" href="../archive/2026-09-10.html" title="The keynote-morning reaction post. Apple&#x27;s &quot;Surprise and Shine&quot; keynote streamed at 1am SGT, revealing the iPhone 18 Pro (from S$1,899) and its first foldable, the iPhone Duo (from S$3,099) — the sticker-shock conversation is happening in Singapore right now, hours old, not next week.">10</a><a class="cal-cell has" href="../archive/2026-09-11.html" title="The pre-order-eve prep post. iPhone 18 Pro and Pro Max pre-orders open at 8pm tomorrow (Sat 12 Sep), capped at two units per customer — trade-in and telco creative needs to be ready before the window opens, not after.">11</a><a class="cal-cell weekend has" href="../archive/2026-09-12.html" title="The pre-order-night post. iPhone 18 Pro and Pro Max pre-orders open at 8pm tonight, still capped at two units per customer — trade-in and accessory creative needs to be live before the window opens, not after.">12</a><a class="cal-cell weekend has" href="../archive/2026-09-13.html" title="The last-day-of-holidays post. The nine-day school holidays end tonight and Term 4 starts tomorrow — the closing window for any &quot;one final thing before Monday&quot; post, alongside a record S$133,009 Cat A COE and the final Toa Payoh #RevUpSG F1 watch party.">13</a><a class="cal-cell has" href="../archive/2026-09-14.html" title="The back-to-Term-4 post. School resumes this morning after the nine-day break, the one clean back-to-routine Monday of the month — post it before lunchtime, not after.">14</a><a class="cal-cell has" href="../archive/2026-09-15.html" title="The haze-is-back post. NEA&#x27;s 7am reading put every region of Singapore in the unhealthy PSI band for the first time this spell — central highest at 153 — with the dry spell set to persist. Indoor-comfort content is live now, not filler.">15</a><a class="cal-cell has" href="../archive/2026-09-16.html" title="The Maxwell-reopens-tomorrow post. It&#x27;s the last day of Maxwell Food Centre&#x27;s scheduled cleaning closure, one of 28 hawker centres cycled through this week — the alternative-stalls window is open today only.">16</a><a class="cal-cell has" href="../archive/2026-09-17.html" title="The act-today post is the moving-fee viral story. A woman quoted $228 to move house was hit with a $1,280 &quot;long pushing distance&quot; surcharge mid-move, for a $1,706 total — a same-day window for any brand that can credibly say its quote is the bill.">17</a><a class="cal-cell has" href="../archive/2026-09-18.html" title="iPhone 18 Pro and Pro Max hit Singapore stores this morning. Queues at Orchard Road, Jewel and Marina Bay Sands are the day&#x27;s cleanest, lowest-risk content — one photo, timestamped, before the crowds thin out by lunch.">18</a><a class="cal-cell weekend has" href="../archive/2026-09-19.html" title="Chinatown&#x27;s Mid-Autumn opening ceremony runs from 6pm tonight at Kreta Ayer Square — a community lantern procession, mooncake-and-tea appreciation and lantern riddles in all four official languages, the first year without the giant lanterns on Eu Tong Sen Street and New Bridge Road.">19</a><a class="cal-cell weekend has" href="../archive/2026-09-20.html" title="Yoga Inc&#x27;s abrupt closure — the studio texted over 30 instructors on Friday night that it can&#x27;t pay September wages, and members with unused class packages have had no response since. A fitness brand can credibly say &quot;bring your receipt, first class is on us&quot; while the story is still raw.">20</a><a class="cal-cell has" href="../archive/2026-09-21.html" title="Singapore Tennis Open opens today at The Kallang — Southeast Asia&#x27;s only WTA 500, with Alexandra Eala, fresh off her first WTA singles title, drawing a first-round bye as No. 3 seed. Tickets from S$8, one of the cleanest, lowest-risk content days of the week.">21</a><a class="cal-cell has" href="../archive/2026-09-22.html" title="Tiffany Teo wins Singapore&#x27;s first gold of the 2026 Asian Games, beating Uzbekistan&#x27;s Khilola Sobirova in overtime in the women&#x27;s 60kg MMA final. A same-day congratulations post, zero risk.">22</a><a class="cal-cell has" href="../archive/2026-09-23.html" title="A Sengkang void-deck &quot;butcher&quot; video is going properly viral. SFA has confirmed to Mothership it&#x27;s investigating a group filmed chopping and reselling wholesale meat at Block 107 Rivervale Walk — a uniquely Singaporean scene, zero shoot required.">23</a><a class="cal-cell has" href="../archive/2026-09-24.html" title="A highly venomous black spitting cobra spotted near Serangoon Gardens has outrun NParks twice. No shoot, no risk — the searches themselves are the joke.">24</a><a class="cal-cell has" href="../archive/2026-09-25.html" title="Mid-Autumn Festival is here — mooncake and lantern content peaks today. Same night, Halloween Horror Nights 14 opens at USS and Singapore&#x27;s FIFA ASEAN Cup opener vs Indonesia kicks off 1pm in Jakarta.">25</a><a class="cal-cell weekend has" href="../archive/2026-09-26.html" title="Shanti Pereira&#x27;s 100m silver at the Asian Games in Aichi-Nagoya — 11.21s, 0.01s off her own national record, and her third individual Asian Games athletics medal. A same-day congratulations post, zero risk, no shoot needed.">26</a><a class="cal-cell weekend has" href="../archive/2026-09-27.html" title="Shanti Pereira races the Asian Games 200m final in Nagoya today, defending the title she won at Hangzhou 2023 — a day after her 100m silver. A same-day watch-and-cheer post, zero risk, no shoot needed.">27</a><a class="cal-cell has" href="../archive/2026-09-28.html" title="Loh Kean Yew plays his Asian Games badminton semi-final today, a day after upsetting world No. 1 Jonatan Christie to clinch Singapore&#x27;s first-ever individual Asian Games badminton medal. A same-day watch-and-cheer post, zero risk, no shoot needed.">28</a><a class="cal-cell has" href="../archive/2026-09-29.html" title="Loh Kean Yew plays Thailand&#x27;s Kunlavut Vitidsarn for the Asian Games badminton gold at 8.30am SGT today, the first Singaporean in an Asian Games badminton final. Pre-write a gold and a silver post; publish the moment it ends. No shoot, zero risk.">29</a><a class="cal-cell has" href="../archive/2026-09-30.html" title="Haze is back: 24-hour PSI is Unhealthy in four of five regions (119 in the west and central at 7am). Publish one indoor-plan post before lunch, caring tone, no shoot.">30</a><span class="cal-cell out"></span><span class="cal-cell out"></span><span class="cal-cell out"></span><span class="cal-cell out"></span></div><div class="cal-label" hidden>September 2026</div></div><p class="cal-legend"><span class="lg holiday">Public holiday</span><span class="lg weekend">Weekend</span><span class="lg">&#9733; calendar item &mdash; tap to jump</span></p><a class="cal-all" href="../archive/">All briefs &#8594;</a>
+<script>
+(function(){
+  var root=document.currentScript.closest('.cal'); if(!root) return;
+  var months=[].slice.call(root.querySelectorAll('.cal-month')),
+      title=root.querySelector('.cal-title'),
+      btns=[].slice.call(root.querySelectorAll('.cal-nav')), i=1;
+  function show(n){
+    if(n<0||n>=months.length) return;
+    months[i].hidden=true; i=n; months[i].hidden=false;
+    title.textContent=months[i].querySelector('.cal-label').textContent;
+    btns[0].disabled=(i>=months.length-1); btns[1].disabled=(i<=0);
+  }
+  btns[0].addEventListener('click',function(){show(i+1);});
+  btns[1].addEventListener('click',function(){show(i-1);});
+})();
+</script></nav><!--/CAL-->
+  <section class="sec">
+    <div class="sec-head"><h2>This week</h2><span class="note">three decisions</span></div>
+    <div class="sec-rule"></div>
+    <div class="prio">
+      <div class="prio-row act"><span class="prio-tag">Act today</span>
+        <p><strong>A Singaporean dad lost 21kg to keep up with his daughters</strong> &mdash; and placed fifth in his first bodybuilding show, with another on Saturday. HYROX, AUFF, OSIM and AIA post before the weekend, no shoot.</p></div>
+      <div class="prio-row build"><span class="prio-tag">Start building</span>
+        <p><strong>11.11 is 19 days out</strong> &mdash; UOB and Maersk Air brief their peak-week posts now; Deepavali follows three days earlier.</p></div>
+      <div class="prio-row avoid"><span class="prio-tag">Avoid</span>
+        <p><strong>The 10-cent cup row</strong> &mdash; a soya chain is taking flak over the BCRS deposit. No brand joins the pile-on or the policy argument.</p></div>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="sec-head"><h2>Trending now</h2><span class="note">last 24&ndash;48h</span></div>
+    <div class="sec-rule"></div>
+    <article class="trend">
+      <div class="trend-top">
+        <h3>TikTok &middot; slot 1 &middot; SG ranking stale</h3>
+        <span class="heat cool">Cooling</span>
+      </div>
+      <!--TIKTOK--><!--/TIKTOK-->
+      <dl>
+        <dt>What</dt>
+        <dd>The Singapore hashtag ranking still ends on 15 Oct, eight days back, so no rank is printed for a sixth day.</dd>
+        <dt>Trendjack</dt><dd class="none">Empty slot: the ranking is stale, and TikTok itself was blocked.</dd>
+        <dt>Source</dt>
+        <dd class="src">TikTok &middot; Creative Center hashtags via Apify (data_xplorer/tiktok-trends), read 23 Oct</dd>
+      </dl>
+    </article>
+    <article class="trend">
+      <div class="trend-top">
+        <h3>TikTok &middot; the wallet that went for supper</h3>
+        <span class="heat cool">Cooling</span>
+      </div>
+      <dl>
+        <dt>What</dt>
+        <dd>A mum’s TikTok clips follow her son’s lost wallet by tracker round the island for an hour, then find it days later, untouched, wedged between bus seats.</dd>
+        <dt>Trendjack</dt><dd class="angle"><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>Into the reaction: <em>“In Singapore, lost things don’t get stolen. They get wedged between seats.”</em> One card &middot; viral</span></li></ul></dd>
+        <dt>Source</dt>
+        <dd class="src">TikTok &middot; clips by @44catt posted 14 and 17 Oct, reported by The Independent SG (no view count given): <a href="https://theindependent.sg/singapore-mum-s-search-for-son-s-lost-wallet-shows-both-the-frustration-and-usefulness-of-airtags" target="_blank" rel="noopener noreferrer">theindependent.sg/singapore-mum-s-search…</a> (22 Oct, 18:00)</dd>
+      </dl>
+    </article>
+    <article class="trend">
+      <div class="trend-top">
+        <h3>Instagram &middot; Explore feed (SG locale)</h3>
+        <span class="heat cool">Cooling</span>
+      </div>
+      <!--IG--><div class="ig-grid top"><figure class="ig"><a class="ig-cover" href="https://www.instagram.com/reel/Det7oikxXI-/" target="_blank" rel="noopener noreferrer"><img src="https://api.apify.com/v2/key-value-stores/BHsdrOcVSIOdWJthV/records/4012125113704346174-POLARIS_4012125113704346174_cover.jpg?signature=1w22zOkzVcHy4xLFtsmfp" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><span class="play">▶</span></a><figcaption><span class="ig-meta"><b>1</b> <a href="https://www.instagram.com/reel/Det7oikxXI-/" target="_blank" rel="noopener noreferrer">@cadenmcdonald</a> · — views</span></figcaption></figure><figure class="ig"><a class="ig-cover" href="https://www.instagram.com/reel/DeueAVVBGvA/" target="_blank" rel="noopener noreferrer"><img src="https://api.apify.com/v2/key-value-stores/BHsdrOcVSIOdWJthV/records/4012276282330213312-POLARIS_4012276282330213312_cover.jpg?signature=sK2f5zw9Kuqv3P8Ycsb9" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><span class="play">▶</span></a><figcaption><span class="ig-meta"><b>2</b> <a href="https://www.instagram.com/reel/DeueAVVBGvA/" target="_blank" rel="noopener noreferrer">@dr.jmack</a> · — views</span></figcaption></figure></div><details class="more"><summary>Show 18 more</summary><div class="ig-grid"><figure class="ig"><a class="ig-cover" href="https://www.instagram.com/reel/DeviigOs7xj/" target="_blank" rel="noopener noreferrer"><img src="https://api.apify.com/v2/key-value-stores/BHsdrOcVSIOdWJthV/records/4012577697660386403-POLARIS_4012577697660386403_cover.jpg?signature=OJoxPgxHR0MyREIyw9zF" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><span class="play">▶</span></a><figcaption><span class="ig-meta"><b>3</b> <a href="https://www.instagram.com/reel/DeviigOs7xj/" target="_blank" rel="noopener noreferrer">@memezar</a> · — views</span></figcaption></figure><figure class="ig"><a class="ig-cover" href="https://www.instagram.com/reel/DewK43xqrid/" target="_blank" rel="noopener noreferrer"><img src="https://api.apify.com/v2/key-value-stores/BHsdrOcVSIOdWJthV/records/4012755156631992477-POLARIS_4012755156631992477_cover.jpg?signature=Ym4rJI3hqGjm3hyapFaM" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><span class="play">▶</span></a><figcaption><span class="ig-meta"><b>4</b> <a href="https://www.instagram.com/reel/DewK43xqrid/" target="_blank" rel="noopener noreferrer">@nadiahmdin</a> · — views</span></figcaption></figure><figure class="ig"><a class="ig-cover" href="https://www.instagram.com/reel/DexGUQihQ6w/" target="_blank" rel="noopener noreferrer"><img src="https://api.apify.com/v2/key-value-stores/BHsdrOcVSIOdWJthV/records/4013016523391438512-POLARIS_4013016523391438512_cover.jpg?signature=lmw02whb2Uxz0gAkjDWD" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><span class="play">▶</span></a><figcaption><span class="ig-meta"><b>5</b> <a href="https://www.instagram.com/reel/DexGUQihQ6w/" target="_blank" rel="noopener noreferrer">@itztherealrizzler</a> · — views</span></figcaption></figure><figure class="ig"><a class="ig-cover" href="https://www.instagram.com/reel/DexAL3qAUy2/" target="_blank" rel="noopener noreferrer"><img src="https://api.apify.com/v2/key-value-stores/BHsdrOcVSIOdWJthV/records/4012989558638595254-POLARIS_4012989558638595254_cover.jpg?signature=1cSqGDV04LzXj3qTqtFg1" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><span class="play">▶</span></a><figcaption><span class="ig-meta"><b>6</b> <a href="https://www.instagram.com/reel/DexAL3qAUy2/" target="_blank" rel="noopener noreferrer">@zackdfilms</a> · — views</span></figcaption></figure><figure class="ig"><a class="ig-cover" href="https://www.instagram.com/reel/DetObQkhpyw/" target="_blank" rel="noopener noreferrer"><img src="https://api.apify.com/v2/key-value-stores/BHsdrOcVSIOdWJthV/records/4011926288926678192-POLARIS_4011926288926678192_cover.jpg?signature=1gwmE5CXrZrileINt7RVW" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><span class="play">▶</span></a><figcaption><span class="ig-meta"><b>7</b> <a href="https://www.instagram.com/reel/DetObQkhpyw/" target="_blank" rel="noopener noreferrer">@liamstapleton</a> · — views</span></figcaption></figure><figure class="ig"><a class="ig-cover" href="https://www.instagram.com/reel/DewsLPhlcaF/" target="_blank" rel="noopener noreferrer"><img src="https://api.apify.com/v2/key-value-stores/BHsdrOcVSIOdWJthV/records/4012901554617435781-POLARIS_4012901554617435781_cover.jpg?signature=1k7JVcsGGjOqM8VT37bl0" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><span class="play">▶</span></a><figcaption><span class="ig-meta"><b>8</b> <a href="https://www.instagram.com/reel/DewsLPhlcaF/" target="_blank" rel="noopener noreferrer">@angrybirds2official</a> · — views</span></figcaption></figure><figure class="ig"><a class="ig-cover" href="https://www.instagram.com/reel/DewLQ2NM0em/" target="_blank" rel="noopener noreferrer"><img src="https://api.apify.com/v2/key-value-stores/BHsdrOcVSIOdWJthV/records/4012756804213884838-POLARIS_4012756804213884838_cover.jpg?signature=1zNWrZ8CKnBGF1vlBAVbM" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><span class="play">▶</span></a><figcaption><span class="ig-meta"><b>9</b> <a href="https://www.instagram.com/reel/DewLQ2NM0em/" target="_blank" rel="noopener noreferrer">@jonathan__l</a> · — views</span></figcaption></figure><figure class="ig"><a class="ig-cover" href="https://www.instagram.com/reel/DexF-YwpfdZ/" target="_blank" rel="noopener noreferrer"><img src="https://api.apify.com/v2/key-value-stores/BHsdrOcVSIOdWJthV/records/4013015020389922649-POLARIS_4013015020389922649_cover.jpg?signature=11LOyiOADfC302tcudkCF" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><span class="play">▶</span></a><figcaption><span class="ig-meta"><b>10</b> <a href="https://www.instagram.com/reel/DexF-YwpfdZ/" target="_blank" rel="noopener noreferrer">@cadenmcdonald</a> · — views</span></figcaption></figure><figure class="ig"><a class="ig-cover" href="https://www.instagram.com/reel/Dd6kvdPI2rQ/" target="_blank" rel="noopener noreferrer"><img src="https://api.apify.com/v2/key-value-stores/BHsdrOcVSIOdWJthV/records/3997669210127035088-POLARIS_3997669210127035088_cover.jpg?signature=1yV2ZLnASpc75VZ9Ur7fU" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><span class="play">▶</span></a><figcaption><span class="ig-meta"><b>11</b> <a href="https://www.instagram.com/reel/Dd6kvdPI2rQ/" target="_blank" rel="noopener noreferrer">@iamjonathanpeter</a> · — views</span></figcaption></figure><figure class="ig"><a class="ig-cover" href="https://www.instagram.com/reel/DevdD0pzXn2/" target="_blank" rel="noopener noreferrer"><img src="https://api.apify.com/v2/key-value-stores/BHsdrOcVSIOdWJthV/records/4012553599053560310-POLARIS_4012553599053560310_cover.jpg?signature=1NQ9bNhdn8VRQyEfmzg9T" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><span class="play">▶</span></a><figcaption><span class="ig-meta"><b>12</b> <a href="https://www.instagram.com/reel/DevdD0pzXn2/" target="_blank" rel="noopener noreferrer">@chrisgqperry</a> · — views</span></figcaption></figure><figure class="ig"><a class="ig-cover" href="https://www.instagram.com/reel/DerjgeYxjeR/" target="_blank" rel="noopener noreferrer"><img src="https://api.apify.com/v2/key-value-stores/BHsdrOcVSIOdWJthV/records/4011456056382601105-POLARIS_4011456056382601105_cover.jpg?signature=zWNUvU1zr0hhE0FYG8FS" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><span class="play">▶</span></a><figcaption><span class="ig-meta"><b>13</b> <a href="https://www.instagram.com/reel/DerjgeYxjeR/" target="_blank" rel="noopener noreferrer">@thedolapolawal</a> · — views</span></figcaption></figure><figure class="ig"><a class="ig-cover" href="https://www.instagram.com/reel/DevQ4ZlhqA0/" target="_blank" rel="noopener noreferrer"><img src="https://api.apify.com/v2/key-value-stores/BHsdrOcVSIOdWJthV/records/4012500037518401588-POLARIS_4012500037518401588_cover.jpg?signature=kKCSRapraDXXqDNBbm0z" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><span class="play">▶</span></a><figcaption><span class="ig-meta"><b>14</b> <a href="https://www.instagram.com/reel/DevQ4ZlhqA0/" target="_blank" rel="noopener noreferrer">@playingwithpencil</a> · — views</span></figcaption></figure><figure class="ig"><a class="ig-cover" href="https://www.instagram.com/reel/DevZAOygKra/" target="_blank" rel="noopener noreferrer"><img src="https://api.apify.com/v2/key-value-stores/BHsdrOcVSIOdWJthV/records/4012535760052857562-POLARIS_4012535760052857562_cover.jpg?signature=1ylhCNOWXKi6J5bCfxfkQ" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><span class="play">▶</span></a><figcaption><span class="ig-meta"><b>15</b> <a href="https://www.instagram.com/reel/DevZAOygKra/" target="_blank" rel="noopener noreferrer">@cron</a> · — views</span></figcaption></figure><figure class="ig"><a class="ig-cover" href="https://www.instagram.com/reel/DewJ41iJe9q/" target="_blank" rel="noopener noreferrer"><img src="https://api.apify.com/v2/key-value-stores/BHsdrOcVSIOdWJthV/records/4012750756177637226-POLARIS_4012750756177637226_cover.jpg?signature=pNZ5VzmWrENes2s1KTd5" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><span class="play">▶</span></a><figcaption><span class="ig-meta"><b>16</b> <a href="https://www.instagram.com/reel/DewJ41iJe9q/" target="_blank" rel="noopener noreferrer">@bertandlulu</a> · — views</span></figcaption></figure><figure class="ig"><a class="ig-cover" href="https://www.instagram.com/reel/DewW__rFMuH/" target="_blank" rel="noopener noreferrer"><img src="https://api.apify.com/v2/key-value-stores/BHsdrOcVSIOdWJthV/records/4012808422705908615-POLARIS_4012808422705908615_cover.jpg?signature=48JgvwJfY1gGUNxC9gWJ" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><span class="play">▶</span></a><figcaption><span class="ig-meta"><b>17</b> <a href="https://www.instagram.com/reel/DewW__rFMuH/" target="_blank" rel="noopener noreferrer">@ijustine</a> · — views</span></figcaption></figure><figure class="ig"><a class="ig-cover" href="https://www.instagram.com/reel/DeuV_oxoO6o/" target="_blank" rel="noopener noreferrer"><img src="https://api.apify.com/v2/key-value-stores/BHsdrOcVSIOdWJthV/records/4012241050119761576-POLARIS_4012241050119761576_cover.jpg?signature=PSsA1Igjp0v6b0P0Hhon" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><span class="play">▶</span></a><figcaption><span class="ig-meta"><b>18</b> <a href="https://www.instagram.com/reel/DeuV_oxoO6o/" target="_blank" rel="noopener noreferrer">@violetbenson</a> · — views</span></figcaption></figure><figure class="ig"><a class="ig-cover" href="https://www.instagram.com/reel/DeetcghA64w/" target="_blank" rel="noopener noreferrer"><img src="https://api.apify.com/v2/key-value-stores/BHsdrOcVSIOdWJthV/records/4007840589558296112-POLARIS_4007840589558296112_cover.jpg?signature=x6zMixhnpld1Dkgd93jj" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><span class="play">▶</span></a><figcaption><span class="ig-meta"><b>19</b> <a href="https://www.instagram.com/reel/DeetcghA64w/" target="_blank" rel="noopener noreferrer">@josh.otusanya</a> · — views</span></figcaption></figure><figure class="ig"><a class="ig-cover" href="https://www.instagram.com/reel/DeuNZlUxCqH/" target="_blank" rel="noopener noreferrer"><img src="https://api.apify.com/v2/key-value-stores/BHsdrOcVSIOdWJthV/records/4012203250702101127-POLARIS_4012203250702101127_cover.jpg?signature=wIlHVBbq8WdL7aICw6vu" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><span class="play">▶</span></a><figcaption><span class="ig-meta"><b>20</b> <a href="https://www.instagram.com/reel/DeuNZlUxCqH/" target="_blank" rel="noopener noreferrer">@joeealbanese</a> · — views</span></figcaption></figure></div></details><!--/IG-->
+      <dl>
+        <dt>What</dt>
+        <dd>None of 20 posts carries a Singapore location or hashtag; one Malay-language motherhood Reel may be local but its creator isn’t confirmed, and the rest are US and other content.</dd>
+        <dt>Trendjack</dt><dd class="none">No Singapore signal to build on.</dd>
+        <dt>Source</dt>
+        <dd class="src">Instagram &middot; Explore via Apify (agentx/instagram-trending-scraper), 23 Oct</dd>
+      </dl>
+    </article>
+    <article class="trend">
+      <div class="trend-top">
+        <h3>Instagram &middot; slot 2 &middot; nothing confirmed</h3>
+        <span class="heat cool">Cooling</span>
+      </div>
+      <dl>
+        <dt>What</dt>
+        <dd>No Singapore Reel or Story format was reported by SG media inside 48 hours.</dd>
+        <dt>Trendjack</dt><dd class="none">Empty slot: Explore carried no SG post; Mothership, The Smart Local, Goody Feed and two searches turned up nothing dated.</dd>
+        <dt>Source</dt>
+        <dd class="src">Instagram &middot; no source inside 48h</dd>
+      </dl>
+    </article>
+    <article class="trend">
+      <div class="trend-top">
+        <h3>Fit enough for the playground</h3>
+        <span class="heat rise">Rising</span>
+      </div>
+      <dl>
+        <dt>What</dt>
+        <dd>A 37-year-old who hit 92kg and tired too fast to play with his daughters lost 21kg in ten months and placed fifth in his first bodybuilding show; the diet, he says, was harder than the gym.</dd>
+        <dt>Trendjack</dt><dd class="angle"><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>Insider observation: <em>“Nobody starts training for a stage. They start because the kids got faster.”</em> One card &middot; award</span></li></ul></dd>
+        <dt>Our brands</dt><dd><details class="brand-fit"><summary>For our brands (4) <span class="chip">HYROX</span><span class="chip">AUFF</span><span class="chip">OSIM</span><span class="chip">AIA</span></summary><ul class="brand-ideas">
+  <li class="brand-idea"><span class="chip">HYROX</span><span><ul class="cal-ideas">
+    <li class="cal-idea"><span class="n">1</span><span>Product punchline: a sled at rest, <em>“Built for pushing. Like a pram at 7am.”</em> &middot; viral</span></li>
+    <li class="cal-idea"><span class="n">2</span><span>Format remix: members finish one sentence on camera &mdash; <em>“I started the day…”</em> &mdash; one take each, Reel &middot; award ⚠ review: member consent</span></li>
+    <li class="cal-idea"><span class="n">3</span><span>Utility: the eight stations on one card, with what a first-timer trains in week one &middot; award ⚠ review: format from HYROX’s own page</span></li>
+  </ul></span></li>
+  <li class="brand-idea"><span class="chip">AUFF</span><span><ul class="cal-ideas">
+    <li class="cal-idea"><span class="n">1</span><span>Into the reaction: <em>“The stage takes minutes. The months before it are the festival.”</em> &middot; award ⚠ review: no festival dates until confirmed</span></li>
+    <li class="cal-idea"><span class="n">2</span><span>Reply in the comments: <em>“Who are you training for? Tag them.”</em> &middot; viral</span></li>
+    <li class="cal-idea"><span class="n">3</span><span>Insider observation: <em>“Every fitness journey in Singapore has a kopi siew dai chapter.”</em> &middot; viral ⚠ review: no diet or health claims</span></li>
+  </ul></span></li>
+  <li class="brand-idea"><span class="chip">OSIM</span><span><ul class="cal-ideas">
+    <li class="cal-idea"><span class="n">1</span><span>Product punchline: the chair, lights low, <em>“Ten months of discipline. Ten minutes off.”</em> &middot; viral ⚠ review: no recovery claims</span></li>
+    <li class="cal-idea"><span class="n">2</span><span>Insider observation: <em>“The gym was the easy part. Saying no to dessert was the workout.”</em> &middot; award</span></li>
+    <li class="cal-idea"><span class="n">3</span><span>Utility: a seated wind-down card for after playground duty, three moves, no claims &middot; award ⚠ review: no health claims; moves checked by a qualified trainer</span></li>
+  </ul></span></li>
+  <li class="brand-idea"><span class="chip">AIA</span><span><ul class="cal-ideas">
+    <li class="cal-idea"><span class="n">1</span><span>Insider observation: <em>“Fit enough to keep up is a real goal. Write it down.”</em> &middot; award</span></li>
+    <li class="cal-idea"><span class="n">2</span><span>Utility: four free weekend moves parents and kids do together &mdash; park, pool, stairs, void deck &middot; award ⚠ review: no health or cover claims</span></li>
+    <li class="cal-idea"><span class="n">3</span><span>Format remix: kids rate their parent’s push-up form, deadpan scorecards, Reel &middot; viral ⚠ review: guardian consent</span></li>
+  </ul></span></li>
+</ul></details></dd>
+        <dt>Source</dt>
+        <dd class="src">Berita Harian interview reported by Mothership: <a href="https://mothership.sg/2026/10/sporean-dad-workout-21kg-bodybuilder/">mothership.sg/2026/10/sporean-dad-workout…</a> (22 Oct)</dd>
+      </dl>
+    </article>
+    <article class="trend">
+      <div class="trend-top">
+        <h3>Two sports, twelve years apart</h3>
+        <span class="heat peak">Peaking</span>
+      </div>
+      <dl>
+        <dt>What</dt>
+        <dd>Singapore won its first individual boccia medals at the Asian Para Games on 21 Oct &mdash; two silvers and a bronze &mdash; and one silver came from a sailor who won gold at the Games 12 years ago.</dd>
+        <dt>Trendjack</dt><dd class="angle"><ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>Utility: boccia in three cards &mdash; the ball, the jack, how a point is won &middot; award</span></li></ul></dd>
+        <dt>Source</dt>
+        <dd class="src">Results reported by Little Big Red Dot: <a href="https://littlebigreddot.com/asian-para-games-2026-singapore-boccia-jovin-tan-aloysius-gan-jeralyn-tan/">littlebigreddot.com/asian-para-games-2026…</a> (22 Oct)</dd>
+      </dl>
+    </article>
+    <article class="trend">
+      <div class="trend-top">
+        <h3>Ten cents and a walk</h3>
+        <span class="heat rise">Rising</span>
+      </div>
+      <dl>
+        <dt>What</dt>
+        <dd>Lao Ban says its soya drinks have carried the 10-cent BCRS deposit since 1 Oct, after commenters complained about carrying cups to a return machine.</dd>
+        <dt>Trendjack</dt><dd class="none">No clean trendjack: a national scheme and a named stall under fire; any joke takes a side or piles on.</dd>
+        <dt>Source</dt>
+        <dd class="src">Mothership: <a href="https://mothership.sg/2026/10/lao-ban-soya-bcrs/">mothership.sg/2026/10/lao-ban-soya-bcrs</a> (22 Oct)</dd>
+      </dl>
+    </article>
+  </section>
+  <section class="sec">
+    <div class="sec-head"><h2>No-go list</h2><span class="note">trending, untouchable</span></div>
+    <div class="sec-rule"></div>
+    <div class="nogo">
+      <div class="nogo-item"><span class="nogo-x">&#10005;</span><div><h4>Haze blame widens to a Malaysian politician</h4><p>Bilateral &mdash; nothing.</p></div></div>
+      <div class="nogo-item"><span class="nogo-x">&#10005;</span><div><h4>NUS student arrested for filming a housemate</h4><p>A sexual-offence case &mdash; nothing.</p></div></div>
+      <div class="nogo-item"><span class="nogo-x">&#10005;</span><div><h4>Malaysian teen electrocuted during a procession</h4><p>A death &mdash; nothing.</p></div></div>
+      <div class="nogo-item"><span class="nogo-x">&#10005;</span><div><h4>Toa Payoh hawker closes after a cancer diagnosis</h4><p>Illness &mdash; AIA and OSIM stay off.</p></div></div>
+      <div class="nogo-item"><span class="nogo-x">&#10005;</span><div><h4>Private-hire driver’s stroke after 14-hour days</h4><p>Illness &mdash; nothing.</p></div></div>
+      <div class="nogo-item"><span class="nogo-x">&#10005;</span><div><h4>Phone snatched from a Hougang shop</h4><p>A theft on Hougang Middle Road, not at the mall &mdash; Hougang Mall and Samsung stay off.</p></div></div>
+      <div class="nogo-item"><span class="nogo-x">&#10005;</span><div><h4>Yishun kitchen fire, four hurt</h4><p>A home fire &mdash; Samsung stays off appliances.</p></div></div>
+      <div class="nogo-item"><span class="nogo-x">&#10005;</span><div><h4>GovTech cuts 38 more jobs</h4><p>Layoffs &mdash; nothing.</p></div></div>
+      <div class="nogo-item"><span class="nogo-x">&#10005;</span><div><h4>Miss Universe Singapore pulls out</h4><p>A franchise dispute &mdash; nothing.</p></div></div>
+      <div class="nogo-item"><span class="nogo-x">&#10005;</span><div><h4>S$186,000 taken by a “scam recovery” friend</h4><p>Scam losses &mdash; UOB stays off.</p></div></div>
+      <div class="nogo-item"><span class="nogo-x">&#10005;</span><div><h4>Typhoon cancels SIA’s Taipei flights</h4><p>Weather disruption &mdash; Maersk Air stays off.</p></div></div>
+      <div class="nogo-item"><span class="nogo-x">&#10005;</span><div><h4>Wage council’s 6&ndash;8% for lower-wage workers</h4><p>Government policy &mdash; nothing.</p></div></div>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="sec-head"><h2>Calendar</h2><span class="note">★★★ major &middot; ★★ worth a post &middot; ★ if it fits</span></div>
+    <div class="sec-rule"></div>
+    <div class="cal">
+
+      <div class="cal-row" id="ev-2026-10-23">
+        <span class="cal-date">FRI 23 OCT</span><span class="cal-away">today</span>
+        <div class="cal-body">
+          <h4>IKEA’s free haze coffee, last day <span class="stars s2">★★</span></h4>
+          <p class="cal-why">IKEA’s “Hazy outside, cosy inside” free coffee or tea runs at its Swedish Restaurants to today.</p>
+          <ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>Utility: a list of free indoor seats for a hazy afternoon &mdash; libraries, community clubs, food halls &middot; award</span></li></ul>
+          <details class="brand-fit"><summary>For our brands (1) <span class="chip">IKEA</span></summary><ul class="brand-ideas">
+            <li class="brand-idea"><span class="chip">IKEA</span><span><ul class="cal-ideas">
+              <li class="cal-idea"><span class="n">1</span><span>Product punchline: one cup on a showroom sofa, <em>“Hazy outside. Last refills inside.”</em> &middot; viral ⚠ review: offer terms from IKEA SG’s own page</span></li>
+              <li class="cal-idea"><span class="n">2</span><span>Insider observation: <em>“Free coffee: the one thing here you don’t have to assemble.”</em> &middot; viral</span></li>
+              <li class="cal-idea"><span class="n">3</span><span>Format remix: five showroom rooms rated by how long you’d hide from the haze in each, Story poll &middot; viral</span></li>
+              <li class="cal-idea"><span class="n">4</span><span>Utility: last-call card &mdash; Friday, Swedish Restaurant only, specialty drinks excluded &middot; award ⚠ review: terms from IKEA SG’s own page</span></li>
+            </ul></span></li>
+          </ul></details>
+        </div>
+      </div>
+      <div class="cal-row" id="ev-2026-10-23-b">
+        <span class="cal-date">FRI 23 OCT</span><span class="cal-away">today</span>
+        <div class="cal-body">
+          <h4>SIA and Scoot fare sale and travel fair <span class="stars s1">★</span></h4>
+          <p class="cal-why">The online sale runs to 30 Oct for 2027 travel; the fair is at Suntec to Sunday, free entry.</p>
+          <ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>Format remix: the 2027 long-weekend planner &mdash; leave first, fare second, carousel &middot; viral</span></li></ul>
+          <details class="brand-fit"><summary>For our brands (1) <span class="chip">UOB</span></summary><ul class="brand-ideas">
+            <li class="brand-idea"><span class="chip">UOB</span><span><ul class="cal-ideas">
+              <li class="cal-idea"><span class="n">1</span><span>Utility: <em>“The fare comes from the airline’s site. Not from a link in your SMS.”</em> &middot; award ⚠ review: wording against police scam advice</span></li>
+            </ul></span></li>
+          </ul></details>
+        </div>
+      </div>
+      <div class="cal-row" id="ev-2026-10-24">
+        <span class="cal-date">SAT 24 OCT</span><span class="cal-away">1d</span>
+        <div class="cal-body">
+          <h4>The Car Expo, Singapore EXPO, 24&ndash;25 Oct <span class="stars s2">★★</span></h4>
+          <p class="cal-why">Free entry, 10am&ndash;9pm; BMW is listed at D6 and MINI at D18 among 50-plus brands; LTA has urged buyers to bid prudently.</p>
+          <ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>Utility: the hall map as one Story &mdash; stands, food, nearest MRT exit &middot; award</span></li></ul>
+          <details class="brand-fit"><summary>For our brands (2) <span class="chip">BMW</span><span class="chip">MINI</span></summary><ul class="brand-ideas">
+            <li class="brand-idea"><span class="chip">BMW</span><span><ul class="cal-ideas">
+              <li class="cal-idea"><span class="n">1</span><span>Insider observation: <em>“There’s always one visitor who sits in the driver’s seat and won’t get out.”</em> &middot; viral</span></li>
+              <li class="cal-idea"><span class="n">2</span><span>Utility: <em>“D6. Closest exit: Expo MRT.”</em> Hall-map Story &middot; award ⚠ review: stand confirmed on BMW Singapore’s own page</span></li>
+              <li class="cal-idea"><span class="n">3</span><span>Format remix: first-sit reactions at the stand, one take each, Reel &middot; viral ⚠ review: visitor consent; no offer named</span></li>
+            </ul></span></li>
+            <li class="brand-idea"><span class="chip">MINI</span><span><ul class="cal-ideas">
+              <li class="cal-idea"><span class="n">1</span><span>Product punchline: one car at D18, <em>“Easiest car on the floor to find. Look a little lower.”</em> &middot; viral ⚠ review: stand confirmed on MINI Singapore’s own page</span></li>
+              <li class="cal-idea"><span class="n">2</span><span>Stunt: a parking challenge at the stand &mdash; a bay taped to HDB size, one try each &middot; viral ⚠ review: organiser permission</span></li>
+              <li class="cal-idea"><span class="n">3</span><span>Insider observation: <em>“Nobody kicks the tyres any more. They check whether the stroller fits.”</em> &middot; award</span></li>
+            </ul></span></li>
+          </ul></details>
+        </div>
+      </div>
+      <div class="cal-row" id="ev-2026-10-26">
+        <span class="cal-date">MON 26 OCT</span><span class="cal-away">3d</span>
+        <div class="cal-body">
+          <h4>OPPO Find X10 deliveries begin <span class="stars s1">★</span></h4>
+          <p class="cal-why">Pre-orders opened 22 Oct; a second rival launch lands in upgrade season.</p>
+          <ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>Format remix: one night scene, every phone at the dinner table, no brands shown, carousel &middot; viral</span></li></ul>
+          <details class="brand-fit"><summary>For our brands (1) <span class="chip">Samsung</span></summary><ul class="brand-ideas">
+            <li class="brand-idea"><span class="chip">Samsung</span><span><ul class="cal-ideas">
+              <li class="cal-idea"><span class="n">1</span><span>Insider observation: <em>“Everyone’s comparing cameras this week. We’d rather see your photos.”</em> &middot; award ⚠ review: no rival named or implied</span></li>
+              <li class="cal-idea"><span class="n">2</span><span>Utility: moving chats and photos to a new phone in one card, whatever you switch from &middot; award ⚠ review: steps from Samsung SG’s own page</span></li>
+            </ul></span></li>
+          </ul></details>
+        </div>
+      </div>
+      <div class="cal-row" id="ev-2026-10-26-b">
+        <span class="cal-date">MON 26 OCT</span><span class="cal-away">3d</span>
+        <div class="cal-body">
+          <h4>Teochew Festival, Chinatown Point, to 1 Nov <span class="stars s1">★</span></h4>
+          <p class="cal-why">A Teochew bakery open since 1943 runs a week of kueh and braised duck by pre-order.</p>
+          <ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>Utility: the pre-order rule on one card &mdash; order two days ahead, collect at the atrium &middot; award</span></li></ul>
+        </div>
+      </div>
+      <div class="cal-row" id="ev-2026-10-29">
+        <span class="cal-date">THU 29 OCT</span><span class="cal-away">6d</span>
+        <div class="cal-body">
+          <h4>CATS opens at Sands Theatre <span class="stars s1">★</span></h4>
+          <p class="cal-why">To 22 Nov, S$68&ndash;238.</p>
+          <ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>Insider observation: <em>“Finally, a show where the audience gets stared at.”</em> &middot; viral</span></li></ul>
+        </div>
+      </div>
+      <div class="cal-row" id="ev-2026-10-31">
+        <span class="cal-date">SAT 31 OCT</span><span class="cal-away">8d</span>
+        <div class="cal-body">
+          <h4>Halloween <span class="stars s2">★★</span></h4>
+          <p class="cal-why">A Saturday; four estate trick-or-treat walks are on OnePA, and three malls run free trails.</p>
+          <ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>Format remix: a costume from what’s already in the cupboard, against the clock &middot; viral</span></li><li class="cal-idea"><span class="n">2</span><span>Utility: the costume contests by neighbourhood, one carousel &middot; award</span></li></ul>
+          <details class="brand-fit"><summary>For our brands (4) <span class="chip">Dunkin'</span><span class="chip">Centrepoint</span><span class="chip">Tiong Bahru</span><span class="chip">Hougang Mall</span></summary><ul class="brand-ideas">
+            <li class="brand-idea"><span class="chip">Dunkin'</span><span><ul class="cal-ideas">
+              <li class="cal-idea"><span class="n">1</span><span>Product punchline: a doughnut under a tiny sheet with two eye holes, <em>“Classic.”</em> &middot; viral</span></li>
+              <li class="cal-idea"><span class="n">2</span><span>Insider observation: <em>“The office party’s most common costume: ‘came straight from work’.”</em> &middot; viral</span></li>
+              <li class="cal-idea"><span class="n">3</span><span>Utility: a printable dozen-box mask &mdash; cut, fold, wear &middot; award</span></li>
+            </ul></span></li>
+            <li class="brand-idea"><span class="chip">Centrepoint</span><span><ul class="cal-ideas">
+              <li class="cal-idea"><span class="n">1</span><span>Insider observation: <em>“Orchard, Saturday night: the only place a vampire still waits for the green man.”</em> &middot; viral</span></li>
+              <li class="cal-idea"><span class="n">2</span><span>Format remix: one-take costume parade down the escalators, Reel &middot; viral ⚠ review: mall safety sign-off</span></li>
+              <li class="cal-idea"><span class="n">3</span><span>Utility: the shortest dry route from the MRT to the doors, for costumes that can’t meet rain &middot; award ⚠ review: route from the mall’s own page</span></li>
+            </ul></span></li>
+            <li class="brand-idea"><span class="chip">Tiong Bahru</span><span><ul class="cal-ideas">
+              <li class="cal-idea"><span class="n">1</span><span>Insider observation: <em>“Old estate, new costumes. It’s seen scarier.”</em> &middot; award</span></li>
+              <li class="cal-idea"><span class="n">2</span><span>Collab: tenant shopfronts as trick-or-treat stops on one stamp card &middot; award ⚠ review: tenants from the mall’s own directory</span></li>
+              <li class="cal-idea"><span class="n">3</span><span>Format remix: walk in in uniform, walk out in costume, one cut, Reel &middot; viral ⚠ review: guardian consent</span></li>
+            </ul></span></li>
+            <li class="brand-idea"><span class="chip">Hougang Mall</span><span><ul class="cal-ideas">
+              <li class="cal-idea"><span class="n">1</span><span>Utility: a stroller-friendly trick-or-treat route, one map &middot; award ⚠ review: facilities from the mall’s own page</span></li>
+              <li class="cal-idea"><span class="n">2</span><span>Insider observation: <em>“In the northeast, the costume contest started at the void deck.”</em> &middot; viral</span></li>
+              <li class="cal-idea"><span class="n">3</span><span>Stunt: a family costume parade on the main stage, judged by the kids &middot; viral ⚠ review: venue and safety sign-off</span></li>
+            </ul></span></li>
+          </ul></details>
+        </div>
+      </div>
+      <div class="cal-row" id="ev-2026-11-02">
+        <span class="cal-date">MON 2 NOV</span><span class="cal-away">10d</span>
+        <div class="cal-body">
+          <h4>Allotment garden ballot closes <span class="stars s1">★</span></h4>
+          <p class="cal-why">NParks plots of 2.5m by 1m in 13 parks, S$65.40 a year, applied for on AXS by 11.59pm.</p>
+          <ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>Insider observation: <em>“Singapore’s hottest ballot this week is for a garden bed.”</em> &middot; viral</span></li></ul>
+          <details class="brand-fit"><summary>For our brands (1) <span class="chip">IKEA</span></summary><ul class="brand-ideas">
+            <li class="brand-idea"><span class="chip">IKEA</span><span><ul class="cal-ideas">
+              <li class="cal-idea"><span class="n">1</span><span>Product punchline: three pots on a kitchen windowsill, <em>“Balloted. Unsuccessful. Planted anyway.”</em> &middot; viral ⚠ review: products from IKEA SG’s own page</span></li>
+              <li class="cal-idea"><span class="n">2</span><span>Utility: herbs that grow on an HDB windowsill, one carousel &middot; award</span></li>
+            </ul></span></li>
+          </ul></details>
+        </div>
+      </div>
+      <div class="cal-row" id="ev-2026-11-08">
+        <span class="cal-date">SUN 8 NOV</span><span class="cal-away">16d</span>
+        <div class="cal-body">
+          <h4>Deepavali <span class="stars">★★★</span> <span class="lead">⏰ Lead time</span></h4>
+          <p class="cal-why">Public holiday, 9 Nov in lieu; outside brands post as guests.</p>
+          <ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>Greeting: “Happy Deepavali to all who celebrate.” Correct date, plain card</span></li><li class="cal-idea"><span class="n">2</span><span>Utility: the Indian Heritage Centre’s free Open House runs to 8 Nov, Saturdays to 8pm; share its own listing &middot; award</span></li></ul>
+          <details class="brand-fit"><summary>For our brands (1) <span class="chip">Rolls-Royce</span></summary><ul class="brand-ideas">
+            <li class="brand-idea"><span class="chip">Rolls-Royce</span><span><ul class="cal-ideas">
+              <li class="cal-idea"><span class="n">1</span><span>Greeting: one restrained image, “Wishing all who celebrate a joyous Deepavali.”</span></li>
+            </ul></span></li>
+          </ul></details>
+        </div>
+      </div>
+      <div class="cal-row" id="ev-2026-11-11">
+        <span class="cal-date">WED 11 NOV</span><span class="cal-away">19d</span>
+        <div class="cal-body">
+          <h4>11.11 <span class="stars">★★★</span> <span class="lead">⏰ Lead time</span></h4>
+          <p class="cal-why">The biggest online sale day; card spend and delivery scams peak.</p>
+          <ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>Insider observation: <em>“The one day Singapore’s doorbell rings more than its phone.”</em> &middot; viral</span></li></ul>
+          <details class="brand-fit"><summary>For our brands (2) <span class="chip">UOB</span><span class="chip">Maersk Air</span></summary><ul class="brand-ideas">
+            <li class="brand-idea"><span class="chip">UOB</span><span><ul class="cal-ideas">
+              <li class="cal-idea"><span class="n">1</span><span>Utility: <em>“Delivery fee: S$0. A link in an SMS: never.”</em> Parcel-scam card &middot; award ⚠ review: wording against police scam advice</span></li>
+              <li class="cal-idea"><span class="n">2</span><span>Format remix: cart against budget, split screen, one swipe per item, Reel &middot; viral ⚠ review: no offer, rate or product implied</span></li>
+              <li class="cal-idea"><span class="n">3</span><span>Collab: a budgeting creator sorts a live 11.11 cart into need and want on Stories &middot; viral ⚠ review: creator disclosure under ASAS</span></li>
+            </ul></span></li>
+            <li class="brand-idea"><span class="chip">Maersk Air</span><span><ul class="cal-ideas">
+              <li class="cal-idea"><span class="n">1</span><span>LinkedIn: <em>“A parcel that lands on the 12th left a plan in August.”</em> &middot; award</span></li>
+              <li class="cal-idea"><span class="n">2</span><span>Utility: three questions every SG e-commerce shipper should ask before peak week, LinkedIn carousel &middot; award ⚠ review: no capacity or rate promises</span></li>
+              <li class="cal-idea"><span class="n">3</span><span>Insider observation: <em>“Peak season isn’t a day. It’s a six-week relay.”</em> LinkedIn &middot; award</span></li>
+            </ul></span></li>
+          </ul></details>
+        </div>
+      </div>
+      <div class="cal-row" id="ev-2026-11-19">
+        <span class="cal-date">THU 19 NOV</span><span class="cal-away">27d</span>
+        <div class="cal-body">
+          <h4>World Toilet Day <span class="stars s1">★</span></h4>
+          <p class="cal-why">A UN observance with Singapore roots; public toilets are a national talking point.</p>
+          <ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>Reply in the comments: <em>“Name the cleanest public toilet you know. Credit the cleaner.”</em> &middot; award</span></li></ul>
+        </div>
+      </div>
+      <div class="cal-row" id="ev-2026-11-20">
+        <span class="cal-date">FRI 20 NOV</span><span class="cal-away">28d</span>
+        <div class="cal-body">
+          <h4>Christmas Train Show opens; school holidays from 21 Nov <span class="stars s2">★★</span></h4>
+          <p class="cal-why">Six weeks of holidays start the day after the Flower Dome’s train show opens, with two SMRT trains in its Singapore section.</p>
+          <ul class="cal-ideas"><li class="cal-idea"><span class="n">1</span><span>Utility: one fridge-door planner for six weeks, a free thing for every weekend &middot; award</span></li><li class="cal-idea"><span class="n">2</span><span>Insider observation: <em>“Day one of the holidays: ‘I’m bored.’ Day two: the same, louder.”</em> &middot; viral</span></li></ul>
+          <details class="brand-fit"><summary>For our brands (4) <span class="chip">IKEA</span><span class="chip">Centrepoint</span><span class="chip">Tiong Bahru</span><span class="chip">Hougang Mall</span></summary><ul class="brand-ideas">
+            <li class="brand-idea"><span class="chip">IKEA</span><span><ul class="cal-ideas">
+              <li class="cal-idea"><span class="n">1</span><span>Product punchline: a bunk bed, made, <em>“Six weeks of sleepovers start 21 November.”</em> &middot; viral</span></li>
+              <li class="cal-idea"><span class="n">2</span><span>Utility: a kid’s-room reset for the holidays in one afternoon, Reel &middot; award ⚠ review: products and prices from IKEA SG’s own page</span></li>
+              <li class="cal-idea"><span class="n">3</span><span>Insider observation: <em>“The school-holiday rite: one IKEA trip, one meatball lunch, nothing on the list bought.”</em> &middot; viral</span></li>
+            </ul></span></li>
+            <li class="brand-idea"><span class="chip">Centrepoint</span><span><ul class="cal-ideas">
+              <li class="cal-idea"><span class="n">1</span><span>Insider observation: <em>“School’s out. Orchard’s newest shoppers are 1.2 metres tall.”</em> &middot; viral</span></li>
+              <li class="cal-idea"><span class="n">2</span><span>Utility: a rain-proof Orchard holiday plan, one floor a week &middot; award ⚠ review: tenants and events from the mall’s own page</span></li>
+              <li class="cal-idea"><span class="n">3</span><span>Format remix: holiday bingo, Orchard edition, as a Story sticker grid &middot; viral</span></li>
+            </ul></span></li>
+            <li class="brand-idea"><span class="chip">Tiong Bahru</span><span><ul class="cal-ideas">
+              <li class="cal-idea"><span class="n">1</span><span>Insider observation: <em>“Your parents spent their school holidays in this estate too. Ask them where.”</em> &middot; award</span></li>
+              <li class="cal-idea"><span class="n">2</span><span>Collab: a half-day estate walk for families with a heritage guide &middot; award ⚠ review: partner and dates confirmed</span></li>
+              <li class="cal-idea"><span class="n">3</span><span>Format remix: then-and-now photo pairs sent in by residents, carousel &middot; viral ⚠ review: rights to every photo</span></li>
+            </ul></span></li>
+            <li class="brand-idea"><span class="chip">Hougang Mall</span><span><ul class="cal-ideas">
+              <li class="cal-idea"><span class="n">1</span><span>Utility: a week-by-week holiday plan that never leaves the northeast &mdash; library, park, mall &middot; award ⚠ review: facilities from the mall’s own page</span></li>
+              <li class="cal-idea"><span class="n">2</span><span>Insider observation: <em>“Six weeks of holidays. Northeast parents have planned the first three days.”</em> &middot; viral</span></li>
+              <li class="cal-idea"><span class="n">3</span><span>Stunt: one holiday day when kids run the mall’s Instagram Stories, supervised &middot; viral ⚠ review: guardian consent and child safety</span></li>
+            </ul></span></li>
+          </ul></details>
+        </div>
+      </div>
+    </div>
+
+    <div class="gap">
+      <h4>Beyond 30 days &mdash; start now</h4>
+      <p><strong>AIA HYROX Youngstars (28&ndash;29 Nov, Singapore EXPO, 36 days)</strong> opens the race to ages 8&ndash;15; <strong>BTS THE CITY ARIRANG (1&ndash;31 Dec, 39 days)</strong> runs city-wide shows at Jewel, Sentosa and USS before four sold-out stadium nights.</p>
+      <details class="brand-fit"><summary>For our brands (2) <span class="chip">HYROX</span><span class="chip">Samsung</span></summary><ul class="brand-ideas">
+        <li class="brand-idea"><span class="chip">HYROX</span><span><ul class="cal-ideas">
+          <li class="cal-idea"><span class="n">1</span><span>Insider observation: <em>“They’ve watched you drag a sled for a year. Their turn.”</em> &middot; award</span></li>
+          <li class="cal-idea"><span class="n">2</span><span>Format remix: parent and child at the same station, scaled, split screen, Reel &middot; viral ⚠ review: child-safe weights, guardian consent</span></li>
+          <li class="cal-idea"><span class="n">3</span><span>Utility: one card on what scales by age &mdash; distance, weight, reps &middot; award ⚠ review: format from HYROX’s own page</span></li>
+        </ul></span></li>
+        <li class="brand-idea"><span class="chip">Samsung</span><span><ul class="cal-ideas">
+          <li class="cal-idea"><span class="n">1</span><span>Insider observation: <em>“Four sold-out nights. A whole month for everyone who didn’t get in.”</em> &middot; award</span></li>
+          <li class="cal-idea"><span class="n">2</span><span>Utility: a night-shot guide for the Rain Vortex show, carousel &middot; award ⚠ review: mode names from Samsung SG’s own page; Jewel filming rules</span></li>
+          <li class="cal-idea"><span class="n">3</span><span>Format remix: a lock-screen countdown to 1 Dec, wallpaper drop &middot; viral ⚠ review: no BTS imagery without rights</span></li>
+        </ul></span></li>
+      </ul></details>
+    </div>
+  </section>
+  <section class="sec" id="debug" hidden>
+    <div class="sec-head"><h2>Source ledger</h2><span class="note">debug</span></div>
+    <div class="sec-rule"></div>
+    <table class="srcs">
+      <tr><th>Source</th><th>URL</th><th>Status</th><th>Fed</th></tr>
+      <tr><td>Google Trends SG RSS</td><td>https://trends.google.com/trending/rss?geo=SG</td><td class="ok">200</td><td>10 items to 22 Oct 17:00: “govtech singapore layoffs” 500+, “toothpaste” 500+, sport &mdash; No-go 8 cross-check</td></tr>
+      <tr><td>Live PSI</td><td>https://api.data.gov.sg/v1/environment/psi</td><td class="ok">200</td><td>8am 24-hour PSI: west 90, central 79, east 72, south 68, north 67 (context only)</td></tr>
+      <tr><td>Apify · TikTok Trends actor (sync)</td><td>https://api.apify.com/v2/acts/data_xplorer~tiktok-trends/run-sync-get-dataset-items</td><td class="ok">201</td><td>20 hashtags, window still 9&ndash;15 Oct (#f1 No. 1) &mdash; stale, card left empty (Trend 1)</td></tr>
+      <tr><td>Apify · Instagram Trending actor (sync)</td><td>https://api.apify.com/v2/acts/agentx~instagram-trending-scraper/run-sync-get-dataset-items</td><td class="ok">201</td><td>20 posts, Trend 3 card; no SG location or hashtag</td></tr>
+      <tr><td>Mothership feed</td><td>https://mothership.sg/feed/</td><td class="ok">200</td><td>Trends 5, 7; No-go 1&ndash;5, 9</td></tr>
+      <tr><td>Mothership · dad loses 21kg</td><td>https://mothership.sg/2026/10/sporean-dad-workout-21kg-bodybuilder/</td><td class="ok">200</td><td>Trend 5</td></tr>
+      <tr><td>Mothership · Lao Ban BCRS</td><td>https://mothership.sg/2026/10/lao-ban-soya-bcrs/</td><td class="ok">200</td><td>Trend 7</td></tr>
+      <tr><td>Mothership · HYROX Youngstars</td><td>https://mothership.sg/2026/10/hyrox-youngstars-singapore/</td><td class="ok">200</td><td>Beyond 30 days</td></tr>
+      <tr><td>The Independent SG feed.xml</td><td>https://theindependent.sg/feed.xml</td><td class="ok">200</td><td>Trend 2 (full text from the feed); No-go 6, 7, 12</td></tr>
+      <tr><td>The Independent SG · wallet clip</td><td>https://theindependent.sg/singapore-mum-s-search-for-son-s-lost-wallet-shows-both-the-frustration-and-usefulness-of-airtags</td><td class="bad">403</td><td>Read from the feed instead (Trend 2)</td></tr>
+      <tr><td>Goody Feed (pages 1&ndash;2)</td><td>https://goodyfeed.com/feed/</td><td class="ok">200</td><td>No-go 8, 10, 11; haze-mask round two checked, not carried</td></tr>
+      <tr><td>Little Big Red Dot feed (pages 1&ndash;2)</td><td>https://littlebigreddot.com/feed/</td><td class="ok">200</td><td>Trend 6; Calendar 23, 26 Oct, 2 Nov leads</td></tr>
+      <tr><td>Little Big Red Dot · Asian Para Games boccia</td><td>https://littlebigreddot.com/asian-para-games-2026-singapore-boccia-jovin-tan-aloysius-gan-jeralyn-tan/</td><td class="ok">200</td><td>Trend 6</td></tr>
+      <tr><td>Little Big Red Dot · weekend 23&ndash;25 Oct</td><td>https://littlebigreddot.com/things-to-do-this-weekend-singapore-23-25-october-2026/</td><td class="ok">200</td><td>Calendar 23 Oct (travel fair); haze cancellations context</td></tr>
+      <tr><td>Little Big Red Dot · IKEA free coffee</td><td>https://littlebigreddot.com/haze-deals-ikea-free-coffee-toysrus-flash-city-square-mall-honey-lemon/</td><td class="ok">200</td><td>Calendar 23 Oct (IKEA)</td></tr>
+      <tr><td>Little Big Red Dot · The Car Expo</td><td>https://littlebigreddot.com/the-car-expo-singapore-expo-october-2026-spc-vouchers-draw/</td><td class="ok">200</td><td>Calendar 24 Oct (BMW D6, MINI D18)</td></tr>
+      <tr><td>Little Big Red Dot · EV incentive and COE</td><td>https://littlebigreddot.com/coe-car-expo-ev-incentive-ends-2027-buy-now-or-wait-22-october-2026/</td><td class="ok">200</td><td>Checked; COE ran yesterday, not repeated</td></tr>
+      <tr><td>Little Big Red Dot · OPPO Find X10</td><td>https://littlebigreddot.com/oppo-find-x10-pro-max-pre-order-singapore-22-october-2026/</td><td class="ok">200</td><td>Calendar 26 Oct</td></tr>
+      <tr><td>Little Big Red Dot · Teochew Festival</td><td>https://littlebigreddot.com/thye-moh-chan-teochew-festival-chinatown-point-26-october-2026/</td><td class="ok">200</td><td>Calendar 26 Oct (read from the feed)</td></tr>
+      <tr><td>Little Big Red Dot · CATS</td><td>https://littlebigreddot.com/cats-musical-sands-theatre-singapore-29-october-2026/</td><td class="ok">200</td><td>Calendar 29 Oct</td></tr>
+      <tr><td>Little Big Red Dot · Halloween trick-or-treat</td><td>https://littlebigreddot.com/halloween-trick-or-treat-31-october-2026-singapore-estates-malls/</td><td class="ok">200</td><td>Calendar 31 Oct (read from the feed)</td></tr>
+      <tr><td>Little Big Red Dot · NParks allotment ballot</td><td>https://littlebigreddot.com/nparks-allotment-garden-ballot-october-2026-13-parks/</td><td class="ok">200</td><td>Calendar 2 Nov</td></tr>
+      <tr><td>Little Big Red Dot · Deepavali Open House</td><td>https://littlebigreddot.com/deepavali-open-house-2026-indian-heritage-centre-free-entry/</td><td class="ok">200</td><td>Calendar 8 Nov</td></tr>
+      <tr><td>Little Big Red Dot · Christmas family dates</td><td>https://littlebigreddot.com/christmas-2026-singapore-family-dates-train-show-school-holidays/</td><td class="ok">200</td><td>Calendar 20 Nov</td></tr>
+      <tr><td>Little Big Red Dot · BTS THE CITY ARIRANG</td><td>https://littlebigreddot.com/bts-the-city-arirang-singapore-december-2026/</td><td class="ok">200</td><td>Beyond 30 days</td></tr>
+      <tr><td>Little Big Red Dot · Causeway Point HomePage</td><td>https://littlebigreddot.com/causeway-point-to-get-a-32000-sq-ft-nlb-reading-space-called-the-homepage/</td><td class="ok">200</td><td>Checked; opens 2028, no honest fit today</td></tr>
+      <tr><td>The Smart Local feed</td><td>https://thesmartlocal.com/feed/</td><td class="ok">200</td><td>Nothing SG-viral inside 48h</td></tr>
+      <tr><td>The Smart Local · BTS THE CITY</td><td>https://thesmartlocal.com/read/bts-the-city-arirang-singapore/</td><td class="ok">200</td><td>Beyond 30 days cross-check</td></tr>
+      <tr><td>calendar_seed.json (repo cache)</td><td>calendar_seed.json</td><td class="ok">200</td><td>Calendar 8 Nov, 19 Nov</td></tr>
+      <tr><td>Web search · SG TikTok, 22 Oct</td><td>search: Singapore TikTok video viral netizens 22 October 2026</td><td class="ok">200</td><td>Nothing dated inside 48h</td></tr>
+      <tr><td>Web search · IG Reels SG</td><td>search: Singapore Instagram Reel viral October 2026 netizens</td><td class="ok">200</td><td>Nothing dated inside 48h (Trend 4)</td></tr>
+      <tr><td>Web search · Explore creator check</td><td>search: Nadiah M Din nadiahmdin Singapore</td><td class="ok">200</td><td>A Singapore actress of that name exists; handle not linked to her &mdash; not called local</td></tr>
+      <tr><td>Web search · brand watch (BMW, MINI, Samsung, IKEA, OSIM)</td><td>search: BMW Singapore OR MINI Singapore OR Samsung Singapore OR IKEA Singapore OR OSIM news October 2026</td><td class="ok">200</td><td>Nothing dated October</td></tr>
+      <tr><td>Web search · brand watch (UOB, AIA, Dunkin’, Maersk, malls)</td><td>search: UOB Singapore OR AIA Singapore OR Dunkin Singapore OR Maersk Air Cargo OR Hougang Mall OR Tiong Bahru Plaza OR Centrepoint Orchard news October 2026</td><td class="ok">200</td><td>Nothing dated October bar a 19 Oct Maersk shipping (not air cargo) item</td></tr>
+      <tr><td>Web search · HYROX, AUFF, Great Street</td><td>search: HYROX Singapore November 2026 OR AIA Ultimate FitnessFest 2026 OR “Christmas on A Great Street” 2026</td><td class="ok">200</td><td>Youngstars 28&ndash;29 Nov confirmed again; nothing on AUFF or Great Street</td></tr>
+      <tr><td>CNA RSS</td><td>https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml</td><td class="bad">blocked</td><td>Egress refused</td></tr>
+      <tr><td>Straits Times RSS</td><td>https://www.straitstimes.com/news/singapore/rss.xml</td><td class="bad">blocked</td><td>Egress refused</td></tr>
+      <tr><td>AsiaOne Singapore</td><td>https://www.asiaone.com/singapore</td><td class="bad">blocked</td><td>Egress refused</td></tr>
+      <tr><td>Reddit r/singapore</td><td>https://www.reddit.com/r/singapore/.rss</td><td class="bad">blocked</td><td>Egress refused</td></tr>
+      <tr><td>Marketing-Interactive</td><td>https://www.marketing-interactive.com/</td><td class="bad">blocked</td><td>Egress refused</td></tr>
+      <tr><td>Stomp Trending Now</td><td>https://www.stomp.sg/trending-now</td><td class="bad">blocked</td><td>Egress refused</td></tr>
+      <tr><td>TikTok</td><td>https://www.tiktok.com/tag/f1</td><td class="bad">blocked</td><td>Egress refused</td></tr>
+      <tr><td>OSIM Singapore</td><td>https://www.osim.com.sg/</td><td class="bad">blocked</td><td>Egress refused; OSIM lines carry review</td></tr>
+      <tr><td>BMW Singapore</td><td>https://www.bmw.com.sg/</td><td class="bad">blocked</td><td>Egress refused; stand lines carry review</td></tr>
+      <tr><td>MINI Singapore</td><td>https://www.mini.com.sg/</td><td class="bad">blocked</td><td>Egress refused; stand line carries review</td></tr>
+      <tr><td>IKEA Singapore</td><td>https://www.ikea.com/sg/en/</td><td class="bad">blocked</td><td>Egress refused; offer and product lines carry review</td></tr>
+      <tr><td>Samsung Singapore</td><td>https://www.samsung.com/sg/</td><td class="bad">blocked</td><td>Egress refused; how-to lines carry review</td></tr>
+      <tr><td>HYROX</td><td>https://hyrox.com/</td><td class="bad">blocked</td><td>Egress refused; format lines carry review</td></tr>
+      <tr><td>AIA Singapore · HYROX page</td><td>https://www.aia.com.sg/en/about-aia/esg/health-and-wellness/hyrox</td><td class="bad">blocked</td><td>Egress refused; no AIA facts printed</td></tr>
+      <tr><td>UOB</td><td>https://www.uob.com.sg/</td><td class="bad">blocked</td><td>Egress refused; no UOB facts printed</td></tr>
+      <tr><td>Dunkin’ Singapore</td><td>https://www.dunkindonuts.sg/</td><td class="bad">blocked</td><td>Egress refused; no outlet facts printed</td></tr>
+    </table>
+    <div class="gap">
+      <h4>Unresolved</h4>
+      <p><strong>TikTok freshness</strong> &mdash; the Apify ranking still ends 15 Oct, eight days old; no rank printed, card empty for a sixth day.</p>
+      <p><strong>TikTok slot 2</strong> &mdash; the wallet clips were posted 14 and 17 Oct and reported on 22 Oct; the report is inside 48h, the clips are not, and no view count was given. Carried as Cooling.</p>
+      <p><strong>Instagram Explore</strong> &mdash; no SG location or hashtag in 20 posts; @nadiahmdin’s Malay-language motherhood Reel (4,015 likes, 21 Oct) may be a Singapore creator, but the handle couldn’t be tied to one, so it isn’t called local. Instagram slot 2 shipped empty.</p>
+      <p><strong>HYROX Singapore adult race and AUFF 2026</strong> &mdash; still no dated source from either; not printed.</p>
+      <p><strong>Christmas on A Great Street 2026</strong> &mdash; no dated source again.</p>
+      <p><strong>Brand watch</strong> &mdash; nothing dated October for any roster brand. The Hougang phone theft was on Hougang Middle Road, not at Hougang Mall; listed as No-go, no flag.</p>
+      <p><strong>Carried over, not repeated</strong> &mdash; WhatsApp hijack scams, the parents’ allowance thread and COE (22 Oct); vivo X500 and Jujutsu Kaisen rows dropped to keep 12, as their pages weren’t refetched today.</p>
+      <p><strong>Dropped, High risk</strong> &mdash; Samsung on the wallet-tracker clips: the clip runs down a rival’s product, and any reply reads as a put-down.</p>
+      <p><strong>Dropped, High risk</strong> &mdash; HYROX, AUFF or AIA on the boccia medals: para athletes as a fitness brand’s prop, and no rights to the Games.</p>
+      <p><strong>Dropped, High risk</strong> &mdash; Dunkin’ on the dad’s “the diet was harder” line: a doughnut brand posting into someone’s weight loss.</p>
+      <p><strong>Dropped, High risk</strong> &mdash; any brand on the BCRS row: it takes a side on an NEA scheme or piles onto a named stall.</p>
+      <p><strong>Dropped, High risk</strong> &mdash; BMW or MINI on the EV incentive’s end: urgency selling in a week LTA has urged buyers to bid prudently.</p>
+    </div>
+  </section>
+</div>
+<script>
+(function(){
+  var d=document.getElementById('debug'); if(!d) return;
+  function sync(){
+    d.hidden=!(/(^|[?&])debug\b/.test(location.search)||/(^|#)debug\b/.test(location.hash));
+  }
+  sync(); addEventListener('hashchange',sync);
+})();
+</script>
+</body>
+</html>
