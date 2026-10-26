@@ -31,7 +31,7 @@ than this prompt, follow `CLAUDE.md`.
 
 Verify everything against a source you fetched today. Never from memory, never
 from yesterday's page. Cover: Google Trends SG, Mothership, CNA, Straits Times,
-AsiaOne, r/singapore, TikTok/IG Reels SG (via the Apify actors in
+AsiaOne, r/singapore, TikTok/IG videos from Singapore creators (via `scripts/sg_platforms.py` and the Apify actors in
 `sources.json`), Marketing-Interactive.
 
 Read `archive/` for the last 2–3 days first so you don't repeat a trend that

@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 """Render the TikTok and Instagram trend cards from the day's Apify datasets.
 
-    python3 scripts/platform_cards.py TIKTOK.json INSTAGRAM.json index.html archive/YYYY-MM-DD.html
+    python3 scripts/platform_cards.py OUT/tiktok_sg.json OUT/instagram_sg.json index.html archive/YYYY-MM-DD.html
+
+Takes the Singapore-only lists written by scripts/sg_platforms.py. The older
+raw formats (TikTok Creative Center hashtags, Instagram Explore) still render,
+for re-stamping archive pages.
 
 Replaces the <!--TIKTOK-->…<!--/TIKTOK--> and <!--IG-->…<!--/IG--> blocks in
 each page. Top two items show; the rest sit behind a "Show N more" toggle.
@@ -75,11 +79,50 @@ def ig_tile(i, x):
             '</figcaption></figure>')
 
 
+# Captions are other people's words. One that uses the shorthand banned by the
+# sensitivity check in CLAUDE.md is left off the card rather than edited.
+BANNED = re.compile(r"\baunt|\buncle|阿叔|阿姨|安娣|安哥|clears? the shelf", re.I)
+
+
+def snippet(text, n=70):
+    if BANNED.search(text or ""):
+        return ""
+    t = " ".join(re.sub(r"#\S+", "", text or "").split())
+    return t[:n].rstrip() + ("…" if len(t) > n else "")
+
+
+def video_row(x):
+    """A row for one Singapore video from scripts/sg_platforms.py."""
+    avatar = safe_url(x.get("avatar"))
+    img = (f'<img class="av" src="{avatar}" alt="" loading="lazy" referrerpolicy="no-referrer" '
+           f'onerror="this.style.visibility=\'hidden\'">' if avatar else '<span class="av"></span>')
+    return (f'<li class="tt"><span class="rk">{esc(x.get("rank"))}</span>{img}'
+            f'<span class="tt-main"><a href="{safe_url(x.get("url"))}"{NEWTAB}>@{esc(x.get("handle"))}</a>'
+            f'<span class="tt-meta">{short(x.get("views"))} views · {short(x.get("likes"))} likes · {esc(x.get("signal"))}</span>'
+            f'<span class="tt-meta">{esc(snippet(x.get("caption")))}</span></span>'
+            f'<span class="tt-trend">{esc(x.get("age_h"))}h ago</span></li>')
+
+
+def video_tile(x):
+    cover = safe_url(x.get("cover"))
+    post = safe_url(x.get("url"))
+    return (f'<figure class="ig"><a class="ig-cover" href="{post}"{NEWTAB}><img src="{cover}" alt="" loading="lazy" '
+            f'referrerpolicy="no-referrer" onerror="this.style.visibility=\'hidden\'"><span class="play">▶</span></a><figcaption>'
+            f'<span class="ig-meta"><b>{esc(x.get("rank"))}</b> <a href="{post}"{NEWTAB}>@{esc(x.get("handle"))}</a> · '
+            f'{short(x.get("views"))} views · {esc(x.get("age_h"))}h · {esc(x.get("signal"))}</span>'
+            f'{esc(snippet(x.get("caption"), 60))}</figcaption></figure>')
+
+
 def more(n, inner):
     return (f'<details class="more"><summary>Show {n} more</summary>{inner}</details>' if n > 0 else "")
 
 
 def tiktok_block(data):
+    if data and data[0].get("platform"):
+        rows = [video_row(x) for x in data]
+        return ('<!--TIKTOK--><ol class="tt-list">' + "".join(rows[:VISIBLE]) + "</ol>"
+                + more(len(rows) - VISIBLE, '<ol class="tt-list">' + "".join(rows[VISIBLE:]) + "</ol>")
+                + "<!--/TIKTOK-->")
     data = sorted(data, key=lambda x: x.get("Rank") or 999)
     rows = [tiktok_row(x) for x in data]
     return ('<!--TIKTOK--><ol class="tt-list">' + "".join(rows[:VISIBLE]) + "</ol>"
@@ -88,6 +131,11 @@ def tiktok_block(data):
 
 
 def ig_block(data):
+    if data and data[0].get("platform"):
+        tiles = [video_tile(x) for x in data]
+        return ('<!--IG--><div class="ig-grid top">' + "".join(tiles[:VISIBLE]) + "</div>"
+                + more(len(tiles) - VISIBLE, '<div class="ig-grid">' + "".join(tiles[VISIBLE:]) + "</div>")
+                + "<!--/IG-->")
     tiles_big = [ig_tile(i, x) for i, x in enumerate(data[:VISIBLE], 1)]
     tiles = [ig_tile(i, x) for i, x in enumerate(data[VISIBLE:], VISIBLE + 1)]
     return ('<!--IG--><div class="ig-grid top">' + "".join(tiles_big) + "</div>"

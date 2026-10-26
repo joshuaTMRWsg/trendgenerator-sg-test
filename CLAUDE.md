@@ -360,30 +360,54 @@ already in `index.html` — copy it forward like the rest of the tokens.
 
 ## Platform cards (TikTok + Instagram)
 
-Both platform slots come from the Apify actors pinned in `sources.json`, one
-run each per day, `maxItems`/`max_results` 20. Save each dataset to a temp
-file (never commit it) and stamp the cards with:
+**Singapore creators only.** Both platform cards show videos from Singapore
+accounts, never the global or "SG locale" feeds. One command runs the four
+Apify actors pinned under `sg_platforms` in `sources.json` (one run each per
+day) and filters them:
 
 ```bash
-python3 scripts/platform_cards.py tiktok.json instagram.json index.html archive/<today>.html
+python3 scripts/sg_platforms.py "$SCRATCH/platforms"
+python3 scripts/platform_cards.py "$SCRATCH/platforms/tiktok_sg.json" "$SCRATCH/platforms/instagram_sg.json" index.html archive/<today>.html
 ```
 
-The script fills the `<!--TIKTOK--><!--/TIKTOK-->` and `<!--IG--><!--/IG-->`
-markers inside each platform card (directly under its `.trend-top`): the top
-two items show, the other 18 sit behind a "Show 18 more" toggle. Instagram
-tiles are thumbnails whose `src` is the Apify-hosted cover and which link to
-the post; TikTok rows show rank, hashtag, posts, views, the top creator's
-avatar and a 7-day sparkline. Media is hotlinked, never stored — it is only
-valid for the day, and older archive pages losing their thumbnails is
-expected.
+`$SCRATCH` is a scratch directory; the raw datasets are never committed.
 
-Every TikTok and Instagram link on the page — cards and Source lines —
-opens in a new tab with `target="_blank" rel="noopener noreferrer"`.
+What the filter keeps (the rules and lists live in `sources.json`):
 
-The Instagram actor's `country` setting does not geolocate. Title the card
-`Instagram · Explore feed (SG locale)` and say plainly in `What` whether any
-post carries a Singapore creator, location or hashtag. If none does, the
-trendjack is `<dd class="none">`. Never call that feed "trending in SG".
+- videos from the SG watchlist of publishers and creators, where a
+  publisher's video must also have a Singapore marker in its caption, so
+  its world-news clips drop out;
+- other videos only if they carry a local hashtag (`#sgtiktok`, `#sgig`,
+  `#新加坡生活` …), have no travel or tourist marker, and are not geotagged
+  outside Singapore. Bare `#singapore` is not enough, because tourists and
+  overseas accounts use it;
+- posts from the last 48 hours, widened to 72 hours if fewer than two pass,
+  ranked by views.
 
-If an actor run fails, leave its markers empty and fall back to the evidence
-ladder above for that slot.
+Anything else is dropped and only counted in the script's summary. Log that
+summary (scraped / SG / dropped / window) in the ledger row for each actor.
+
+Title the cards `TikTok · SG creators, last 48h` and `Instagram · SG
+creators, last 48h` (say 72h when the script widened the window). The top
+two items show; the rest sit behind a "Show N more" toggle. Each item shows
+its rank, @handle, views, likes, hours since posting and its SG signal
+(`SG publisher`, `SG creator`, or the local hashtag and place). The cards are
+data, not endorsements: an item that belongs on the No-go list still shows
+in the card, but its slot's `What` and Trendjack move to the next clean item,
+and it never gets a brand line.
+
+Each slot's `What` names the item it builds on, with the rank and views the
+card shows: *"@mothershipsg's clip of …, No. 1 of today's SG TikToks at 160K
+views"*. Never call an item "trending" beyond what the views show. If both
+lists come back empty, or the actors fail, leave the markers empty and fall
+back to the evidence ladder above for that slot.
+
+Media is hotlinked, never stored, and is only valid for the day. Older archive
+pages losing their thumbnails is expected.
+
+Every TikTok and Instagram link on the page, in the cards and the Source
+lines, opens in a new tab with `target="_blank" rel="noopener noreferrer"`.
+
+The old TikTok Creative Center and Instagram Explore actors were retired on
+26 Oct 2026. The SG hashtag ranking had stopped updating after 15 Oct, and
+the Explore feed is not geolocated.
