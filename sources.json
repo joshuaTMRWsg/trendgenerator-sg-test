@@ -1,5 +1,5 @@
 {
-  "_comment": "Pinned Apify actor(s) for platform trend reads, per CLAUDE.md §1d, so the Routine doesn't pick a different actor each day.",
+  "_comment": "Pinned Apify actors for platform reads, per CLAUDE.md, so the Routine doesn't pick a different actor each day. `sg_platforms` is the live setup (scripts/sg_platforms.py); the two older actors below are kept for reference only.",
   "tiktok_trends_actor": {
     "id": "data_xplorer~tiktok-trends",
     "actor_id": "GULLsEZsAD69QFACQ",
@@ -11,7 +11,7 @@
       "maxItems": 20
     },
     "pinned_on": "2026-09-23",
-    "notes": "Trending-hashtags mode supports countryCode=SG directly (TikTok Creative Center rankings: rank, posts, video views, trend direction). Top-videos mode does not support SG. Cap: maxItems 20, one run per day."
+    "notes": "Trending-hashtags mode supports countryCode=SG directly (TikTok Creative Center rankings: rank, posts, video views, trend direction). Top-videos mode does not support SG. Cap: maxItems 20, one run per day. RETIRED 2026-10-26: the SG ranking stopped updating after 15 Oct, and its top items were non-SG creators."
   },
   "instagram_trends_actor": {
     "id": "agentx~instagram-trending-scraper",
@@ -23,6 +23,157 @@
       "max_results": 20
     },
     "pinned_on": "2026-09-23",
-    "notes": "Explore feed. `country` only sets Accept-Language, it does not geolocate: on 2026-09-23 all 20 posts were US content (Hispanic Heritage Month, NFL), published_at empty on every row. Label the card as the Explore feed with SG locale, never as 'trending in SG', unless posts show real Singapore signals. ~US$0.09 and ~3 min per run of 20."
+    "notes": "Explore feed. `country` only sets Accept-Language, it does not geolocate: on 2026-09-23 all 20 posts were US content (Hispanic Heritage Month, NFL), published_at empty on every row. Label the card as the Explore feed with SG locale, never as 'trending in SG', unless posts show real Singapore signals. ~US$0.09 and ~3 min per run of 20. RETIRED 2026-10-26: the Explore feed is not geolocated and returned almost no Singapore creators."
+  },
+  "sg_platforms": {
+    "_comment": "Singapore-only TikTok and Instagram videos. scripts/sg_platforms.py runs all four actors once a day (needs APIFY_TOKEN), keeps only videos from SG accounts or with local hashtags, posted inside fresh_hours (fallback_hours if fewer than two), ranked by views. {SINCE} is replaced with today minus three days. Edit the watchlist and rules here, nowhere else.",
+    "pinned_on": "2026-10-26",
+    "actors": {
+      "tiktok_watchlist": {
+        "id": "clockworks~tiktok-profile-scraper",
+        "watchlist": {
+          "platform": "tiktok",
+          "field": "profiles"
+        },
+        "input": {
+          "profileSorting": "latest",
+          "resultsPerPage": 8,
+          "excludePinnedPosts": true,
+          "oldestPostDateUnified": "{SINCE}"
+        }
+      },
+      "tiktok_hashtags": {
+        "id": "clockworks~tiktok-hashtag-scraper",
+        "input": {
+          "hashtags": [
+            "sgtiktok",
+            "sgviral",
+            "tiktoksg",
+            "fypsg",
+            "新加坡生活"
+          ],
+          "resultsPerPage": 30
+        }
+      },
+      "instagram_watchlist": {
+        "id": "apify~instagram-reel-scraper",
+        "watchlist": {
+          "platform": "instagram",
+          "field": "username"
+        },
+        "input": {
+          "resultsLimit": 8,
+          "onlyPostsNewerThan": "{SINCE}",
+          "skipPinnedPosts": true
+        }
+      },
+      "instagram_hashtags": {
+        "id": "apify~instagram-hashtag-scraper",
+        "input": {
+          "hashtags": [
+            "sgig",
+            "sgviral",
+            "igsg",
+            "sglife",
+            "sgfood",
+            "sgmemes"
+          ],
+          "resultsType": "reels",
+          "resultsLimit": 30
+        }
+      }
+    },
+    "watchlist": {
+      "_comment": "Singapore accounts, checked by hand. Accounts listed in rules.publishers also post world news, so their videos need a Singapore marker in the caption text (hashtags don't count). Everyone else on the watchlist (Stomp, sgfollowsall, creators) posts local content only and is kept as is.",
+      "tiktok": [
+        "mothershipsg",
+        "zaobaosg",
+        "shinmindailynews",
+        "straitstimes",
+        "8worldnews",
+        "goodyfeedbluecats",
+        "stompsg",
+        "thesmartlocal",
+        "sgfollowsall",
+        "sgag_sg",
+        "jianhaotan"
+      ],
+      "instagram": [
+        "mothershipsg",
+        "zaobaosg",
+        "straits_times",
+        "channelnewsasia",
+        "asiaonecom",
+        "sgfollowsall",
+        "goody.feed",
+        "thesmartlocal",
+        "sgag_sg",
+        "8worldnews",
+        "bandwagonasia",
+        "wakeupsingapore",
+        "stompsingapore"
+      ]
+    },
+    "rules": {
+      "fresh_hours": 48,
+      "fallback_hours": 72,
+      "publishers": [
+        "mothershipsg",
+        "zaobaosg",
+        "shinmindailynews",
+        "straitstimes",
+        "straits_times",
+        "8worldnews",
+        "goodyfeedbluecats",
+        "goody.feed",
+        "channelnewsasia",
+        "asiaonecom",
+        "thesmartlocal",
+        "bandwagonasia",
+        "wakeupsingapore"
+      ],
+      "local_caption_pattern": "singapore|s'pore|新加坡|本地|【本地】|hdb|mrt|hawker|sengkang|punggol|tampines|jurong|woodlands|yishun|bedok|ang mo kio|toa payoh|orchard|changi|sentosa|bishan|clementi|hougang|pasir ris|bukit|serangoon|geylang|marina bay|nparks|nea\\b|lta\\b",
+      "local_hashtags": [
+        "sgtiktok",
+        "sgviral",
+        "tiktoksg",
+        "fypsg",
+        "sgig",
+        "igsg",
+        "sglife",
+        "sgfood",
+        "sgfoodie",
+        "sgmemes",
+        "sgmeme",
+        "sgdaily",
+        "singaporean",
+        "新加坡生活",
+        "新加坡美食",
+        "sgcreator",
+        "sgcontentcreator"
+      ],
+      "travel_hashtags": [
+        "travel",
+        "traveltok",
+        "travelgram",
+        "traveladdict",
+        "travelvlog",
+        "singaporetravel",
+        "visitsingapore",
+        "wanderlust",
+        "explorepage"
+      ],
+      "travel_markers": [
+        "trip to singapore",
+        "visiting singapore",
+        "visit singapore",
+        "itinerary",
+        "first time in singapore",
+        "days in singapore",
+        "layover",
+        "tourist"
+      ],
+      "sg_place_pattern": "singapore|singapura|新加坡|sentosa|changi|jewel|orchard|marina bay|tampines|jurong|woodlands|punggol|sengkang|bedok|yishun|hougang|bishan|clementi|toa payoh|ang mo kio|geylang|bugis|chinatown|tiong bahru|pulau ujong|zhup zhup|rasapura|arab street|kallang|national stadium"
+    }
   }
 }
